@@ -1,0 +1,130 @@
+{
+  "session": [
+    {
+      "id": "pep8-lookup",
+      "question": "What does PEP 8 say about putting imports on separate lines?",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "answer": "PEP 8 states that imports should usually be on separate lines, except when importing multiple items from the same module."
+    },
+    {
+      "id": "final-count",
+      "question": "A table of PEPs is available. In one sentence, what would a count of status Final tell a reader?",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "answer": "A count of PEPs with the status \"Final\" tells the reader the total number of proposed Python enhancements that have been officially accepted, completed, and implemented into the language."
+    },
+    {
+      "id": "code-explain",
+      "question": "Explain format_pep_reference in pep_tools/references.py in one sentence.",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "dimension": "capability",
+      "reason": "Complexity is high for this code step, so the more capable model handles it.",
+      "answer": "Please paste `format_pep_reference` from `pep_tools/references.py` so I can explain it accurately in one sentence."
+    },
+    {
+      "id": "after-snapshot",
+      "question": "Where would a reader look for PEPs accepted after a fixed documentation snapshot?",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "answer": "A reader would look at the official Python Enhancement Proposals index on the Python website (peps.python.org) or its corresponding GitHub repository."
+    },
+    {
+      "id": "summary",
+      "question": "Write one sentence that could summarize a PEP 8 import rule together with a count of Process PEPs.",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "dimension": "capability",
+      "reason": "Complexity is high for this summary step, so the more capable model handles it.",
+      "answer": "PEP 8 recommends placing imports on separate lines, and two examples of Process PEPs are PEP 1 and PEP 8."
+    }
+  ],
+  "route_log": [
+    {
+      "agent": "research",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "kind": "lookup",
+      "fallback": false,
+      "recovered": false,
+      "ok": true
+    },
+    {
+      "agent": "data",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "kind": "lookup",
+      "fallback": false,
+      "recovered": false,
+      "ok": true
+    },
+    {
+      "agent": "code",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "dimension": "capability",
+      "reason": "Complexity is high for this code step, so the more capable model handles it.",
+      "kind": "code",
+      "fallback": false,
+      "recovered": false,
+      "ok": true
+    },
+    {
+      "agent": "research",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "cost",
+      "reason": "Complexity is low for this lookup step, so the cheaper model handles it.",
+      "kind": "lookup",
+      "fallback": false,
+      "recovered": false,
+      "ok": true
+    },
+    {
+      "agent": "summary",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "dimension": "capability",
+      "reason": "Complexity is high for this summary step, so the more capable model handles it.",
+      "kind": "summary",
+      "fallback": false,
+      "recovered": false,
+      "ok": true
+    }
+  ],
+  "forced_fallback": [
+    {
+      "agent": "code",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "dimension": "capability",
+      "reason": "Complexity is high for this code step, so the more capable model handles it.",
+      "kind": "code",
+      "fallback": false,
+      "recovered": false,
+      "ok": false
+    },
+    {
+      "agent": "code",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "dimension": "fallback",
+      "reason": "The openai call failed (RuntimeError), so this step retries once on google.",
+      "kind": "code",
+      "fallback": true,
+      "recovered": true,
+      "ok": true
+    }
+  ]
+}

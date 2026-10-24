@@ -54,3 +54,34 @@ The snapshot has 745 PEPs. 375 of them have status `Final`. That count matches a
 ## Code bundle
 
 `code_bundle/pep_tools/` is the source tree the Code agent can open. `tools/code_reader.py` searches it and reads line ranges. A path that leaves the bundle is rejected. The modules check the PEP 8 separate-import rule and format a PEP citation URL.
+
+## Orchestration
+
+```mermaid
+flowchart TD
+  startNode[User question] --> planNode[Plan]
+  planNode --> supervisorNode[Supervisor]
+  supervisorNode -->|next pending step| researchNode[Research]
+  supervisorNode -->|next pending step| dataNode[Data]
+  supervisorNode -->|next pending step| codeNode[Code]
+  researchNode --> supervisorNode
+  dataNode --> supervisorNode
+  codeNode --> supervisorNode
+  supervisorNode -->|plan complete| summaryNode[Summary]
+  summaryNode --> endNode[Final answer]
+```
+
+The planner calls the cheap model and writes `plan`. The supervisor reads that list and sends the next step whose dependencies are done or failed. It does not read the question text. Summary always runs after the planned workers.
+
+State fields: `user_query`, `history`, `plan`, `route_log`, `agent_outputs`, `citations`, `errors`, `trace`, `final_answer`. Each plan step has `id`, `agent`, `reason`, `depends_on`, `complexity`, `kind`, and `status`.
+
+## LLM routing
+
+`app/routing.py` reads the plan fields `complexity` and `kind`. It does not look at the question text.
+
+| Complexity | Kind | Provider | Model | Dimension |
+|---|---|---|---|---|
+| low | plan, rewrite, lookup | Google | `gemini-3.8-flash` | cost |
+| high | synthesis, summary, code | OpenAI | `gpt-6.1-sol` | capability |
+
+GPT calls go through the Responses API so a later tool call uses the same path. If the chosen provider raises, the step retries once on the other provider. The route log records `fallback: true` and `recovered: true` for that retry. If the retry also fails, the step is marked failed and the caller continues. A saved session is in `eval/route_log.json`.
