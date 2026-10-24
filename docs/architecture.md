@@ -34,3 +34,23 @@ Chunk ids are stable: `doc_id/section-index-slug/piece`. Re-running `ingest/buil
 | Retrieval k | 5, used by the later Research agent |
 
 Ingest does not run when the server starts. `ingest/download_corpus.py` fetches the archives. `ingest/build_index.py` chunks, embeds, and writes Chroma.
+
+## PEP table
+
+`ingest/build_sqlite.py` reads the same PEP snapshot and writes `data/peps.sqlite`. The Data agent is the only caller of `tools/sqlite_tool.py`, which accepts one `SELECT` and opens the file read-only.
+
+| Column | Meaning |
+|---|---|
+| `number` | PEP number, primary key |
+| `title` | Header title |
+| `status` | Header status, stored as written |
+| `type` | Header type |
+| `created` | Header created date |
+| `python_version` | `Python-Version` header, null when the PEP has none |
+| `author` | Header authors, continuation lines joined |
+
+The snapshot has 745 PEPs. 375 of them have status `Final`. That count matches a separate scan of the `Status:` header lines. PEP 8 is status `Active`, not `Final`.
+
+## Code bundle
+
+`code_bundle/pep_tools/` is the source tree the Code agent can open. `tools/code_reader.py` searches it and reads line ranges. A path that leaves the bundle is rejected. The modules check the PEP 8 separate-import rule and format a PEP citation URL.
