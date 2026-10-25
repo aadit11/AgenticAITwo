@@ -1,0 +1,167 @@
+{
+  "supervisor_skip": {
+    "plan": [
+      {
+        "id": "s1",
+        "agent": "data",
+        "reason": "data step s1",
+        "depends_on": [],
+        "complexity": "low",
+        "kind": "lookup",
+        "status": "failed"
+      },
+      {
+        "id": "s2",
+        "agent": "code",
+        "reason": "code step s2",
+        "depends_on": [
+          "s1"
+        ],
+        "complexity": "low",
+        "kind": "lookup",
+        "status": "failed"
+      }
+    ],
+    "next_node": "summary",
+    "errors": [
+      {
+        "agent": "code",
+        "message": "skipped because dependency s1 failed; the failure was recovered",
+        "recovered": true
+      }
+    ],
+    "trace": [
+      {
+        "node": "supervisor",
+        "event": "skip",
+        "detail": "id=s2 agent=code dependency s1 failed",
+        "ts": "2026-10-25T03:08:46.789639+00:00"
+      },
+      {
+        "node": "supervisor",
+        "event": "route",
+        "detail": "planned steps are finished; next=summary",
+        "ts": "2026-10-25T03:08:46.789677+00:00"
+      }
+    ]
+  },
+  "graph_guard": {
+    "errors": [
+      {
+        "agent": "graph",
+        "message": "RuntimeError; the failure was recovered",
+        "recovered": true
+      }
+    ],
+    "final_answer": "The briefing stopped after an unexpected failure. The failure was recovered, and no finished answer was produced."
+  },
+  "broken_data": {
+    "question": "What does PEP 8 say about imports, and how many PEPs have status Final?",
+    "plan": [
+      {
+        "id": "s1",
+        "agent": "research",
+        "reason": "research step s1",
+        "depends_on": [],
+        "complexity": "low",
+        "kind": "lookup",
+        "status": "done"
+      },
+      {
+        "id": "s2",
+        "agent": "data",
+        "reason": "data step s2",
+        "depends_on": [],
+        "complexity": "low",
+        "kind": "lookup",
+        "status": "failed"
+      },
+      {
+        "id": "s3",
+        "agent": "code",
+        "reason": "code step s3",
+        "depends_on": [
+          "s2"
+        ],
+        "complexity": "low",
+        "kind": "lookup",
+        "status": "failed"
+      }
+    ],
+    "errors": [
+      {
+        "agent": "data",
+        "message": "RuntimeError; the failure was recovered",
+        "recovered": true
+      },
+      {
+        "agent": "code",
+        "message": "skipped because dependency s2 failed; the failure was recovered",
+        "recovered": true
+      }
+    ],
+    "final_answer": "PEP 8 says imports should usually be on separate lines. [pep-0008/09-imports/0] The number of PEPs with status Final could not be determined from the PEP table: the data agent failed, and the code agent was skipped because its dependency failed; both errors were marked recovered, but no count was returned.",
+    "trace": [
+      {
+        "node": "plan",
+        "event": "exit",
+        "detail": "research,data,code",
+        "ts": "2026-10-25T03:08:46.889878+00:00"
+      },
+      {
+        "node": "supervisor",
+        "event": "route",
+        "detail": "next=research id=s1 reason=research step s1",
+        "ts": "2026-10-25T03:08:46.891880+00:00"
+      },
+      {
+        "node": "research",
+        "event": "exit",
+        "detail": "done",
+        "ts": "2026-10-25T03:08:46.894244+00:00"
+      },
+      {
+        "node": "supervisor",
+        "event": "route",
+        "detail": "next=data id=s2 reason=data step s2",
+        "ts": "2026-10-25T03:08:46.895567+00:00"
+      },
+      {
+        "node": "data",
+        "event": "enter",
+        "detail": "s2",
+        "ts": "2026-10-25T03:08:46.897076+00:00"
+      },
+      {
+        "node": "data",
+        "event": "exit",
+        "detail": "failed",
+        "ts": "2026-10-25T03:08:46.897125+00:00"
+      },
+      {
+        "node": "supervisor",
+        "event": "skip",
+        "detail": "id=s3 agent=code dependency s2 failed",
+        "ts": "2026-10-25T03:08:46.898102+00:00"
+      },
+      {
+        "node": "supervisor",
+        "event": "route",
+        "detail": "planned steps are finished; next=summary",
+        "ts": "2026-10-25T03:08:46.898120+00:00"
+      },
+      {
+        "node": "summary",
+        "event": "enter",
+        "detail": "merge",
+        "ts": "2026-10-25T03:08:46.899638+00:00"
+      },
+      {
+        "node": "summary",
+        "event": "exit",
+        "detail": "done",
+        "ts": "2026-10-25T03:08:51.364128+00:00"
+      }
+    ]
+  }
+}

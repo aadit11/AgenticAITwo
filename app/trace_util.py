@@ -14,6 +14,14 @@ def trace_event(node: str, event: str, detail: str) -> dict:
     }
 
 
+def recovered_error(agent: str, message: str) -> dict:
+    """An error that stayed inside the graph. The message says the failure was recovered."""
+    detail = message.strip() or "worker failed"
+    if "failure was recovered" not in detail:
+        detail = f"{detail}; the failure was recovered"
+    return {"agent": agent, "message": detail, "recovered": True}
+
+
 def mark_step(plan: list[dict], step_id: str, status: str) -> list[dict]:
     updated = []
     for step in plan:

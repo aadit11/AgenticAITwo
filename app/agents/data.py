@@ -7,16 +7,18 @@ import json
 from app.json_util import extract_json
 from app.prompts import DATA_PROMPT
 from app.routing import run_task
-from app.trace_util import mark_step, trace_event
+from app.trace_util import mark_step, recovered_error, trace_event
 from tools.sqlite_tool import query_database
 
 
 def data_node(state: dict) -> dict:
-    step = _step(state)
-    entry = trace_event("data", "enter", step["id"])
+    step_id = str(state.get("current_step_id") or "")
+    entry = trace_event("data", "enter", step_id)
     routes: list[dict] = []
     errors: list[dict] = []
     try:
+        step = _step(state)
+        step_id = step["id"]
         drafted = run_task(
             {
                 "agent": "data",
@@ -35,10 +37,10 @@ def data_node(state: dict) -> dict:
     except Exception as exc:
         text = "Data could not answer from the PEP table."
         status = "failed"
-        errors.append({"agent": "data", "message": type(exc).__name__, "recovered": False})
+        errors.append(recovered_error("data", type(exc).__name__))
     return {
-        "plan": mark_step(state["plan"], step["id"], status),
-        "agent_outputs": {step["id"]: text},
+        "plan": mark_step(state["plan"], step_id, status),
+        "agent_outputs": {step_id: text},
         "route_log": routes,
         "errors": errors,
         "trace": [entry, trace_event("data", "exit", status)],

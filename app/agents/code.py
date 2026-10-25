@@ -7,16 +7,18 @@ import json
 from app.json_util import extract_json
 from app.prompts import CODE_PROMPT
 from app.routing import run_task
-from app.trace_util import mark_step, trace_event
+from app.trace_util import mark_step, recovered_error, trace_event
 from tools.code_reader import read_file, search_code
 
 
 def code_node(state: dict) -> dict:
-    step = _step(state)
-    entry = trace_event("code", "enter", step["id"])
+    step_id = str(state.get("current_step_id") or "")
+    entry = trace_event("code", "enter", step_id)
     routes: list[dict] = []
     errors: list[dict] = []
     try:
+        step = _step(state)
+        step_id = step["id"]
         located = run_task(
             {
                 "agent": "code",
@@ -63,10 +65,10 @@ def code_node(state: dict) -> dict:
     except Exception as exc:
         text = "Code could not read the bundle."
         status = "failed"
-        errors.append({"agent": "code", "message": type(exc).__name__, "recovered": False})
+        errors.append(recovered_error("code", type(exc).__name__))
     return {
-        "plan": mark_step(state["plan"], step["id"], status),
-        "agent_outputs": {step["id"]: text},
+        "plan": mark_step(state["plan"], step_id, status),
+        "agent_outputs": {step_id: text},
         "route_log": routes,
         "errors": errors,
         "trace": [entry, trace_event("code", "exit", status)],

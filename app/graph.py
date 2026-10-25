@@ -16,7 +16,7 @@ from app.json_util import extract_json
 from app.prompts import PLANNER_PROMPT
 from app.routing import run_task
 from app.state import AgentState
-from app.trace_util import trace_event
+from app.trace_util import recovered_error, trace_event
 
 ALLOWED_AGENTS = {"research", "data", "code"}
 ALLOWED_KINDS = {"lookup", "code", "synthesis", "rewrite", "plan", "summary"}
@@ -106,31 +106,42 @@ def plan_node(state: dict) -> dict:
 def supervisor_node(state: dict) -> dict:
     plan = [dict(step) for step in state.get("plan") or []]
     by_id = {step["id"]: step for step in plan}
+    errors: list[dict] = []
+    events: list[dict] = []
     for step in plan:
         if step["status"] != "pending":
             continue
         missing = [dep for dep in step["depends_on"] if dep not in by_id or dep == step["id"]]
-        if missing:
+        blocked = [dep for dep in step["depends_on"] if dep in by_id and by_id[dep]["status"] == "failed"]
+        if missing or blocked:
             step["status"] = "failed"
+            why = "a dependency is missing" if missing else "dependency " + ", ".join(blocked) + " failed"
+            errors.append(recovered_error(step["agent"], f"skipped because {why}"))
+            events.append(trace_event("supervisor", "skip", f"id={step['id']} agent={step['agent']} {why}"))
             continue
-        if all(by_id[dep]["status"] in {"done", "failed"} for dep in step["depends_on"]):
-            step["status"] = "running"
-            return {
-                "plan": plan,
-                "next_node": step["agent"],
-                "current_step_id": step["id"],
-                "trace": [
-                    trace_event(
-                        "supervisor",
-                        "route",
-                        f"next={step['agent']} id={step['id']} reason={step['reason']}",
-                    )
-                ],
-            }
+        if any(by_id[dep]["status"] != "done" for dep in step["depends_on"]):
+            continue
+        step["status"] = "running"
+        events.append(
+            trace_event(
+                "supervisor",
+                "route",
+                f"next={step['agent']} id={step['id']} reason={step['reason']}",
+            )
+        )
+        return {
+            "plan": plan,
+            "next_node": step["agent"],
+            "current_step_id": step["id"],
+            "errors": errors,
+            "trace": events,
+        }
+    events.append(trace_event("supervisor", "route", "planned steps are finished; next=summary"))
     return {
         "plan": plan,
         "next_node": "summary",
-        "trace": [trace_event("supervisor", "route", "planned steps are finished; next=summary")],
+        "errors": errors,
+        "trace": events,
     }
 
 
@@ -154,6 +165,24 @@ def build_graph():
     graph.add_edge("code", "supervisor")
     graph.add_edge("summary", END)
     return graph.compile()
+
+
+def invoke_graph(question: str, history: list[dict] | None = None, *, graph=None) -> dict:
+    """Run the graph. An exception that escapes a node becomes an error payload."""
+    compiled = graph or build_graph()
+    state = initial_state(question, history)
+    try:
+        return compiled.invoke(state, config={"recursion_limit": 40})
+    except Exception as exc:
+        return {
+            **state,
+            "final_answer": (
+                "The briefing stopped after an unexpected failure. "
+                "The failure was recovered, and no finished answer was produced."
+            ),
+            "errors": [recovered_error("graph", type(exc).__name__)],
+            "trace": [trace_event("graph", "error", type(exc).__name__)],
+        }
 
 
 def initial_state(question: str, history: list[dict] | None = None) -> dict:

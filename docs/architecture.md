@@ -85,3 +85,18 @@ State fields: `user_query`, `history`, `plan`, `route_log`, `agent_outputs`, `ci
 | high | synthesis, summary, code | OpenAI | `gpt-6.1-sol` | capability |
 
 GPT calls go through the Responses API so a later tool call uses the same path. If the chosen provider raises, the step retries once on the other provider. The route log records `fallback: true` and `recovered: true` for that retry. If the retry also fails, the step is marked failed and the caller continues. A saved session is in `eval/route_log.json`.
+
+## Shared Tavily MCP
+
+Research and Summary share one remote MCP server: `https://mcp.tavily.com/mcp/` over Streamable HTTP. `tools/tavily_mcp.py` puts `TAVILY_API_KEY` in the query string. The key is not sent in the request body and is not written into the trace.
+
+| Agent | Tool | When it runs | Argument |
+|---|---|---|---|
+| Research | `tavily_search` | The best corpus score is below 0.5, or the question asks about something after the 2026-10-24 snapshot | For a post-snapshot question, `Python PEPs accepted` on `peps.python.org`, `discuss.python.org`, and `blog.python.org`. Otherwise the user question. |
+| Summary | `tavily_extract` | Research already returned a `tavily-search` citation | That citation's URL only |
+
+Summary does not search, and it does not extract a corpus source URL. A saved session is in `eval/phase5_runs.json`.
+
+## Failure handling
+
+Each worker catches an exception, marks that plan step `failed`, and appends an error that names the agent and says the failure was recovered. Control returns to the supervisor. A later step whose dependency failed is skipped and is not executed. Summary still runs and says which part of the answer is missing. `invoke_graph` turns an exception that escapes a node into that same error payload. A saved session is in `eval/phase6_runs.json`.
