@@ -81,3 +81,10 @@ def retrieve(query: str, k: int = 5) -> list[dict]:
         rest = [item for item in ranked if item not in named]
         return (named + rest)[:k]
     return ranked[:k]
+
+
+def corpus_count() -> int:
+    try:
+        return PersistentClient(path=str(_persist_dir())).get_collection(COLLECTION_NAME).count()
+    except Exception:
+        return 0

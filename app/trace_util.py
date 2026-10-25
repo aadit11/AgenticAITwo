@@ -4,14 +4,18 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+from app.publish import publish
+
 
 def trace_event(node: str, event: str, detail: str) -> dict:
-    return {
+    payload = {
         "node": node,
         "event": event,
         "detail": detail,
         "ts": datetime.now(timezone.utc).isoformat(),
     }
+    publish("trace", {"node": node, "event": event, "detail": detail})
+    return payload
 
 
 def recovered_error(agent: str, message: str) -> dict:
@@ -19,7 +23,9 @@ def recovered_error(agent: str, message: str) -> dict:
     detail = message.strip() or "worker failed"
     if "failure was recovered" not in detail:
         detail = f"{detail}; the failure was recovered"
-    return {"agent": agent, "message": detail, "recovered": True}
+    payload = {"agent": agent, "message": detail, "recovered": True}
+    publish("error", payload)
+    return payload
 
 
 def mark_step(plan: list[dict], step_id: str, status: str) -> list[dict]:

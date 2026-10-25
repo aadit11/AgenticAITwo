@@ -100,3 +100,9 @@ Summary does not search, and it does not extract a corpus source URL. A saved se
 ## Failure handling
 
 Each worker catches an exception, marks that plan step `failed`, and appends an error that names the agent and says the failure was recovered. Control returns to the supervisor. A later step whose dependency failed is skipped and is not executed. Summary still runs and says which part of the answer is missing. `invoke_graph` turns an exception that escapes a node into that same error payload. A saved session is in `eval/phase6_runs.json`.
+
+## Chat API
+
+`main.py` serves `static/` at `/` and does not store chat history. The browser sends `history` on each `POST /api/chat`. The response is a Server-Sent Events stream. The handler writes a `: ping` comment before the first model call, then emits `trace`, `route`, `citation`, `token`, and `error` events as the graph runs. `done` closes the stream. `GET /health` returns `ok`, `chroma_count`, and `providers_configured`, and it does not return key values.
+
+The page in `static/` is one HTML file and vanilla JavaScript. The left column is the question box and the streaming transcript. The right column is the live trace. Starter buttons fill the box with the five Phase 3 questions. Tokens append to the current answer, route lines sit under that answer, and a citation chip opens the chunk id, title, section, score, and excerpt. A follow-up sends `history` from the messages already on the page. Refreshing the tab starts over.

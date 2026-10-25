@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 
 from app.prompts import SUMMARY_PROMPT
-from app.routing import run_task
+from app.publish import sink_bound
+from app.routing import complete, run_task, stream_complete
 from app.trace_util import recovered_error, trace_event
 from tools.tavily_mcp import tavily_extract
 
@@ -35,6 +36,7 @@ def summary_node(state: dict) -> dict:
                 ),
             },
             routes,
+            caller=stream_complete if sink_bound() else complete,
         )
         text = result["text"] if result["ok"] else "Summary could not merge the worker outputs."
         if not result["ok"]:

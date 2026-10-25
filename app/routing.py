@@ -15,6 +15,8 @@ from google import genai
 from google.genai import types
 from openai import OpenAI
 
+from app.publish import publish
+
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
 
@@ -112,6 +114,65 @@ def complete(decision: dict, prompt: str, needs_tools: bool = False) -> str:
     return text
 
 
+def _iter_deltas(decision: dict, prompt: str, needs_tools: bool):
+    if decision["provider"] == "openai":
+        client = OpenAI(timeout=90)
+        kwargs = {
+            "model": decision["model"],
+            "input": prompt,
+            "reasoning": {"effort": "low"},
+            "max_output_tokens": 512,
+        }
+        if needs_tools:
+            kwargs["tools"] = decision.get("tools") or []
+        with client.responses.stream(**kwargs) as stream:
+            for event in stream:
+                if getattr(event, "type", "") == "response.output_text.delta" and event.delta:
+                    yield event.delta
+        return
+    if decision["provider"] == "google":
+        client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+        for chunk in client.models.generate_content_stream(
+            model=decision["model"],
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+                max_output_tokens=512,
+            ),
+        ):
+            text = chunk.text or ""
+            if text:
+                yield text
+        return
+    raise ValueError(f"unknown provider {decision['provider']}")
+
+
+def stream_complete(decision: dict, prompt: str, needs_tools: bool = False) -> str:
+    """Stream Summary text. Each piece is published before the full answer exists."""
+    parts: list[str] = []
+    for delta in _iter_deltas(decision, prompt, needs_tools):
+        parts.append(delta)
+        publish("token", {"text": delta})
+    text = "".join(parts).strip()
+    if not text:
+        raise RuntimeError(f"{decision['provider']} returned an empty answer")
+    return text
+
+
+def _log_route(route_log: list[dict], entry: dict) -> None:
+    route_log.append(entry)
+    publish(
+        "route",
+        {
+            "agent": entry.get("agent"),
+            "provider": entry.get("provider"),
+            "model": entry.get("model"),
+            "dimension": entry.get("dimension"),
+            "reason": entry.get("reason"),
+        },
+    )
+
+
 def run_task(
     task: dict,
     route_log: list[dict],
@@ -134,14 +195,14 @@ def run_task(
         text = attempt(decision)
     except Exception as first_error:
         fallback = alternate_provider(decision, type(first_error).__name__)
-        route_log.append({**decision, "fallback": False, "recovered": False, "ok": False})
+        _log_route(route_log, {**decision, "fallback": False, "recovered": False, "ok": False})
         try:
             text = attempt(fallback)
         except Exception:
-            route_log.append({**fallback, "fallback": True, "recovered": False, "ok": False})
+            _log_route(route_log, {**fallback, "fallback": True, "recovered": False, "ok": False})
             return {"ok": False, "text": "", "decision": fallback, "recovered": False}
-        route_log.append({**fallback, "fallback": True, "recovered": True, "ok": True})
+        _log_route(route_log, {**fallback, "fallback": True, "recovered": True, "ok": True})
         return {"ok": True, "text": text, "decision": fallback, "recovered": True}
 
-    route_log.append({**decision, "fallback": False, "recovered": False, "ok": True})
+    _log_route(route_log, {**decision, "fallback": False, "recovered": False, "ok": True})
     return {"ok": True, "text": text, "decision": decision, "recovered": False}

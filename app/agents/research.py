@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from app.prompts import RESEARCH_PROMPT
+from app.publish import publish_citation
 from app.routing import run_task
 from app.trace_util import mark_step, recovered_error, trace_event
 from tools.chroma_retriever import _named_pep_ids, retrieve
@@ -43,6 +44,8 @@ def research_node(state: dict) -> dict:
             state["user_query"],
         )
         web_passages, tool_events = _maybe_search(state["user_query"], citations, errors)
+        for item in citations:
+            publish_citation(item)
         passages = "\n\n".join(
             f"[{item['chunk_id']}] {item['title']} / {item['section']}\n{item['excerpt']}"
             for item in citations
