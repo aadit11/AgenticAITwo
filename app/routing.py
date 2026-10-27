@@ -7,6 +7,8 @@ It does not inspect the user question.
 from __future__ import annotations
 
 import os
+import time
+from contextvars import ContextVar
 from pathlib import Path
 from typing import Callable
 
@@ -19,6 +21,8 @@ from app.publish import publish
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
+
+_last_tokens: ContextVar[tuple[int, int] | None] = ContextVar("last_tokens", default=None)
 
 COST_MODEL_ENV = "GEMINI_MODEL"
 CAPABILITY_MODEL_ENV = "OPENAI_MODEL"
@@ -82,6 +86,34 @@ def alternate_provider(decision: dict, error_name: str) -> dict:
     }
 
 
+def last_token_usage() -> dict:
+    tokens = _last_tokens.get()
+    if not tokens:
+        return {"input_tokens": 0, "output_tokens": 0}
+    return {"input_tokens": tokens[0], "output_tokens": tokens[1]}
+
+
+def _remember_tokens(input_tokens: int, output_tokens: int) -> None:
+    _last_tokens.set((int(input_tokens or 0), int(output_tokens or 0)))
+
+
+def _usage_openai(response) -> tuple[int, int]:
+    usage = getattr(response, "usage", None)
+    if usage is None:
+        return 0, 0
+    return int(getattr(usage, "input_tokens", 0) or 0), int(getattr(usage, "output_tokens", 0) or 0)
+
+
+def _usage_google(response) -> tuple[int, int]:
+    meta = getattr(response, "usage_metadata", None)
+    if meta is None:
+        return 0, 0
+    prompt = int(getattr(meta, "prompt_token_count", 0) or 0)
+    answer = int(getattr(meta, "candidates_token_count", 0) or 0)
+    thoughts = int(getattr(meta, "thoughts_token_count", 0) or 0)
+    return prompt, answer + thoughts
+
+
 def complete(decision: dict, prompt: str, needs_tools: bool = False) -> str:
     """Call the selected model. GPT uses the Responses API, which is required for tools."""
     if decision["provider"] == "openai":
@@ -96,6 +128,7 @@ def complete(decision: dict, prompt: str, needs_tools: bool = False) -> str:
             kwargs["tools"] = decision.get("tools") or []
         response = client.responses.create(**kwargs)
         text = (response.output_text or "").strip()
+        _remember_tokens(*_usage_openai(response))
     elif decision["provider"] == "google":
         client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
         response = client.models.generate_content(
@@ -107,6 +140,7 @@ def complete(decision: dict, prompt: str, needs_tools: bool = False) -> str:
             ),
         )
         text = (response.text or "").strip()
+        _remember_tokens(*_usage_google(response))
     else:
         raise ValueError(f"unknown provider {decision['provider']}")
     if not text:
@@ -129,9 +163,11 @@ def _iter_deltas(decision: dict, prompt: str, needs_tools: bool):
             for event in stream:
                 if getattr(event, "type", "") == "response.output_text.delta" and event.delta:
                     yield event.delta
+            _remember_tokens(*_usage_openai(stream.get_final_response()))
         return
     if decision["provider"] == "google":
         client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+        last = None
         for chunk in client.models.generate_content_stream(
             model=decision["model"],
             contents=prompt,
@@ -140,9 +176,12 @@ def _iter_deltas(decision: dict, prompt: str, needs_tools: bool):
                 max_output_tokens=512,
             ),
         ):
+            last = chunk
             text = chunk.text or ""
             if text:
                 yield text
+        if last is not None:
+            _remember_tokens(*_usage_google(last))
         return
     raise ValueError(f"unknown provider {decision['provider']}")
 
@@ -189,20 +228,38 @@ def run_task(
     def attempt(choice: dict) -> str:
         if choice["provider"] in blocked:
             raise RuntimeError(f"forced failure for {choice['provider']}")
+        _last_tokens.set(None)
         return caller(choice, prompt, needs_tools)
 
+    def finish(choice: dict, *, fallback: bool, recovered: bool, ok: bool, started: float) -> None:
+        usage = last_token_usage()
+        _log_route(
+            route_log,
+            {
+                **choice,
+                "fallback": fallback,
+                "recovered": recovered,
+                "ok": ok,
+                "latency_ms": round((time.perf_counter() - started) * 1000, 1),
+                "input_tokens": usage["input_tokens"],
+                "output_tokens": usage["output_tokens"],
+            },
+        )
+
+    started = time.perf_counter()
     try:
         text = attempt(decision)
     except Exception as first_error:
+        finish(decision, fallback=False, recovered=False, ok=False, started=started)
         fallback = alternate_provider(decision, type(first_error).__name__)
-        _log_route(route_log, {**decision, "fallback": False, "recovered": False, "ok": False})
+        started = time.perf_counter()
         try:
             text = attempt(fallback)
         except Exception:
-            _log_route(route_log, {**fallback, "fallback": True, "recovered": False, "ok": False})
+            finish(fallback, fallback=True, recovered=False, ok=False, started=started)
             return {"ok": False, "text": "", "decision": fallback, "recovered": False}
-        _log_route(route_log, {**fallback, "fallback": True, "recovered": True, "ok": True})
+        finish(fallback, fallback=True, recovered=True, ok=True, started=started)
         return {"ok": True, "text": text, "decision": fallback, "recovered": True}
 
-    _log_route(route_log, {**decision, "fallback": False, "recovered": False, "ok": True})
+    finish(decision, fallback=False, recovered=False, ok=True, started=started)
     return {"ok": True, "text": text, "decision": decision, "recovered": False}

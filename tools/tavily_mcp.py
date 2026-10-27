@@ -109,7 +109,7 @@ def tavily_search(
     include_domains: list[str] | None = None,
     max_results: int = 5,
 ) -> dict:
-    """Research uses this. Summary does not."""
+    """Research and Summary both call this tool. Their queries differ."""
     arguments = {
         "query": query,
         "search_depth": "basic",

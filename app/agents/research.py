@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import time
+
 from app.prompts import RESEARCH_PROMPT
 from app.publish import publish_citation
 from app.routing import run_task
@@ -21,6 +23,7 @@ def research_node(state: dict) -> dict:
     errors: list[dict] = []
     citations: list[dict] = []
     tool_events: list[dict] = []
+    extra_traces: list[dict] = []
     try:
         step = _step(state)
         step_id = step["id"]
@@ -38,16 +41,19 @@ def research_node(state: dict) -> dict:
             routes,
         )
         search_query = rewritten["text"].strip().splitlines()[0][:300] if rewritten["ok"] else state["user_query"]
+        started = time.perf_counter()
         citations = _merge_citations(
             retrieve(search_query, k=5),
             retrieve(state["user_query"], k=5),
             state["user_query"],
         )
+        retrieve_ms = round((time.perf_counter() - started) * 1000, 1)
+        extra_traces.append(trace_event("research", "retrieve", f"{retrieve_ms} ms"))
         web_passages, tool_events = _maybe_search(state["user_query"], citations, errors)
         for item in citations:
             publish_citation(item)
         passages = "\n\n".join(
-            f"[{item['chunk_id']}] {item['title']} / {item['section']}\n{item['excerpt']}"
+            f"[{item['chunk_id']}] {item['title']} / {item['section']}\n{item.get('text') or item['excerpt']}"
             for item in citations
             if not str(item["chunk_id"]).startswith("tavily-search:")
         )
@@ -77,7 +83,7 @@ def research_node(state: dict) -> dict:
         "citations": citations,
         "route_log": routes,
         "errors": errors,
-        "trace": [entry, *tool_events, trace_event("research", "exit", status)],
+        "trace": [entry, *extra_traces, *tool_events, trace_event("research", "exit", status)],
     }
 
 
@@ -96,7 +102,7 @@ def _merge_citations(primary: list[dict], extra: list[dict], question: str) -> l
             if any(item["chunk_id"].startswith(f"{doc_id}/") for doc_id in named_ids)
         ]
         if named:
-            return named[:5]
+            return named[:6]
     return ranked[:5]
 
 

@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import json
+from urllib.parse import urlparse
 
 from app.prompts import SUMMARY_PROMPT
 from app.publish import sink_bound
 from app.routing import complete, run_task, stream_complete
 from app.trace_util import recovered_error, trace_event
-from tools.tavily_mcp import tavily_extract
+from tools.tavily_mcp import tavily_extract, tavily_search
 
 
 def summary_node(state: dict) -> dict:
@@ -20,6 +21,7 @@ def summary_node(state: dict) -> dict:
     citations = state.get("citations") or []
     history = json.dumps(state.get("history") or [], indent=2)
     failures = json.dumps(state.get("errors") or [], indent=2)
+    checked = _search_research_url(citations, errors, tool_events)
     extracted = _extract_research_url(citations, errors, tool_events)
     try:
         result = run_task(
@@ -32,6 +34,7 @@ def summary_node(state: dict) -> dict:
                     f"Question: {state['user_query']}\n\nWorker outputs:\n{outputs}\n\n"
                     f"Citations:\n{json.dumps(citations, indent=2)}\n\n"
                     f"Errors:\n{failures}\n\n"
+                    f"Search check:\n{checked or 'None.'}\n\n"
                     f"Extracted page:\n{extracted or 'None.'}"
                 ),
             },
@@ -62,6 +65,27 @@ def research_urls(citations: list[dict]) -> list[str]:
         if url.startswith("http") and url not in urls:
             urls.append(url)
     return urls
+
+
+def _search_research_url(citations: list[dict], errors: list[dict], tool_events: list[dict]) -> str:
+    """Call the same tavily_search tool Research used, with the URL Research already returned."""
+    urls = research_urls(citations)
+    if not urls:
+        return ""
+    target = urls[0]
+    host = urlparse(target).netloc
+    query = f"What does this page establish? {target}"[:300]
+    try:
+        found = tavily_search(query, include_domains=[host] if host else None, max_results=2)
+    except Exception as exc:
+        errors.append(recovered_error("summary", f"tavily_search {type(exc).__name__}"))
+        tool_events.append(trace_event("summary", "tool", f"tavily_search failed {type(exc).__name__}"))
+        return ""
+    tool_events.append(trace_event("summary", "tool", f"tavily_search query={found['arguments']['query']}"))
+    lines = []
+    for item in found["results"]:
+        lines.append(f"{item['url']}\n{item['title']}\n{item['content']}")
+    return "\n\n".join(lines)
 
 
 def _extract_research_url(citations: list[dict], errors: list[dict], tool_events: list[dict]) -> str:

@@ -1,0 +1,1431 @@
+{
+  "results": [
+    {
+      "id": "pep7-title",
+      "question": "What is the title of PEP 7?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5116.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 7 is titled **\u201cStyle Guide for C Code.\u201d**"
+    },
+    {
+      "id": "pep4-title",
+      "question": "What is the title of PEP 4?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5292.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 4 is titled **\u201cDeprecation of Standard Modules.\u201d**"
+    },
+    {
+      "id": "pep4-author",
+      "question": "Who is listed first among the authors of PEP 4?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9503.6,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "Brett Cannon is listed first among the authors of PEP 4 [pep-0004/00-introduction/0]."
+    },
+    {
+      "id": "pep11-title",
+      "question": "What is the title of PEP 11?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5061.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 11 is titled **\u201cCPython platform support.\u201d**"
+    },
+    {
+      "id": "pep13-title",
+      "question": "What is the title of PEP 13?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5878.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 13 is titled **\u201cPython Language Governance.\u201d**"
+    },
+    {
+      "id": "pep13-type",
+      "question": "What are the status and type of PEP 13 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7709.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 13 has status **Active** and type **Process**."
+    },
+    {
+      "id": "pep5-status",
+      "question": "What is the status of PEP 5 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4884.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 5\u2019s status is **Superseded**."
+    },
+    {
+      "id": "pep234-meta",
+      "question": "What is the title of PEP 234, and which Python version does the table record?",
+      "pass": false,
+      "reason": "missing final",
+      "ms": 25254.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 234 is titled **\u201cIterators\u201d**, and the table records Python version **2.1**."
+    },
+    {
+      "id": "pep249-meta",
+      "question": "What is the title and type of PEP 249?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5572.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 249 is titled **\u201cPython Database API Specification v2.0\u201d** and its type is **Informational**."
+    },
+    {
+      "id": "pep255-meta",
+      "question": "What is the title of PEP 255, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 17879.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 255 is titled **\u201cSimple Generators\u201d**, and the table records Python version **2.2**."
+    },
+    {
+      "id": "pep263-meta",
+      "question": "What is PEP 263 about, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10432.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 263, **\u201cDefining Python Source Code Encodings,\u201d** establishes a more robust and portable definition of Python source-code encodings [pep-0263/00-introduction/0] [pep-0263/09-scope/0]. The table records **Python 2.3**, confirmed by both the PEP metadata and the SQL query result [pep-0263/00-introduction/0]."
+    },
+    {
+      "id": "pep285-author",
+      "question": "Who authored PEP 285, and what is its title?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5518.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 285, **\u201cAdding a bool type,\u201d** was authored by **Guido van Rossum**."
+    },
+    {
+      "id": "pep315-status",
+      "question": "What is the status of PEP 315 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4987.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 315\u2019s status in the table is **Rejected**."
+    },
+    {
+      "id": "pep328-title",
+      "question": "What is the title of PEP 328?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5784.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 328 is titled **\u201cImports: Multi-Line and Absolute/Relative.\u201d**"
+    },
+    {
+      "id": "pep343-meta",
+      "question": "What is the title of PEP 343, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7205.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 343 is titled **The \"with\" Statement**, and the table records Python version **2.5**."
+    },
+    {
+      "id": "pep362-meta",
+      "question": "What is the title of PEP 362, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6169.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 362 is titled **\u201cFunction Signature Object\u201d**, and the table records Python version **3.3**."
+    },
+    {
+      "id": "pep380-meta",
+      "question": "What is the title of PEP 380, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5364.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 380 is titled **\u201cSyntax for Delegating to a Subgenerator\u201d**, and the table records **Python 3.3**."
+    },
+    {
+      "id": "pep393-meta",
+      "question": "What is the title of PEP 393, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5554.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 393 is titled **\u201cFlexible String Representation\u201d**, and the table records Python version **3.3**."
+    },
+    {
+      "id": "pep420-meta",
+      "question": "What is the title of PEP 420, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5361.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 420 is titled **\u201cImplicit Namespace Packages\u201d**, and the table records Python version **3.3**."
+    },
+    {
+      "id": "pep426-status",
+      "question": "What is the status of PEP 426 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5502.7,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 426\u2019s status in the table is **Withdrawn**."
+    },
+    {
+      "id": "pep428-meta",
+      "question": "What is the title of PEP 428, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6250.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 428 is titled **\u201cThe pathlib module -- object-oriented filesystem paths\u201d**, and the table records Python version **3.4**."
+    },
+    {
+      "id": "pep435-meta",
+      "question": "What is the title of PEP 435, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5207.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 435 is titled **\u201cAdding an Enum type to the Python standard library\u201d**, and the table records Python version **3.4**."
+    },
+    {
+      "id": "pep443-meta",
+      "question": "What is the title of PEP 443, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5241.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 443 is titled **\u201cSingle-dispatch generic functions\u201d**, and the table records Python version **3.4**."
+    },
+    {
+      "id": "pep448-meta",
+      "question": "What is the title of PEP 448, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5473.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 448 is titled **\u201cAdditional Unpacking Generalizations\u201d**, and the table records **Python 3.5**."
+    },
+    {
+      "id": "pep465-meta",
+      "question": "What is the title of PEP 465, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5601.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 465 is titled **\u201cA dedicated infix operator for matrix multiplication\u201d**, and the table records Python version **3.5**."
+    },
+    {
+      "id": "pep492-meta",
+      "question": "What is the title of PEP 492, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6311.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 492 is titled **\u201cCoroutines with async and await syntax\u201d**, and the table records **Python 3.5**."
+    },
+    {
+      "id": "pep498-meta",
+      "question": "What is the title of PEP 498, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5122.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 498 is titled **\u201cLiteral String Interpolation\u201d**, and the table records **Python 3.6**."
+    },
+    {
+      "id": "pep517-title",
+      "question": "What is the title of PEP 517, and what is its status?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5012.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 517 is titled **\u201cA build-system independent format for source trees\u201d**, and its status is **Final**."
+    },
+    {
+      "id": "pep525-meta",
+      "question": "What is the title of PEP 525, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5588.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 525 is titled **\u201cAsynchronous Generators\u201d**, and the table records Python version **3.6**."
+    },
+    {
+      "id": "pep526-meta",
+      "question": "What is the title of PEP 526, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5040.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 526 is titled **\u201cSyntax for Variable Annotations\u201d**, and the table records **Python 3.6**."
+    },
+    {
+      "id": "pep544-meta",
+      "question": "What is the title of PEP 544, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9641.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 544 is titled **\u201cProtocols: Structural subtyping (static duck typing)\u201d**, and the table records Python version **3.8**."
+    },
+    {
+      "id": "pep557-meta",
+      "question": "What is the title of PEP 557, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6412.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 557 is titled **\u201cData Classes\u201d**, and the table records **Python 3.7**."
+    },
+    {
+      "id": "pep563-status",
+      "question": "What is the title and status of PEP 563?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4708.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 563 is titled **\u201cPostponed Evaluation of Annotations\u201d** and its status is **Superseded**."
+    },
+    {
+      "id": "pep584-meta",
+      "question": "What is the title of PEP 584, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8315.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 584 is titled **\u201cAdd Union Operators To dict\u201d**, and the table records Python version **3.9**."
+    },
+    {
+      "id": "pep585-meta",
+      "question": "What is the title of PEP 585, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5761.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 585 is titled **\u201cType Hinting Generics In Standard Collections\u201d**, and the table records Python version **3.9**."
+    },
+    {
+      "id": "pep589-meta",
+      "question": "What is the title of PEP 589, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5975.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 589 is titled **\u201cTypedDict: Type Hints for Dictionaries with a Fixed Set of Keys\u201d**, and the table records Python version **3.8**."
+    },
+    {
+      "id": "pep604-meta",
+      "question": "What Python version does the table record for PEP 604, and what is its status?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5793.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The table records Python **3.10** for PEP 604, with status **Final**."
+    },
+    {
+      "id": "pep617-meta",
+      "question": "What is the title of PEP 617, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6012.7,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 617 is titled **\u201cNew PEG parser for CPython\u201d**, and the table records Python version **3.9**."
+    },
+    {
+      "id": "pep634-meta",
+      "question": "What is the title of PEP 634, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5279.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 634 is titled **\u201cStructural Pattern Matching: Specification\u201d**, and the table records Python version **3.10**."
+    },
+    {
+      "id": "pep649-meta",
+      "question": "What is the title of PEP 649, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6576.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 649 is titled **\u201cDeferred Evaluation Of Annotations Using Descriptors\u201d**, and the table records Python version **3.14**."
+    },
+    {
+      "id": "pep657-meta",
+      "question": "What is the title of PEP 657, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6563.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 657 is titled **\u201cInclude Fine Grained Error Locations in Tracebacks\u201d**, and the table records Python version **3.11**."
+    },
+    {
+      "id": "pep679-status",
+      "question": "What is the status of PEP 679 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5493.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 679 is **Rejected**."
+    },
+    {
+      "id": "pep695-meta",
+      "question": "What is the title of PEP 695, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5370.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 695 is titled **\u201cType Parameter Syntax\u201d**, and the table records Python version **3.12**."
+    },
+    {
+      "id": "pep701-meta",
+      "question": "What is the title of PEP 701, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7120.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 701 is titled **\u201cSyntactic formalization of f-strings\u201d**, and the table records **Python 3.12**."
+    },
+    {
+      "id": "pep709-meta",
+      "question": "What is the title of PEP 709, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5560.7,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 709 is titled **\u201cInlined comprehensions\u201d**, and the table records Python version **3.12**."
+    },
+    {
+      "id": "pep723-title",
+      "question": "What is the title and status of PEP 723?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6044.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 723 is titled **\u201cInline script metadata\u201d** and its status is **Final**."
+    },
+    {
+      "id": "pep401-status",
+      "question": "What is the title and status of PEP 401?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5275.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 401 is titled **\u201cBDFL Retirement\u201d** and its status is **\u201cApril Fool!\u201d**."
+    },
+    {
+      "id": "pep801-meta",
+      "question": "What is the title, status, and author of PEP 801?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4978.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 801 is titled **\u201cReserved\u201d**, has status **Active**, and is authored by **Barry Warsaw <barry@python.org>**."
+    },
+    {
+      "id": "no-version-count",
+      "question": "How many PEPs have no Python-Version recorded?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5589.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "217 PEPs have no Python-Version recorded."
+    },
+    {
+      "id": "has-version-count",
+      "question": "How many PEPs have a Python-Version value recorded?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6421.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "528 PEPs have a Python-Version value recorded."
+    },
+    {
+      "id": "final-informational",
+      "question": "How many PEPs are both status Final and type Informational?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5194.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "51 PEPs have both status **Final** and type **Informational**."
+    },
+    {
+      "id": "final-standards",
+      "question": "How many PEPs are both status Final and type Standards Track?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 13815.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "308 PEPs have both status **Final** and type **Standards Track**."
+    },
+    {
+      "id": "active-process",
+      "question": "How many PEPs are both status Active and type Process?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5538.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "19 PEPs have both status **Active** and type **Process**."
+    },
+    {
+      "id": "accepted-standards",
+      "question": "How many PEPs are both status Accepted and type Standards Track?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6521.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "9 PEPs have both status **Accepted** and type **Standards Track**."
+    },
+    {
+      "id": "rejected-process",
+      "question": "How many PEPs are both status Rejected and type Process?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5216.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "3 PEPs have both status **Rejected** and type **Process**."
+    },
+    {
+      "id": "withdrawn-process",
+      "question": "How many PEPs are both status Withdrawn and type Process?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5521.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "9 PEPs have both status **Withdrawn** and type **Process**."
+    },
+    {
+      "id": "superseded-informational",
+      "question": "How many PEPs are both status Superseded and type Informational?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5561.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "6 PEPs have both status **Superseded** and type **Informational**."
+    },
+    {
+      "id": "barry-count",
+      "question": "How many PEP rows list Barry Warsaw as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4833.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "46 PEP rows list Barry Warsaw as an author."
+    },
+    {
+      "id": "tim-count",
+      "question": "How many PEP rows list Tim Peters as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4903.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "11 PEP rows list Tim Peters as an author."
+    },
+    {
+      "id": "brett-count",
+      "question": "How many PEP rows list Brett Cannon as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6180.7,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "35 PEP rows list Brett Cannon as an author."
+    },
+    {
+      "id": "alyssa-count",
+      "question": "How many PEP rows list Alyssa Coghlan as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5445.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "53 PEP rows list Alyssa Coghlan as an author."
+    },
+    {
+      "id": "raymond-count",
+      "question": "How many PEP rows list Raymond Hettinger as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5948.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "14 PEP rows list Raymond Hettinger as an author."
+    },
+    {
+      "id": "goodger-count",
+      "question": "How many PEP rows list David Goodger as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 19895.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "6 PEP rows list David Goodger as an author."
+    },
+    {
+      "id": "shannon-count",
+      "question": "How many PEP rows list Mark Shannon as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5886.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "14 PEP rows list Mark Shannon as an author."
+    },
+    {
+      "id": "langa-count",
+      "question": "How many PEP rows list Langa as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5491.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "15 PEP rows list Langa as an author."
+    },
+    {
+      "id": "both-guido-barry",
+      "question": "How many PEP rows list both Guido van Rossum and Barry Warsaw as authors?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5735.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "5 PEP rows list both Guido van Rossum and Barry Warsaw as authors."
+    },
+    {
+      "id": "py39-count",
+      "question": "How many PEPs list Python-Version 3.9?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9828.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "15 PEPs list Python-Version 3.9."
+    },
+    {
+      "id": "py310-count",
+      "question": "How many PEPs list Python-Version 3.10?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10750.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "21 PEPs list Python-Version 3.10."
+    },
+    {
+      "id": "py311-count",
+      "question": "How many PEPs list Python-Version 3.11?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8995.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "17 PEPs list Python-Version 3.11."
+    },
+    {
+      "id": "py312-count",
+      "question": "How many PEPs list Python-Version 3.12?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 11186.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "25 PEPs list Python-Version 3.12."
+    },
+    {
+      "id": "py314-count",
+      "question": "How many PEPs list Python-Version 3.14?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9860.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "25 PEPs list Python-Version 3.14."
+    },
+    {
+      "id": "py315-count",
+      "question": "How many PEPs list Python-Version 3.15?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4548.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "32 PEPs list Python-Version 3.15."
+    },
+    {
+      "id": "py316-count",
+      "question": "How many PEPs list Python-Version 3.16?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8247.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "26 PEPs list Python-Version 3.16."
+    },
+    {
+      "id": "created-2025",
+      "question": "How many PEP rows have a Created date in 2025?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6400.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "45 PEP rows have a Created date in 2025."
+    },
+    {
+      "id": "created-2024",
+      "question": "How many PEP rows have a Created date in 2024?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7521.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "34 PEP rows have a Created date in 2024."
+    },
+    {
+      "id": "created-2000",
+      "question": "How many PEP rows have a Created date in 2000?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7906.7,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "40 PEP rows have a Created date in 2000."
+    },
+    {
+      "id": "url-20",
+      "question": "What URL does pep_url(20) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7815.3,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(20)` returns `https://peps.python.org/pep-0020/`. The `04d` format pads `20` to four digits (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "url-257",
+      "question": "What URL does pep_url(257) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8210.3,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(257)` returns `https://peps.python.org/pep-0257/`. The `04d` format pads the number to four digits with leading zeros (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "url-0",
+      "question": "What URL does pep_url(0) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9371.1,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(0)` returns **`https://peps.python.org/pep-0000/`**. The `04d` format pads `0` to four digits with leading zeros. [s1, `pep_tools/references.py:8`]"
+    },
+    {
+      "id": "url-100",
+      "question": "What URL does pep_url(100) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8121.5,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(100)` returns `https://peps.python.org/pep-0100/`. The `04d` format pads the number to four digits with leading zeros (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "url-10000",
+      "question": "What URL does pep_url(10000) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7867.0,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(10000)` returns **`https://peps.python.org/pep-10000/`**. The `:04d` format specifies a minimum width of four digits and does not truncate five-digit numbers. [s1, `pep_tools/references.py:8`]"
+    },
+    {
+      "id": "format-257",
+      "question": "What string does format_pep_reference(257, 'Docstring Conventions') return?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10112.2,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "```text\nPEP 257: Docstring Conventions (https://peps.python.org/pep-0257/)\n```\n\nThe URL number is zero-padded at `pep_tools/references.py:8`, title whitespace is normalized at `pep_tools/references.py:13`, and the string is assembled at `pep_tools/references.py:14`."
+    },
+    {
+      "id": "format-collapse",
+      "question": "What string does format_pep_reference return for number 20 and title '  The   Zen of Python  ' after it cleans whitespace?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9356.5,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "```text\nPEP 20: The Zen of Python (https://peps.python.org/pep-0020/)\n```\n\nWhitespace is collapsed at `pep_tools/references.py:13`, the number is zero-padded at `pep_tools/references.py:8`, and the string is assembled at `pep_tools/references.py:14`."
+    },
+    {
+      "id": "group-os",
+      "question": "What does import_group('os') return in code_bundle/pep_tools/style.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7198.2,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`import_group('os')` returns `\"stdlib\"`. The top-level module name remains `\"os\"` (`pep_tools/style.py:41`), which is in `STDLIB_MODULES` (`pep_tools/style.py:5-7`), so the function returns `\"stdlib\"` (`pep_tools/style.py:42-43`). [s1]"
+    },
+    {
+      "id": "group-ospath",
+      "question": "What does import_group('os.path') return in code_bundle/pep_tools/style.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9280.9,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`import_group('os.path')` returns `\"stdlib\"`. It extracts the root module `'os'` (`pep_tools/style.py:41`), finds it in `STDLIB_MODULES` (`pep_tools/style.py:5\u20137`), and returns `\"stdlib\"` (`pep_tools/style.py:42\u201343`)."
+    },
+    {
+      "id": "group-requests",
+      "question": "What does import_group('requests') return in code_bundle/pep_tools/style.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9977.3,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`import_group('requests')` returns **`\"other\"`**. The top-level module name remains `\"requests\"` (`pep_tools/style.py:41`), which is not in `STDLIB_MODULES` (`pep_tools/style.py:5\u201318`), so the function falls through to `return \"other\"` (`pep_tools/style.py:42\u201344`). [s1]"
+    },
+    {
+      "id": "imports-separate-true",
+      "question": "What does imports_are_on_separate_lines return for source that contains import os on one line and import sys on the next line?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9345.7,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "It returns `True`: each import statement imports only one name, so neither triggers the multiple-name check (`pep_tools/style.py:33\u201336`)."
+    },
+    {
+      "id": "imports-json-false",
+      "question": "What does imports_are_on_separate_lines return for the source import json, pathlib?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8435.0,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "It returns `False`: `import json, pathlib` creates one `ast.Import` node with two names, and the function rejects import nodes containing more than one name (chunk `s1`, `pep_tools/style.py:33\u201335`)."
+    },
+    {
+      "id": "header-hello-world",
+      "question": "In code_bundle, parse_pep_header is given the text Title: Hello followed by a newline and two spaces then World. What is the Title value?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8980.1,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The `Title` value is `\"Hello World\"`. The first line sets it to `\"Hello\"` (`pep_tools/headers.py:24\u201329`); the indented continuation is stripped and appended with a single space (`pep_tools/headers.py:20\u201323`)."
+    },
+    {
+      "id": "negative-message",
+      "question": "What error message does pep_url raise when the PEP number is negative?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8542.9,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url` raises a `ValueError` with the message `\"PEP number must be zero or greater\"` when the PEP number is negative. [s1, pep_tools/references.py:6\u20137]"
+    },
+    {
+      "id": "zen-beautiful",
+      "question": "Quote the Zen of Python line that begins with Beautiful.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7470.2,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cBeautiful is better than ugly.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-simple",
+      "question": "Quote the Zen of Python line that begins with Simple.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8122.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cSimple is better than complex.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-flat",
+      "question": "Quote the Zen of Python line that begins with Flat.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8048.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cFlat is better than nested.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-sparse",
+      "question": "Quote the Zen of Python line that begins with Sparse.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7173.7,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cSparse is better than dense.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-errors",
+      "question": "Quote the Zen of Python line about errors passing silently.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7334.9,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cErrors should never pass silently.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-ambiguity",
+      "question": "Quote the Zen of Python line about ambiguity.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8319.0,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cIn the face of ambiguity, refuse the temptation to guess.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "zen-namespaces",
+      "question": "Quote the Zen of Python line about namespaces.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7518.3,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cNamespaces are one honking great idea -- let's do more of those!\ufffd\ufffd [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "pep8-79",
+      "question": "What maximum line length does PEP 8 recommend, in characters?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8948.9,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8 recommends a maximum of **79 characters per line**, with comments and docstrings limited to **72 characters** [pep-0008/05-maximum-line-length/0]. Teams that agree may use up to **99 characters** for code, while keeping comments and docstrings at 72 [pep-0008/05-maximum-line-length/1]."
+    },
+    {
+      "id": "pep257-quotes",
+      "question": "According to PEP 257, where do the closing quotes of a one-line docstring go?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 11363.2,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "According to PEP 257, the closing quotes of a one-line docstring go on the same line as the opening quotes [pep-0257/04-one-line-docstrings/0]."
+    },
+    {
+      "id": "glossary-generator",
+      "question": "What does the Python glossary say a generator is?",
+      "pass": false,
+      "reason": "missing one of returns an iterator, returns a iterator, function which returns, yield",
+      "ms": 7436.4,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "According to the Python glossary, **\u201cgenerator\u201d** informally means either a **generator function** or a **generator iterator**, depending on context. Those formal terms are uncommon in practice; \u201cgenerator\u201d alone is almost always sufficient. [glossary/00-glossary/37]"
+    }
+  ]
+}

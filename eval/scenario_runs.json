@@ -1,0 +1,727 @@
+{
+  "results": [
+    {
+      "id": "final-count",
+      "question": "How many PEPs in the table have status Final?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 35773.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "375 PEPs have status **Final**."
+    },
+    {
+      "id": "rejected-count",
+      "question": "How many PEPs have status Rejected?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5348.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "131 PEPs have status **Rejected**."
+    },
+    {
+      "id": "withdrawn-count",
+      "question": "How many PEPs have status Withdrawn?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4477.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "74 PEPs have status **Withdrawn**."
+    },
+    {
+      "id": "draft-count",
+      "question": "How many PEPs have status Draft?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6546.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "55 PEPs have status **Draft**."
+    },
+    {
+      "id": "active-count",
+      "question": "How many PEPs have status Active?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5776.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "37 PEPs have status **Active**."
+    },
+    {
+      "id": "deferred-count",
+      "question": "How many PEPs have status Deferred?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4748.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "35 PEPs have the status **Deferred**."
+    },
+    {
+      "id": "superseded-count",
+      "question": "How many PEPs have status Superseded?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6365.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "25 PEPs have status **Superseded**."
+    },
+    {
+      "id": "accepted-count",
+      "question": "How many PEPs have status Accepted?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4908.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "11 PEPs have status **Accepted**."
+    },
+    {
+      "id": "process-count",
+      "question": "How many PEPs have type Process?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5656.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "53 PEPs have type **Process**."
+    },
+    {
+      "id": "standards-count",
+      "question": "How many PEPs have type Standards Track?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5322.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "587 PEPs have type **Standards Track**."
+    },
+    {
+      "id": "informational-count",
+      "question": "How many PEPs have type Informational?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6162.3,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "105 PEPs have type **Informational**."
+    },
+    {
+      "id": "total-count",
+      "question": "How many PEPs are in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5400.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "There are 745 PEPs in the table."
+    },
+    {
+      "id": "final-process",
+      "question": "How many PEPs are both status Final and type Process?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7053.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "16 PEPs have both status **Final** and type **Process**."
+    },
+    {
+      "id": "py313-count",
+      "question": "How many PEPs list Python-Version 3.13?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9032.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "18 PEPs list Python-Version 3.13."
+    },
+    {
+      "id": "guido-count",
+      "question": "How many PEP rows list Guido van Rossum as an author?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5700.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "50 PEP rows list Guido van Rossum as an author."
+    },
+    {
+      "id": "pep8-status",
+      "question": "What is the status of PEP 8 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4663.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8\u2019s status is **Active**."
+    },
+    {
+      "id": "pep8-type",
+      "question": "What is the type of PEP 8 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5177.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8\u2019s type is **Process**."
+    },
+    {
+      "id": "pep8-title",
+      "question": "What is the title of PEP 8?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5149.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8 is titled **\u201cStyle Guide for Python Code.\ufffd\ufffd\ufffd**"
+    },
+    {
+      "id": "pep20-title",
+      "question": "What is the title of PEP 20?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8404.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The title of PEP 20 is **\u201cThe Zen of Python.\u201d**"
+    },
+    {
+      "id": "pep20-author",
+      "question": "Who authored PEP 20, according to the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5257.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 20 was authored by Tim Peters (tim.peters@gmail.com)."
+    },
+    {
+      "id": "pep257-title",
+      "question": "What is the title of PEP 257?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6411.9,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 257 is titled **\u201cDocstring Conventions.\u201d**"
+    },
+    {
+      "id": "pep484-meta",
+      "question": "What are the status and Python version of PEP 484?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7785.2,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 484 has **Final** status and targets **Python 3.5**."
+    },
+    {
+      "id": "pep572-meta",
+      "question": "What is the title of PEP 572, and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4571.8,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 572 is titled **\u201cAssignment Expressions\u201d**, and the table records **Python 3.8**."
+    },
+    {
+      "id": "pep703-meta",
+      "question": "What is PEP 703 about, and what Python version and status does the table give it?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 26119.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 703 is about **\u201cMaking the Global Interpreter Lock Optional in CPython\u201d** [pep-0703/00-introduction/0], enabling parallel threads within one interpreter (\u201cfree-threading\u201d) through fine-grained locking [pep-0703/30-gilectomy/0]. It also proposes object immortalization using biased reference counting [pep-0703/38-why-not-use-pep-683-immortalization/0]. The table lists **Python version 3.13** and **status Final**, matching the PEP\u2019s metadata [pep-0703/00-introduction/0]."
+    },
+    {
+      "id": "pep318-meta",
+      "question": "What is the status of PEP 318 and which Python version does the table record?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7529.5,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 318 has **Final** status, and the table records Python version **2.4**."
+    },
+    {
+      "id": "pep314-status",
+      "question": "What is the status of PEP 314 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 6783.6,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 314\u2019s status is **Superseded**."
+    },
+    {
+      "id": "pep1-title",
+      "question": "What is the title and status of PEP 1?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5409.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 1 is titled **\u201cPEP Purpose and Guidelines\u201d** and its status is **Active**."
+    },
+    {
+      "id": "max-number",
+      "question": "What is the highest PEP number in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5905.4,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The highest PEP number in the table is **8107**."
+    },
+    {
+      "id": "pep8-imports",
+      "question": "What does PEP 8 say about imports?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 14898.3,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8\u2019s main import guidelines are:\n\n- **Usually use separate lines:** write `import os` and `import sys`, not `import os, sys`. Importing several names from one module, such as `from subprocess import Popen, PIPE`, is fine. [pep-0008/09-imports/0]\n- **Put imports at the top**, after module comments and docstrings but before globals and constants. Group them as **standard library \u2192 third-party \u2192 local application/library**, with a blank line between groups. [pep-0008/09-imports/0]\n- **Prefer absolute imports.** Explicit relative imports are acceptable, especially in complex packages where absolute imports would be unnecessarily verbose. Standard-library code should always use absolute imports. [pep-0008/09-imports/0] [pep-0008/09-imports/1]\n- **Importing classes directly is usually fine**, but if names clash, import the modules and use qualified names such as `myclass.MyClass`. [pep-0008/09-imports/1, pep-0008/09-imports/2]\n- **Avoid wildcard imports** (`from module import *`): they obscure which names are available and confuse readers and tools. The defensible exception is republishing an internal interface as a public API. [pep-0008/09-imports/2]"
+    },
+    {
+      "id": "pep8-blank",
+      "question": "What does PEP 8 say about blank lines around functions and methods?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10414.7,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8\u2019s blank-line guidelines are:\n\n- **Top-level functions and classes:** Surround definitions with **two blank lines**.\n- **Methods inside a class:** Surround definitions with **one blank line**.\n- **Groups of related functions:** Extra blank lines may be used sparingly to separate groups.\n- **Related one-liners:** Blank lines may be omitted between related one-line definitions, such as dummy implementations.\n- **Inside functions:** Use blank lines sparingly to mark logical sections.\n\n[pep-0008/07-blank-lines/0]"
+    },
+    {
+      "id": "pep8-indent",
+      "question": "How many spaces does PEP 8 use per indentation level?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 8202.5,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8 recommends **4 spaces per indentation level** [pep-0008/03-indentation/0]."
+    },
+    {
+      "id": "pep20-readability",
+      "question": "Which line of the Zen of Python says that readability counts?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10150.5,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The line is **\u201cReadability counts.\u201d** [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "pep-acronym",
+      "question": "What does PEP stand for, according to PEP 1?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7649.4,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "According to PEP 1, PEP stands for **Python Enhancement Proposal** [pep-0001/01-what-is-a-pep/0]."
+    },
+    {
+      "id": "decorator",
+      "question": "What does the Python glossary say a decorator is?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10789.1,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The Python glossary defines a **decorator** as \u201ca function returning another function, usually applied as a function transformation using the `@wrapper` syntax.\u201d Common examples are `@classmethod` and `@staticmethod` [glossary/00-glossary/23]. The syntax is syntactic sugar: decorating `f` with `@staticmethod` is equivalent to defining `f` and then assigning `f = staticmethod(f)` [glossary/00-glossary/24]. The same concept also applies to classes, though less commonly [glossary/00-glossary/24, glossary/00-glossary/25]."
+    },
+    {
+      "id": "len-builtin",
+      "question": "What does the len built-in return?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 16800.5,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`len(object)` returns the **length (number of items) of an object**, such as a string, list, tuple, dictionary, or set ([Python documentation](https://docs.python.org/3/builtins/functions.html); [Real Python](https://realpython.com/len-python-function)). The checked and extracted [Codecademy page](https://www.codecademy.com/resources/docs/python/built-in-functions/len) confirms this. The supplied data-model passage only identifies `len()` as a built-in function; it does not state its return value [reference/datamodel/22-3-2-8-6-built-in-functions/0]."
+    },
+    {
+      "id": "pep257-topic",
+      "question": "What conventions does PEP 257 describe?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9305.3,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 257 describes the semantics and conventions of **Python docstrings** [pep-0257/01-abstract/0]. It standardizes their high-level structure\u2014what they should contain and how to express it\u2014without specifying markup syntax within docstrings [pep-0257/02-rationale/0]. The provided passages do not include the detailed conventions."
+    },
+    {
+      "id": "zen-explicit",
+      "question": "Quote the Zen of Python line that prefers explicit to implicit.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10206.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "\u201cExplicit is better than implicit.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "pep8-spaces",
+      "question": "Does PEP 8 prefer spaces or tabs for indentation?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 7069.1,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8 prefers **spaces** for indentation. Tabs should be used only to stay consistent with existing tab-indented code, and Python disallows mixing tabs and spaces for indentation. [pep-0008/04-tabs-or-spaces/0]"
+    },
+    {
+      "id": "format-ref",
+      "question": "What string does format_pep_reference(8, 'Style Guide') return?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 17218.2,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "```text\nPEP 8: Style Guide (https://peps.python.org/pep-0008/)\n```\n\nThe title\u2019s whitespace is normalized (`pep_tools/references.py:13`), the URL uses the four-digit PEP number `0008` (`pep_tools/references.py:8`), and the final f-string combines them (`pep_tools/references.py:14`)."
+    },
+    {
+      "id": "pep-url",
+      "question": "What URL does pep_url(8) return in code_bundle/pep_tools/references.py?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10925.4,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`pep_url(8)` returns `https://peps.python.org/pep-0008/`; the `04d` format pads `8` to `0008` (chunk `s1`, `pep_tools/references.py:8`)."
+    },
+    {
+      "id": "import-false",
+      "question": "What does imports_are_on_separate_lines return for the source import os, sys?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 11474.5,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "It returns `False`: `import os, sys` parses as an `ast.Import` node with two names (`pep_tools/style.py:21-24`), and `imports_are_on_separate_lines` returns `False` when an import node has more than one name (`pep_tools/style.py:33-35`). [s1]"
+    },
+    {
+      "id": "from-import-ok",
+      "question": "Does imports_are_on_separate_lines allow from module import a, b?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 9330.5,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "Yes. `imports_are_on_separate_lines` explicitly allows `from module import a, b` in its docstring (`pep_tools/style.py:31`). It rejects only `ast.Import` nodes containing multiple names (`pep_tools/style.py:33\u201335`), not `ast.ImportFrom` nodes, and returns `True` unless another import violates the rule (`pep_tools/style.py:24`, `pep_tools/style.py:36`)."
+    },
+    {
+      "id": "header-join",
+      "question": "How does parse_pep_header treat a continuation line in a PEP header?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 11161.6,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "`parse_pep_header` treats a nonblank line starting with whitespace as a continuation: if a header field is current, it strips the line\u2019s surrounding whitespace and appends it to that field\u2019s value with one separating space; otherwise, it ignores the line (`pep_tools/headers.py:20\u201323`). Blank lines are handled first: they end parsing once a header has started, or are skipped otherwise (`pep_tools/headers.py:16\u201319`)."
+    },
+    {
+      "id": "negative-url",
+      "question": "What does pep_url do when the PEP number is negative?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 10047.6,
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "When the PEP number is negative, `pep_url` raises a `ValueError` with the message `\"PEP number must be zero or greater\"` instead of returning a URL (chunk `s1`, `pep_tools/references.py:6\u20137`)."
+    },
+    {
+      "id": "imports-and-process",
+      "question": "In one paragraph, give one PEP 8 import rule and the number of Process PEPs.",
+      "pass": true,
+      "reason": "ok",
+      "ms": 13946.1,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "PEP 8 says imports should usually be on separate lines\u2014for example, `import os` and `import sys`, rather than `import sys, os` [pep-0008/09-imports/0]. There are **53 Process PEPs** in the queried database, according to `SELECT COUNT(*) FROM peps WHERE type = 'Process'`; PEP 8 itself is classified as a Process PEP [pep-0008/00-introduction/0]."
+    },
+    {
+      "id": "pep8-authors",
+      "question": "Who are the authors of PEP 8 in the table?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 4619.1,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The authors of PEP 8 are Guido van Rossum, Barry Warsaw, and Alyssa Coghlan."
+    },
+    {
+      "id": "after-snapshot",
+      "question": "What PEPs were accepted after the corpus snapshot date?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 24631.3,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "**The available evidence does not identify any PEPs accepted after the corpus snapshot date, 2026-10-24.** This is an information gap, not evidence that none were accepted. The retrieved PEP 1 passages cover guidelines, maintenance, and status transitions\u2014not post-snapshot acceptances (`pep-0001/00-introduction/0`, `pep-0001/12-pep-maintenance/1`, `pep-0001/12-pep-maintenance/0`, `pep-0001/11-pep-review-resolution/8`, `pep-0001/11-pep-review-resolution/6`). The search check and extracted page at https://peps.python.org/pep-0001 likewise do not establish such acceptances (`tavily-search:0`); the check at https://peps.python.org/pep-3131 concerns non-ASCII identifiers, not acceptance dates. The discussions at https://discuss.python.org/t/accepted-but-not-final-python-3-12-peps/54720 (`tavily-search:1`) and https://discuss.python.org/t/multiple-released-peps-have-status-accepted-not-final/20776 (`tavily-search:2`) concern older PEPs\u2019 Accepted versus Final status and do not answer the question."
+    },
+    {
+      "id": "world-cup",
+      "question": "Who won the 2026 FIFA World Cup?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 19271.8,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "Spain won the 2026 FIFA World Cup, defeating Argentina **1\u20130 after extra time on July 19, 2026**, according to the worker\u2019s Britannica and FIFA results [tavily-search:0; tavily-search:1], with Edinburgh Impact also referencing Spain\u2019s victory [tavily-search:2]. The extracted page at https://www.britannica.com/question/Who-won-the-last-World-Cup is truncated before the answer, so it does not independently establish the result. The search check\u2019s Britannica records page lists Spain as the 2026 winner, although its general World Cup page is inconsistent. The remaining supplied chunks concern Python and provide no relevant evidence [pep-8107/08-races/0; pep-8107/14-winner-4/0; pep-8107/11-winner-1/0; pep-2026/06-annual-release-cadence/0; pep-8107/13-winner-3/0]."
+    },
+    {
+      "id": "paris",
+      "question": "What is the capital of France?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 19736.0,
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "The capital of France is **Paris**. The search check for https://www.britannica.com/question/What-is-the-capital-city-of-France-and-why-is-it-famous explicitly confirms this [tavily-search:0], as do [Wikipedia](https://en.wikipedia.org/wiki/Paris) [tavily-search:1] and the cited [Facebook post](https://www.facebook.com/groups/376100836095453/posts/2780652808973565) [tavily-search:2]. Extraction of the Britannica page failed with HTTP 429, so no extracted page content was available for additional verification."
+    },
+    {
+      "id": "provisional",
+      "question": "How many PEPs have status Provisional?",
+      "pass": true,
+      "reason": "ok",
+      "ms": 5718.0,
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "errors": [],
+      "answer": "1 PEP has status **Provisional**."
+    }
+  ]
+}

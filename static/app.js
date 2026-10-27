@@ -4,8 +4,6 @@ const STARTERS = [
   "What does PEP 8 say about imports?",
   "How many PEPs in the table have status Final?",
   "Show the function format_pep_reference in code_bundle/pep_tools/references.py and explain it.",
-  "What PEPs were accepted after the corpus snapshot date?",
-  "Combine a PEP 8 import rule with the count of PEPs whose type is Process, and write one paragraph.",
 ];
 
 const messages = [];

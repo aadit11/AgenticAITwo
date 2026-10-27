@@ -1,4 +1,145 @@
 {
-  "snapshot_date": null,
-  "questions": []
+  "snapshot_date": "2026-10-24",
+  "questions": [
+    {
+      "id": "pep8-imports",
+      "question": "What does PEP 8 say about imports?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0008/09-imports/0"],
+      "reference": "Imports should usually be on separate lines. import os and import sys is correct. import sys, os is wrong. from module import a, b is acceptable."
+    },
+    {
+      "id": "final-count",
+      "question": "How many PEPs in the table have status Final?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "375 PEPs have status Final."
+    },
+    {
+      "id": "format-pep-reference",
+      "question": "Show the function format_pep_reference in code_bundle/pep_tools/references.py and explain it.",
+      "in_corpus": true,
+      "expected_source_ids": ["pep_tools/references.py:11-14"],
+      "reference": "format_pep_reference(number, title) returns a citation string of the form PEP {number}: {title} ({url}). It is defined at pep_tools/references.py lines 11-14."
+    },
+    {
+      "id": "after-snapshot",
+      "question": "What PEPs were accepted after the corpus snapshot date?",
+      "in_corpus": false,
+      "expected_source_ids": [],
+      "reference": "The corpus snapshot is 2026-10-24. The local corpus and PEP table do not identify PEPs accepted after that date."
+    },
+    {
+      "id": "imports-and-process",
+      "question": "Combine a PEP 8 import rule with the count of PEPs whose type is Process, and write one paragraph.",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0008/09-imports/0"],
+      "reference": "PEP 8 says imports should usually be on separate lines. 53 PEPs have type Process."
+    },
+    {
+      "id": "pep8-blank-lines",
+      "question": "What does PEP 8 say about blank lines?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0008/07-blank-lines/0"],
+      "reference": "Use two blank lines around top-level function and class definitions, and one blank line around method definitions inside a class."
+    },
+    {
+      "id": "pep8-status",
+      "question": "What are the status and type of PEP 8 in the PEP table?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "PEP 8 has status Active and type Process."
+    },
+    {
+      "id": "process-count",
+      "question": "How many PEPs have type Process?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "53 PEPs have type Process."
+    },
+    {
+      "id": "rejected-count",
+      "question": "How many PEPs have status Rejected?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "131 PEPs have status Rejected."
+    },
+    {
+      "id": "pep8-authors",
+      "question": "Who are the authors of PEP 8?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "The authors are Guido van Rossum, Barry Warsaw, and Alyssa Coghlan."
+    },
+    {
+      "id": "pep20-readability",
+      "question": "What does PEP 20 say about readability?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0020"],
+      "reference": "PEP 20, the Zen of Python, says readability counts."
+    },
+    {
+      "id": "pep1-name",
+      "question": "What does PEP stand for, according to PEP 1?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0001"],
+      "reference": "PEP stands for Python Enhancement Proposal."
+    },
+    {
+      "id": "glossary-decorator",
+      "question": "What does the Python glossary say a decorator is?",
+      "in_corpus": true,
+      "expected_source_ids": ["glossary.txt"],
+      "reference": "A decorator is a function that wraps another function, usually applied with @ syntax."
+    },
+    {
+      "id": "len-builtin",
+      "question": "What does the len built-in return for a container?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "len returns the number of items in a container."
+    },
+    {
+      "id": "pep8-indentation",
+      "question": "What does PEP 8 say about indentation?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0008"],
+      "reference": "Use 4 spaces per indentation level."
+    },
+    {
+      "id": "accepted-count",
+      "question": "How many PEPs have status Accepted?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "11 PEPs have status Accepted."
+    },
+    {
+      "id": "standards-track-count",
+      "question": "How many PEPs have type Standards Track?",
+      "in_corpus": true,
+      "expected_source_ids": [],
+      "reference": "587 PEPs have type Standards Track."
+    },
+    {
+      "id": "pep257",
+      "question": "What is PEP 257 about?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep-0257"],
+      "reference": "PEP 257 is the docstring conventions."
+    },
+    {
+      "id": "world-cup",
+      "question": "Who won the 2026 FIFA World Cup?",
+      "in_corpus": false,
+      "expected_source_ids": [],
+      "reference": "The Python documentation corpus does not name a winner of the 2026 FIFA World Cup."
+    },
+    {
+      "id": "separate-line-helper",
+      "question": "What does imports_are_on_separate_lines in code_bundle/pep_tools/style.py check?",
+      "in_corpus": true,
+      "expected_source_ids": ["pep_tools/style.py"],
+      "reference": "It returns false when one import statement names more than one module, such as import os, sys. A from-import of several names is allowed."
+    }
+  ]
 }

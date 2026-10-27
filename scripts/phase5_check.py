@@ -55,8 +55,10 @@ def main() -> None:
         state = graph.invoke(initial_state(question), config={"recursion_limit": 40})
         trace = state["trace"]
         searches = tool_details(trace, "research", "tavily_search query=")
+        summary_searches = tool_details(trace, "summary", "tavily_search query=")
         extracts = tool_details(trace, "summary", "tavily_extract urls=")
         print("SEARCH", searches, flush=True)
+        print("SUMMARY SEARCH", summary_searches, flush=True)
         print("EXTRACT", extracts, flush=True)
         print("ANSWER", state["final_answer"], flush=True)
         if not state["final_answer"].strip():
@@ -64,7 +66,7 @@ def main() -> None:
         blob = json.dumps({"trace": trace, "answer": state["final_answer"]})
         if "tavilyApiKey" in blob or "TAVILY_API_KEY" in blob:
             raise SystemExit("the trace contains the Tavily key")
-        if searches and extracts and searches[0] != extracts[0]:
+        if searches and summary_searches and extracts and searches[0] != summary_searches[0]:
             shared = True
         runs.append(
             {
@@ -72,12 +74,13 @@ def main() -> None:
                 "plan": state["plan"],
                 "final_answer": state["final_answer"],
                 "search": searches,
+                "summary_search": summary_searches,
                 "extract": extracts,
                 "trace": trace,
             }
         )
     if not shared:
-        raise SystemExit("no query showed both Tavily search and Tavily extract")
+        raise SystemExit("no query showed Research and Summary both calling tavily_search with different queries")
     destination = ROOT / "eval" / "phase5_runs.json"
     destination.write_text(json.dumps(runs, indent=2) + "\n", encoding="utf-8")
     print(f"\nwrote {destination}", flush=True)

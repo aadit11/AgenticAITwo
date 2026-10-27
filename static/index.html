@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PEP briefing desk</title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/styles.css?v=3">
 </head>
 <body>
   <header class="mast">
@@ -21,7 +21,7 @@
         <div id="starters" class="starters"></div>
         <label class="query">
           <span class="visually-hidden">Question</span>
-          <textarea id="query" name="query" rows="3" placeholder="Ask about a PEP, a count, or a function in the code bundle" required></textarea>
+          <textarea id="query" name="query" rows="2" placeholder="Ask about a PEP, a count, or a function in the code bundle" required></textarea>
         </label>
         <div class="ask-row">
           <button id="send" type="submit">Ask</button>
@@ -34,6 +34,6 @@
       <ol id="trace"></ol>
     </aside>
   </div>
-  <script src="/static/app.js"></script>
+  <script src="/static/app.js?v=3"></script>
 </body>
 </html>

@@ -1,0 +1,699 @@
+{
+  "runs": [
+    {
+      "id": "pep8-imports",
+      "question": "What does PEP 8 say about imports?",
+      "in_corpus": true,
+      "reference": "Imports should usually be on separate lines. import os and import sys is correct. import sys, os is wrong. from module import a, b is acceptable.",
+      "expected_source_ids": [
+        "pep-0008/09-imports/0"
+      ],
+      "answer": "PEP 8 gives these guidelines for imports:\n\n- **Use separate lines:** Prefer `import os` and `import sys` over `import sys, os`. Importing multiple names from one module, such as `from subprocess import Popen, PIPE`, is fine. Put imports after module comments and docstrings, before globals and constants, with standard-library imports first. [pep-0008/09-imports/0]\n- **Explicit relative imports are acceptable**, especially when absolute imports would be unnecessarily verbose in complex packages. Standard-library code should always use absolute imports. [pep-0008/09-imports/1]\n- **Resolve name clashes with qualified names:** Import the module and access names as, for example, `myclass.MyClass`. **Avoid wildcard imports** (`from module import *`), which obscure which names are available. [pep-0008/09-imports/2]\n- **Treat imported names as implementation details:** Other modules should not access them indirectly unless they are explicitly documented as part of the importing module\u2019s API. [pep-0008/34-public-and-internal-interfaces/1]",
+      "contexts": [
+        "pep-0008/34-public-and-internal-interfaces/1\nPEP 8: Style Guide for Python Code. Section: Public and Internal Interfaces.\nAn interface is also considered internal if any containing namespace\n(package, module or class) is considered internal.\n\nImported names should always be considered an implementation detail.\nOther modules must not rely on indirect access to such imported names\nunless they are an explicitly documented part of the containing module's\nAPI, such as ``os.path`` or a package's ``__init__`` module that exposes\nfunctionality fro",
+        "pep-0008/09-imports/0\nPEP 8: Style Guide for Python Code. Section: Imports.\n- Imports should usually be on separate lines:\n\n     # Correct:\n     import os\n     import sys\n\n     # Wrong:\n     import sys, os\n\n  It's okay to say this though:\n\n     # Correct:\n     from subprocess import Popen, PIPE\n\n- Imports are always put at the top of the file, just after any module\n  comments and docstrings, and before module globals and constants.\n\n  Imports should be grouped in the following order:\n\n  1. Standard library imports.",
+        "pep-0008/09-imports/1\nPEP 8: Style Guide for Python Code. Section: Imports.\nimport mypkg.sibling\n     from mypkg import sibling\n     from mypkg.sibling import example\n\n  However, explicit relative imports are an acceptable alternative to\n  absolute imports, especially when dealing with complex package layouts\n  where using absolute imports would be unnecessarily verbose:\n\n     from . import sibling\n     from .sibling import example\n\n  Standard library code should avoid complex package layouts and always\n  use absolut",
+        "pep-0008/00-introduction/0\nPEP 8: Style Guide for Python Code. Section: Introduction.\nPEP: 8\nTitle: Style Guide for Python Code\nAuthor: Guido van Rossum <guido@python.org>,\n        Barry Warsaw <barry@python.org>,\n        Alyssa Coghlan <ncoghlan@gmail.com>\nStatus: Active\nType: Process\nCreated: 05-Jul-2001\nPost-History: 05-Jul-2001, 01-Aug-2013",
+        "pep-0008/09-imports/2\nPEP 8: Style Guide for Python Code. Section: Imports.\nIf this spelling causes local name clashes, then spell them explicitly:\n\n     import myclass\n     import foo.bar.yourclass\n\n  and use ``myclass.MyClass`` and ``foo.bar.yourclass.YourClass``.\n\n- Wildcard imports (``from <module> import *``) should be avoided, as\n  they make it unclear which names are present in the namespace,\n  confusing both readers and many automated tools. There is one\n  defensible use case for a wildcard import, which is t",
+        "Based on PEP 8, the following rules and recommendations are stated regarding imports:\n\n* **Line formatting:** Imports should usually be on separate lines (e.g., `import os` and `import sys` separately, rather than `import sys, os`), though importing multiple items from a single module is acceptable (e.g., `from subprocess import Popen, PIPE`) [pep-0008/09-imports/0].\n* **Placement and grouping:** Imports are always placed at the top of the file, immediately after any module comments and docstrings, and before module globals and constants [pep-0008/09-imports/0]. They should be grouped in order, starting with standard library imports [pep-0008/09-imports/0].\n* **Relative vs. absolute imports:** Explicit relative imports (e.g., `from . import sibling`) are an acceptable alternative to absolute imports, especially in complex package layouts to prevent unnecessary verbosity [pep-0008/09-imports/1]. However, standard library code should avoid complex layouts and always use absolute imports [pep-0008/09-imports/1].\n* **Name clashes:** If an import spelling causes local name clashes, modules should be imported explicitly (e.g., `import myclass` and `import foo.bar.yourclass`) and accessed via their qualified names (e.g., `myclass.MyClass` and `foo.bar.yourclass.YourClass`) [pep-0008/09-imports/2].\n* **Wildcard imports:** Wildcard imports (`from <module> import *`) should be avoided because they make it unclear which names are present in the namespace, confusing both readers and auto"
+      ],
+      "wall_ms": 21531.3,
+      "retrieve_ms": 3270.1,
+      "llm_ms": 18178.5,
+      "ttft_ms": 18522.9,
+      "providers": {
+        "google": {
+          "input_tokens": 1201,
+          "output_tokens": 564,
+          "cost_usd": 0.003016
+        },
+        "openai": {
+          "input_tokens": 1612,
+          "output_tokens": 245,
+          "cost_usd": 0.005674
+        }
+      }
+    },
+    {
+      "id": "final-count",
+      "question": "How many PEPs in the table have status Final?",
+      "in_corpus": true,
+      "reference": "375 PEPs have status Final.",
+      "expected_source_ids": [],
+      "answer": "375 PEPs have status **Final**.",
+      "contexts": [
+        "SQL: SELECT COUNT(*) FROM peps WHERE status = 'Final'\nRows: [{\"COUNT(*)\": 375}]"
+      ],
+      "wall_ms": 6579.3,
+      "retrieve_ms": 0.0,
+      "llm_ms": 6512.2,
+      "ttft_ms": 6028.0,
+      "providers": {
+        "google": {
+          "input_tokens": 488,
+          "output_tokens": 129,
+          "cost_usd": 0.00085
+        },
+        "openai": {
+          "input_tokens": 197,
+          "output_tokens": 14,
+          "cost_usd": 0.000534
+        }
+      }
+    },
+    {
+      "id": "format-pep-reference",
+      "question": "Show the function format_pep_reference in code_bundle/pep_tools/references.py and explain it.",
+      "in_corpus": true,
+      "reference": "format_pep_reference(number, title) returns a citation string of the form PEP {number}: {title} ({url}). It is defined at pep_tools/references.py lines 11-14.",
+      "expected_source_ids": [
+        "pep_tools/references.py:11-14"
+      ],
+      "answer": "In `code_bundle/pep_tools/references.py`:\n\n```python\ndef format_pep_reference(number: int, title: str) -> str:\n    \"\"\"Return a citation string the summary agent can keep next to a passage.\"\"\"\n    cleaned = \" \".join(title.split())\n    return f\"PEP {number}: {cleaned} ({pep_url(number)})\"\n```\n\u2014 `pep_tools/references.py:11\u201314`\n\nThe function accepts a PEP number and title and returns a citation string. \u2014 `pep_tools/references.py:11` Its docstring describes the citation as something the summary agent can keep next to a passage. \u2014 `pep_tools/references.py:12` It strips leading and trailing whitespace and collapses internal whitespace to single spaces. \u2014 `pep_tools/references.py:13` The result has the form `PEP <number>: <cleaned title> (<URL>)`; `pep_url(number)` supplies the URL, but this snippet does not show how that URL is constructed. \u2014 `pep_tools/references.py:14`",
+      "contexts": [
+        "```python\ndef format_pep_reference(number: int, title: str) -> str:\n    \"\"\"Return a citation string the summary agent can keep next to a passage.\"\"\"\n    cleaned = \" \".join(title.split())\n    return f\"PEP {number}: {cleaned} ({pep_url(number)})\"\n```\n\u2014 `pep_tools/references.py:11\u201314`\n\nThe function builds a PEP citation string:\n\n- **Inputs and output:** It accepts a PEP number (`int`) and title (`str`), and returns a string. \u2014 `pep_tools/references.py:11`\n- **Purpose:** Its docstring says the citation can be kept next to a passage by the summary agent. \u2014 `pep_tools/references.py:12`\n- **Whitespace cleanup:** `\" \".join(title.split())` removes leading and trailing whitespace and collapses whitespace between words to single spaces. \u2014 `pep_tools/references.py:13`\n- **Formatting:** It returns `PEP <number>: <cleaned title> (<URL>)`, obtaining the URL through `pep_url(number)`. The provided snippet does not show how `pep_url` constructs that URL. \u2014 `pep_tools/references.py:14`"
+      ],
+      "wall_ms": 10047.4,
+      "retrieve_ms": 0.0,
+      "llm_ms": 9978.6,
+      "ttft_ms": 7910.0,
+      "providers": {
+        "google": {
+          "input_tokens": 350,
+          "output_tokens": 69,
+          "cost_usd": 0.000521
+        },
+        "openai": {
+          "input_tokens": 782,
+          "output_tokens": 495,
+          "cost_usd": 0.006514
+        }
+      }
+    },
+    {
+      "id": "after-snapshot",
+      "question": "What PEPs were accepted after the corpus snapshot date?",
+      "in_corpus": false,
+      "reference": "The corpus snapshot is 2026-10-24. The local corpus and PEP table do not identify PEPs accepted after that date.",
+      "expected_source_ids": [],
+      "answer": "**The available evidence does not identify any PEPs accepted after the corpus snapshot date, October 24, 2026.** This is an information gap\u2014not a finding that none were accepted. The retrieved corpus chunks do not establish post-snapshot acceptances: `pep-0200/08-accepted-and-in-progress/0`, `pep-0375/07-copyright/0`, `pep-0283/02-release-manager/0`, `pep-0375/06-footnotes/0`, and `pep-0745/05-source-only-security-fix-releases/0`. The extracted page at https://peps.python.org/pep-0001 describes PEP procedures, not which PEPs were accepted after that date (`tavily-search:0`). Likewise, the discussions at https://discuss.python.org/t/accepted-but-not-final-python-3-12-peps/54720 (`tavily-search:1`) and https://discuss.python.org/t/multiple-released-peps-have-status-accepted-not-final/20776 (`tavily-search:2`) concern older PEPs remaining in \u201cAccepted\u201d status and do not answer the question.",
+      "contexts": [
+        "pep-0200/08-accepted-and-in-progress/0\nPEP 200: Python 2.0 Release Schedule. Section: Accepted and in progress.\n* Currently none left. [4-Sep-2000 guido]",
+        "pep-0375/07-copyright/0\nPEP 375: Python 3.1 Release Schedule. Section: Copyright.\nThis document has been placed in the public domain.",
+        "pep-0283/02-release-manager/0\nPEP 283: Python 2.3 Release Schedule. Section: Release Manager.\nBarry Warsaw, Jeremy Hylton, Tim Peters",
+        "pep-0375/06-footnotes/0\nPEP 375: Python 3.1 Release Schedule. Section: Footnotes.\nhttp://bugs.python.org/issue4136\n\n   http://bugs.python.org/issue5237",
+        "pep-0745/05-source-only-security-fix-releases/0\nPEP 745: Python 3.14 Release Schedule. Section: Source-only security fix releases.\nProvided irregularly on an as-needed basis until October 2030.",
+        "tavily-search:0\nWhile not shown in the diagram, \u201cAccepted\u201d PEPs may technically move to \u201cRejected\u201d or \u201cWithdrawn\u201d even after acceptance. This will only occur if the implementation process reveals fundamental flaws in the design that were not noticed prior to acceptance of the PEP. Unlike Provisional PEPs, these transitions are only permitted if the accepted proposal has not been included in a Python release - released changes must instead go through the regular deprecation process (which may require a new PEP [",
+        "tavily-search:1\n# Accepted-but-not-final Python 3.12 PEPs?\n\nSeveral of the PEPs implemented for Python 3.12 (What\u2019s New In Python 3.12 \u2014 Python 3.12.3 documentation) are still listed as accepted.\n\nThe ones that caught my eye (as I\u2019m not aware of any remaining work needed on them): [...] I believe PEP 699 \u2013 Remove private dict version field added in PEP 509 | peps.python.org is intentionally still open until the deprecation is followed up with removal in Python 3.14, while PEP 687 \u2013 Isolating modules in the stan",
+        "tavily-search:2\nYou can use the PEP \u201cAPI\u201d to quickly filter all their PEPs based on their metadata, to see, for example, PEPs that were Accepted for, e.g., Python 3.11 that have not yet been marked final:\n\n`import pandas as pd\nimport requests\npeps = requests.get(\"\ndf = pd.DataFrame.from_dict(peps.json(), orient=\"index\")\naccepted_311 = df.loc[(df[\"python_version\"] == \"3.11\") & (df[\"status\"] == \"Accepted\")]\nprint(accepted_311[\"title\"])` [...] There's also the Accepted typing PEPs, which might also depend on imple",
+        "The corpus does not contain information about what PEPs were accepted after the corpus snapshot date (2026-10-24). \n\nEvaluation of web results:\n* **https://peps.python.org/pep-0001**: Does not answer the question; it describes the rules and guidelines for PEP status transitions (such as \"Accepted\" moving to \"Rejected\" or \"Withdrawn\") [https://peps.python.org/pep-0001].\n* **https://discuss.python.org/t/accepted-but-not-final-python-3-12-peps/54720**: Does not answer the question; it discusses PEPs implemented for Python 3.12 that remain in an \"Accepted\" state [https://discuss.python.org/t/accepted-but-not-final-python-3-12-peps/54720].\n* **https://discuss.python.org/t/multiple-released-peps-have-status-accepted-not-final/20776**: Does not answer the question; it discusses querying the PEP API for Python 3.11 PEPs marked as \"Accepted\" rather than \"Final\" [https://discuss.python.org/t/multiple-released-peps-have-status-accepted-not-final/20776]."
+      ],
+      "wall_ms": 20198.8,
+      "retrieve_ms": 999.3,
+      "llm_ms": 12357.7,
+      "ttft_ms": 17740.8,
+      "providers": {
+        "google": {
+          "input_tokens": 1418,
+          "output_tokens": 377,
+          "cost_usd": 0.002477
+        },
+        "openai": {
+          "input_tokens": 2288,
+          "output_tokens": 275,
+          "cost_usd": 0.007326
+        }
+      }
+    },
+    {
+      "id": "imports-and-process",
+      "question": "Combine a PEP 8 import rule with the count of PEPs whose type is Process, and write one paragraph.",
+      "in_corpus": true,
+      "reference": "PEP 8 says imports should usually be on separate lines. 53 PEPs have type Process.",
+      "expected_source_ids": [
+        "pep-0008/09-imports/0"
+      ],
+      "answer": "PEP 8 says imports should usually be on separate lines and should appear at the top of the file, after module comments and docstrings but before module globals and constants [pep-0008/09-imports/0]. PEP 8 itself is a Process PEP [pep-0008/00-introduction/0], and the database query `SELECT count(*) FROM peps WHERE type = 'Process'` returned **53 Process PEPs**.",
+      "contexts": [
+        "pep-0008/00-introduction/0\nPEP 8: Style Guide for Python Code. Section: Introduction.\nPEP: 8\nTitle: Style Guide for Python Code\nAuthor: Guido van Rossum <guido@python.org>,\n        Barry Warsaw <barry@python.org>,\n        Alyssa Coghlan <ncoghlan@gmail.com>\nStatus: Active\nType: Process\nCreated: 05-Jul-2001\nPost-History: 05-Jul-2001, 01-Aug-2013",
+        "pep-0008/13-other-recommendations/2\nPEP 8: Style Guide for Python Code. Section: Other Recommendations.\n# Correct:\n     def complex(real, imag=0.0):\n         return magic(r=real, i=imag)\n\n     # Wrong:\n     def complex(real, imag = 0.0):\n         return magic(r = real, i = imag)\n\n  When combining an argument annotation with a default value, however, do use\n  spaces around the ``=`` sign:\n\n     # Correct:\n     def munge(sep: AnyStr = None): ...\n     def munge(input: AnyStr, sep: AnyStr = None, limit=1000): ...\n\n     # Wrong:\n     d",
+        "pep-0008/09-imports/0\nPEP 8: Style Guide for Python Code. Section: Imports.\n- Imports should usually be on separate lines:\n\n     # Correct:\n     import os\n     import sys\n\n     # Wrong:\n     import sys, os\n\n  It's okay to say this though:\n\n     # Correct:\n     from subprocess import Popen, PIPE\n\n- Imports are always put at the top of the file, just after any module\n  comments and docstrings, and before module globals and constants.\n\n  Imports should be grouped in the following order:\n\n  1. Standard library imports.",
+        "pep-0008/38-references/0\nPEP 8: Style Guide for Python Code. Section: References.\nhttp://barry.warsaw.us/software/STYLEGUIDE.txt\n\n   https://github.com/python/typeshed",
+        "pep-0008/37-variable-annotations/1\nPEP 8: Style Guide for Python Code. Section: Variable Annotations.\n- Although the 526 is accepted for Python 3.6, the variable annotation\n  syntax is the preferred syntax for stub files on all versions of Python\n  (see 484 for details).\n\n   the lines in a paragraph are indented except the first line.  In\n   the context of Python, the term is used to describe a style where\n   the opening parenthesis of a parenthesized statement is the last\n   non-whitespace character of the line, with subsequent",
+        "According to PEP 8, imports should usually be on separate lines and are always placed at the top of the file, just after any module comments and docstrings, and before module globals and constants [pep-0008/09-imports/0]. While PEP 8 itself is listed with the type \"Process\" [pep-0008/00-introduction/0], the provided corpus does not contain the total count of PEPs whose type is Process.",
+        "SQL: SELECT count(*) FROM peps WHERE type = 'Process'\nRows: [{\"count(*)\": 53}]"
+      ],
+      "wall_ms": 17138.5,
+      "retrieve_ms": 1155.9,
+      "llm_ms": 15889.0,
+      "ttft_ms": 16276.2,
+      "providers": {
+        "google": {
+          "input_tokens": 1428,
+          "output_tokens": 719,
+          "cost_usd": 0.003767
+        },
+        "openai": {
+          "input_tokens": 1233,
+          "output_tokens": 99,
+          "cost_usd": 0.003456
+        }
+      }
+    },
+    {
+      "id": "pep8-blank-lines",
+      "question": "What does PEP 8 say about blank lines?",
+      "in_corpus": true,
+      "reference": "Use two blank lines around top-level function and class definitions, and one blank line around method definitions inside a class.",
+      "expected_source_ids": [
+        "pep-0008/07-blank-lines/0"
+      ],
+      "answer": "PEP 8\u2019s [Blank Lines section](https://peps.python.org/pep-0008/) says:\n\n- Surround top-level function and class definitions with **two blank lines**.\n- Separate method definitions inside a class with **one blank line**.\n- Use extra blank lines **sparingly** to separate groups of related functions.\n- Blank lines may be omitted between related one-liners, such as dummy implementations.\n- Within functions, use blank lines sparingly to indicate logical sections.\n- Python accepts the control-L (form feed) character.\n\n[pep-0008/07-blank-lines/0]",
+      "contexts": [
+        "pep-0008/07-blank-lines/0\nPEP 8: Style Guide for Python Code. Section: Blank Lines.\nSurround top-level function and class definitions with two blank\nlines.\n\nMethod definitions inside a class are surrounded by a single blank\nline.\n\nExtra blank lines may be used (sparingly) to separate groups of\nrelated functions.  Blank lines may be omitted between a bunch of\nrelated one-liners (e.g. a set of dummy implementations).\n\nUse blank lines in functions, sparingly, to indicate logical sections.\n\nPython accepts the control-L (i.e.",
+        "pep-0008/00-introduction/0\nPEP 8: Style Guide for Python Code. Section: Introduction.\nPEP: 8\nTitle: Style Guide for Python Code\nAuthor: Guido van Rossum <guido@python.org>,\n        Barry Warsaw <barry@python.org>,\n        Alyssa Coghlan <ncoghlan@gmail.com>\nStatus: Active\nType: Process\nCreated: 05-Jul-2001\nPost-History: 05-Jul-2001, 01-Aug-2013",
+        "pep-0008/16-block-comments/0\nPEP 8: Style Guide for Python Code. Section: Block Comments.\nBlock comments generally apply to some (or all) code that follows\nthem, and are indented to the same level as that code.  Each line of a\nblock comment starts with a ``#`` and a single space (unless it is\nindented text inside the comment).\n\nParagraphs inside a block comment are separated by a line containing a\nsingle ``#``.",
+        "pep-0008/03-indentation/3\nPEP 8: Style Guide for Python Code. Section: Indentation.\n# No extra indentation.\n   if (this_is_one_thing and\n       that_is_another_thing):\n       do_something()\n\n   # Add a comment, which will provide some distinction in editors\n   # supporting syntax highlighting.\n   if (this_is_one_thing and\n       that_is_another_thing):\n       # Since both conditions are true, we can frobnicate.\n       do_something()\n\n   # Add some extra indentation on the conditional continuation line.\n   if (this_is_one",
+        "pep-0008/04-tabs-or-spaces/0\nPEP 8: Style Guide for Python Code. Section: Tabs or Spaces?.\nSpaces are the preferred indentation method.\n\nTabs should be used solely to remain consistent with code that is\nalready indented with tabs.\n\nPython disallows mixing tabs and spaces for indentation.",
+        "Based on the retrieved passages, PEP 8 states the following regarding blank lines:\n\n* Top-level function and class definitions should be surrounded with two blank lines [pep-0008/07-blank-lines/0].\n* Method definitions inside a class are surrounded by a single blank line [pep-0008/07-blank-lines/0].\n* Extra blank lines may be used sparingly to separate groups of related functions [pep-0008/07-blank-lines/0].\n* Blank lines may be omitted between a bunch of related one-liners, such as a set of dummy implementations [pep-0008/07-blank-lines/0].\n* Blank lines should be used sparingly within functions to indicate logical sections [pep-0008/07-blank-lines/0].\n* Python accepts the control-L (i.e., form feed character) [pep-0008/07-blank-lines/0]."
+      ],
+      "wall_ms": 9866.8,
+      "retrieve_ms": 1121.8,
+      "llm_ms": 8691.2,
+      "ttft_ms": 8799.3,
+      "providers": {
+        "google": {
+          "input_tokens": 1186,
+          "output_tokens": 285,
+          "cost_usd": 0.001958
+        },
+        "openai": {
+          "input_tokens": 1249,
+          "output_tokens": 129,
+          "cost_usd": 0.003788
+        }
+      }
+    },
+    {
+      "id": "pep8-status",
+      "question": "What are the status and type of PEP 8 in the PEP table?",
+      "in_corpus": true,
+      "reference": "PEP 8 has status Active and type Process.",
+      "expected_source_ids": [],
+      "answer": "PEP 8 has status **Active** and type **Process**.",
+      "contexts": [
+        "SQL: SELECT status, type FROM peps WHERE number = 8\nRows: [{\"status\": \"Active\", \"type\": \"Process\"}]"
+      ],
+      "wall_ms": 5700.2,
+      "retrieve_ms": 0.0,
+      "llm_ms": 5628.3,
+      "ttft_ms": 5282.1,
+      "providers": {
+        "google": {
+          "input_tokens": 496,
+          "output_tokens": 142,
+          "cost_usd": 0.000905
+        },
+        "openai": {
+          "input_tokens": 208,
+          "output_tokens": 19,
+          "cost_usd": 0.000606
+        }
+      }
+    },
+    {
+      "id": "process-count",
+      "question": "How many PEPs have type Process?",
+      "in_corpus": true,
+      "reference": "53 PEPs have type Process.",
+      "expected_source_ids": [],
+      "answer": "53 PEPs have type **Process**.",
+      "contexts": [
+        "SQL: SELECT COUNT(*) FROM peps WHERE type = 'Process'\nRows: [{\"COUNT(*)\": 53}]"
+      ],
+      "wall_ms": 5703.1,
+      "retrieve_ms": 0.0,
+      "llm_ms": 5636.7,
+      "ttft_ms": 5274.0,
+      "providers": {
+        "google": {
+          "input_tokens": 482,
+          "output_tokens": 73,
+          "cost_usd": 0.000635
+        },
+        "openai": {
+          "input_tokens": 194,
+          "output_tokens": 14,
+          "cost_usd": 0.000528
+        }
+      }
+    },
+    {
+      "id": "rejected-count",
+      "question": "How many PEPs have status Rejected?",
+      "in_corpus": true,
+      "reference": "131 PEPs have status Rejected.",
+      "expected_source_ids": [],
+      "answer": "131 PEPs have status **Rejected**.",
+      "contexts": [
+        "SQL: SELECT COUNT(*) FROM peps WHERE status = 'Rejected'\nRows: [{\"COUNT(*)\": 131}]"
+      ],
+      "wall_ms": 5005.2,
+      "retrieve_ms": 0.0,
+      "llm_ms": 4937.5,
+      "ttft_ms": 4748.2,
+      "providers": {
+        "google": {
+          "input_tokens": 482,
+          "output_tokens": 73,
+          "cost_usd": 0.000635
+        },
+        "openai": {
+          "input_tokens": 195,
+          "output_tokens": 14,
+          "cost_usd": 0.00053
+        }
+      }
+    },
+    {
+      "id": "pep8-authors",
+      "question": "Who are the authors of PEP 8?",
+      "in_corpus": true,
+      "reference": "The authors are Guido van Rossum, Barry Warsaw, and Alyssa Coghlan.",
+      "expected_source_ids": [],
+      "answer": "The authors of PEP 8 are **Guido van Rossum, Barry Warsaw, and Alyssa Coghlan**.",
+      "contexts": [
+        "SQL: SELECT author FROM peps WHERE number = 8\nRows: [{\"author\": \"Guido van Rossum <guido@python.org>, Barry Warsaw <barry@python.org>, Alyssa Coghlan <ncoghlan@gmail.com>\"}]"
+      ],
+      "wall_ms": 5448.2,
+      "retrieve_ms": 0.0,
+      "llm_ms": 5386.6,
+      "ttft_ms": 5123.9,
+      "providers": {
+        "google": {
+          "input_tokens": 484,
+          "output_tokens": 69,
+          "cost_usd": 0.000622
+        },
+        "openai": {
+          "input_tokens": 226,
+          "output_tokens": 30,
+          "cost_usd": 0.000752
+        }
+      }
+    },
+    {
+      "id": "pep20-readability",
+      "question": "What does PEP 20 say about readability?",
+      "in_corpus": true,
+      "reference": "PEP 20, the Zen of Python, says readability counts.",
+      "expected_source_ids": [
+        "pep-0020"
+      ],
+      "answer": "PEP 20 says: **\u201cReadability counts.\u201d** [pep-0020/02-the-zen-of-python/0]",
+      "contexts": [
+        "pep-0020/02-the-zen-of-python/0\nPEP 20: The Zen of Python. Section: The Zen of Python.\nBeautiful is better than ugly.\n    Explicit is better than implicit.\n    Simple is better than complex.\n    Complex is better than complicated.\n    Flat is better than nested.\n    Sparse is better than dense.\n    Readability counts.\n    Special cases aren't special enough to break the rules.\n    Although practicality beats purity.\n    Errors should never pass silently.\n    Unless explicitly silenced.\n    In the face of ambiguity, refuse the",
+        "pep-0020/00-introduction/0\nPEP 20: The Zen of Python. Section: Introduction.\nPEP: 20\nTitle: The Zen of Python\nAuthor: Tim Peters <tim.peters@gmail.com>\nStatus: Active\nType: Informational\nCreated: 19-Aug-2004\nPost-History: 22-Aug-2004",
+        "pep-0020/01-abstract/0\nPEP 20: The Zen of Python. Section: Abstract.\nLong time Pythoneer Tim Peters succinctly channels the BDFL's guiding\nprinciples for Python's design into 20 aphorisms, only 19 of which\nhave been written down.",
+        "pep-0020/05-copyright/0\nPEP 20: The Zen of Python. Section: Copyright.\nThis document has been placed in the public domain.",
+        "pep-0020/04-references/0\nPEP 20: The Zen of Python. Section: References.\nOriginally posted to comp.lang.python/python-list@python.org under a\nthread called `\"The Way of Python\"\n<https://groups.google.com/d/msg/comp.lang.python/B_VxeTBClM0/L8W9KlsiriUJ>`__",
+        "According to PEP 20, \"Readability counts\" [pep-0020/02-the-zen-of-python/0]."
+      ],
+      "wall_ms": 8695.1,
+      "retrieve_ms": 1167.7,
+      "llm_ms": 7476.1,
+      "ttft_ms": 8383.1,
+      "providers": {
+        "google": {
+          "input_tokens": 1018,
+          "output_tokens": 103,
+          "cost_usd": 0.00115
+        },
+        "openai": {
+          "input_tokens": 888,
+          "output_tokens": 32,
+          "cost_usd": 0.002096
+        }
+      }
+    },
+    {
+      "id": "pep1-name",
+      "question": "What does PEP stand for, according to PEP 1?",
+      "in_corpus": true,
+      "reference": "PEP stands for Python Enhancement Proposal.",
+      "expected_source_ids": [
+        "pep-0001"
+      ],
+      "answer": "According to PEP 1, PEP stands for **Python Enhancement Proposal** [pep-0001/01-what-is-a-pep/0].",
+      "contexts": [
+        "pep-0001/00-introduction/0\nPEP 1: PEP Purpose and Guidelines. Section: Introduction.\nPEP: 1\nTitle: PEP Purpose and Guidelines\nAuthor: Barry Warsaw, Jeremy Hylton, David Goodger, Alyssa Coghlan\nStatus: Active\nType: Process\nCreated: 13-Jun-2000\nPost-History: 21-Mar-2001, 29-Jul-2002, 03-May-2003, 05-May-2012,\n              07-Apr-2013",
+        "pep-0001/15-pep-header-preamble/0\nPEP 1: PEP Purpose and Guidelines. Section: PEP Header Preamble.\nEach PEP must begin with an 2822 style header preamble.  The headers\nmust appear in the following order.  Headers marked with \"*\" are\noptional and are described below.  All other headers are required.",
+        "pep-0001/12-pep-maintenance/1\nPEP 1: PEP Purpose and Guidelines. Section: PEP Maintenance.\nOccasionally, a Deferred or even a Withdrawn PEP may be resurrected\nwith major updates, but it is often better to just propose a new one.",
+        "pep-0001/09-submitting-a-pep/6\nPEP 1: PEP Purpose and Guidelines. Section: Submitting a PEP.\nStandards Track PEPs consist of two parts, a design document and a\nreference implementation.  It is generally recommended that at least a\nprototype implementation be co-developed with the PEP, as ideas that sound\ngood in principle sometimes turn out to be impractical when subjected to the\ntest of implementation.",
+        "pep-0001/03-pep-types/0\nPEP 1: PEP Purpose and Guidelines. Section: PEP Types.\nThere are three kinds of PEP:\n\n1. A **Standards Track** PEP describes a new feature or implementation\n   for Python. It may also describe an interoperability standard that will\n   be supported outside the standard library for current Python versions\n   before a subsequent PEP adds standard library support in a future\n   version.\n\n2. An **Informational** PEP describes a Python design issue, or\n   provides general guidelines or information to the Python community,\n   but does not propose a new feature.  Informational PEPs do not\n   necessarily represent a Python community consensus or\n   recommendation, so users and implementers are free to ignore\n   Informational PEPs or follow their advice.",
+        "pep-0001/01-what-is-a-pep/0\nPEP 1: PEP Purpose and Guidelines. Section: What is a PEP?.\nPEP stands for Python Enhancement Proposal.  A PEP is a design\ndocument providing information to the Python community, or describing\na new feature for Python or its processes or environment.  The PEP\nshould provide a concise technical specification of the feature and a\nrationale for the feature.\n\nWe intend PEPs to be the primary mechanisms for proposing major new\nfeatures, for collecting community input on an issue, and for\ndocumenting the design decisions that have gone into Python.  The PEP\nauthor is responsible for building consensus within the community and\ndocumenting dissenting opinions.\n\nBecause the PEPs are maintained as text files in a versioned\nrepository, their revision history is the historical record of the\nfeature proposal. This historical record is available by the normal git\ncommands for retrieving older revisions, and can also be browsed\n`on GitHub <https://github.com/python/peps>`__.",
+        "According to PEP 1, PEP stands for Python Enhancement Proposal [pep-0001/01-what-is-a-pep/0]."
+      ],
+      "wall_ms": 13719.0,
+      "retrieve_ms": 999.2,
+      "llm_ms": 12675.7,
+      "ttft_ms": 13071.1,
+      "providers": {
+        "google": {
+          "input_tokens": 1100,
+          "output_tokens": 86,
+          "cost_usd": 0.001148
+        },
+        "openai": {
+          "input_tokens": 1003,
+          "output_tokens": 110,
+          "cost_usd": 0.003106
+        }
+      }
+    },
+    {
+      "id": "glossary-decorator",
+      "question": "What does the Python glossary say a decorator is?",
+      "in_corpus": true,
+      "reference": "A decorator is a function that wraps another function, usually applied with @ syntax.",
+      "expected_source_ids": [
+        "glossary.txt"
+      ],
+      "answer": "The [Python glossary](https://docs.python.org/3/glossary.html) defines a **decorator** as \u201ca function returning another function, usually applied as a function transformation using the `@wrapper` syntax.\u201d Common examples are `@classmethod` and `@staticmethod` [glossary/00-glossary/23]. The syntax is syntactic sugar; the same concept also applies to classes, though less commonly [glossary/00-glossary/24, glossary/00-glossary/25].",
+      "contexts": [
+        "glossary/00-glossary/24\nPython documentation: Glossary. Section: Glossary.\nThe decorator syntax is merely syntactic sugar, the following two\n   function definitions are semantically equivalent:\n\n      def f(arg):\n          ...\n      f = staticmethod(f)\n\n      @staticmethod\n      def f(arg):\n          ...\n\n   The same concept exists for classes, but is less commonly used\n   there.  See the documentation for function definitions and class\n   definitions for more about decorators.",
+        "glossary/00-glossary/23\nPython documentation: Glossary. Section: Glossary.\ndeadlock\n   A situation in which two or more tasks (threads, processes, or\n   coroutines) wait indefinitely for each other to release resources\n   or complete actions, preventing any from making progress.  For\n   example, if thread A holds lock 1 and waits for lock 2, while\n   thread B holds lock 2 and waits for lock 1, both threads will wait\n   indefinitely.  In Python this often arises from acquiring multiple\n   locks in conflicting orders or from circular join/await\n   dependencies.  Deadlocks can be avoided by always acquiring\n   multiple *locks* in a consistent order.  See also *lock* and\n   *reentrant*.\n\ndecorator\n   A function returning another function, usually applied as a\n   function transformation using the \"@wrapper\" syntax.  Common\n   examples for decorators are \"@classmethod\" and \"@staticmethod\".\n\n   The decorator syntax is merely syntactic sugar, the following two\n   function definitions are semantically equivalent:",
+        "pep-0318/08-current-syntax/0\nPEP 318: Decorators for Functions and Methods. Section: Current Syntax.\nThe current syntax for function decorators as implemented in Python\n2.4a2 is::\n\n    @dec2\n    @dec1\n    def func(arg1, arg2, ...):\n        pass\n\nThis is equivalent to::\n\n    def func(arg1, arg2, ...):\n        pass\n    func = dec2(dec1(func))\n\nwithout the intermediate assignment to the variable ``func``.  The\ndecorators are near the function declaration.  The @ sign makes it clear\nthat something new is going on here.\n\nThe rationale for the `order of application`_ (bottom to top) is that it\nmatches the usual order for function-application.  In mathematics,\ncomposition of functions (g o f)(x) translates to g(f(x)).  In Python,\n``@g @f def foo()`` translates to ``foo=g(f(foo)``.\n\n    https://mail.python.org/pipermail/python-dev/2004-September/048874.html\n\nThe decorator statement is limited in what it can accept -- arbitrary\nexpressions will not work.  Guido preferred this because of a `gut\nfeeling`_.\n\n    https://mail.python.org/pipermail/python-dev/2004-August/046711.html",
+        "glossary/00-glossary/25\nPython documentation: Glossary. Section: Glossary.\nThe same concept exists for classes, but is less commonly used\n   there.  See the documentation for function definitions and class\n   definitions for more about decorators.\n\ndescriptor\n   Any object which defines the methods \"__get__()\", \"__set__()\", or\n   \"__delete__()\". When a class attribute is a descriptor, its special\n   binding behavior is triggered upon attribute lookup.  Normally,\n   using *a.b* to get, set or delete an attribute looks up the object\n   named *b* in the class dictionary for *a*, but if *b* is a\n   descriptor, the respective descriptor method gets called.\n   Understanding descriptors is a key to a deep understanding of\n   Python because they are the basis for many features including\n   functions, methods, properties, class methods, static methods, and\n   reference to super classes.\n\n   For more information about descriptors' methods, see Implementing\n   Descriptors or the Descriptor How To Guide.",
+        "whatsnew/2.4/05-pep-318-decorators-for-functions-and-methods/2\nPython documentation: What's New in Python 2.4. Section: PEP 318: Decorators for Functions and Methods.\n@A\n   @B\n   @C\n   def f ():\n       ...\n\nIt's equivalent to the following pre-decorator code:\n\n   def f(): ...\n   f = A(B(C(f)))\n\nDecorators must come on the line before a function definition, one\ndecorator per line, and can't be on the same line as the def\nstatement, meaning that \"@A def f(): ...\" is illegal.  You can only\ndecorate function definitions, either at the module level or inside a\nclass; you can't decorate class definitions.\n\nA decorator is just a function that takes the function to be decorated\nas an argument and returns either the same function or some new\nobject.  The return value of the decorator need not be callable\n(though it typically is), unless further decorators will be applied to\nthe result.  It's easy to write your own decorators.  The following\nsimple example just sets an attribute on the function object:",
+        "According to the Python glossary, a decorator is a function returning another function, usually applied as a function transformation using the `@wrapper` syntax [glossary/00-glossary/23]. Common examples of decorators include `@classmethod` and `@staticmethod` [glossary/00-glossary/23]. \n\nThe glossary also notes that decorator syntax is merely syntactic sugar (and the same concept exists for classes, though it is less commonly used there) [glossary/00-glossary/23, glossary/00-glossary/24, glossary/00-glossary/25]."
+      ],
+      "wall_ms": 12724.0,
+      "retrieve_ms": 824.7,
+      "llm_ms": 11837.3,
+      "ttft_ms": 11493.6,
+      "providers": {
+        "google": {
+          "input_tokens": 1270,
+          "output_tokens": 440,
+          "cost_usd": 0.002602
+        },
+        "openai": {
+          "input_tokens": 1385,
+          "output_tokens": 122,
+          "cost_usd": 0.00399
+        }
+      }
+    },
+    {
+      "id": "len-builtin",
+      "question": "What does the len built-in return for a container?",
+      "in_corpus": true,
+      "reference": "len returns the number of items in a container.",
+      "expected_source_ids": [],
+      "answer": "`len(container)` calls the container\u2019s `__len__()` method and returns its length as a nonnegative integer. In CPython, that length must be at most `sys.maxsize`. [reference/datamodel/63-3-3-7-emulating-container-types/2]",
+      "contexts": [
+        "reference/datamodel/63-3-3-7-emulating-container-types/2\nPython documentation: 3. Data model. Section: 3.3.7. Emulating container types.\nobject.__len__(self)\n\n   Called to implement the built-in function \"len()\".  Should return\n   the length of the object, an integer \">=\" 0.  Also, an object that\n   doesn't define a \"__bool__()\" method and whose \"__len__()\" method\n   returns zero is considered to be false in a Boolean context.\n\n   **CPython implementation detail:** In CPython, the length is\n   required to be at most \"sys.maxsize\". If the length is lar",
+        "pep-0329/08-copyright/0\nPEP 329: Treating Builtins as Constants in the Standard Library. Section: Copyright.\nThis document has been placed in the public domain.",
+        "pep-0329/01-abstract/0\nPEP 329: Treating Builtins as Constants in the Standard Library. Section: Abstract.\nThe proposal is to add a function for treating builtin references as\nconstants and to apply that function throughout the standard library.",
+        "pep-0576/17-copyright/0\nPEP 576: Rationalize Built-in function classes. Section: Copyright.\nThis document has been placed in the public domain.",
+        "pep-0329/06-sample-implementation/2\nPEP 329: Treating Builtins as Constants in the Standard Library. Section: Sample Implementation.\ni = 0\n        while i < codelen:\n            opcode = newcode[i]\n            if opcode in ABORT_CODES:\n                return f    # for simplicity, only optimize common cases\n            if opcode == LOAD_GLOBAL:\n                oparg = newcode[i+1] + (newcode[i+2] << 8)\n                name = co.co_names[oparg]\n                if name in env and name not in stoplist:\n                    value = env",
+        "Based on the retrieved passages, the built-in function `len()` calls `__len__()`, which should return the length of the object as an integer `>= 0` [reference/datamodel/63-3-3-7-emulating-container-types/2]. \n\n*(Note: In CPython, this length is required to be at most `sys.maxsize` [reference/datamodel/63-3-3-7-emulating-container-types/2].)*"
+      ],
+      "wall_ms": 14567.4,
+      "retrieve_ms": 778.3,
+      "llm_ms": 13736.7,
+      "ttft_ms": 13752.1,
+      "providers": {
+        "google": {
+          "input_tokens": 1065,
+          "output_tokens": 660,
+          "cost_usd": 0.003274
+        },
+        "openai": {
+          "input_tokens": 1029,
+          "output_tokens": 62,
+          "cost_usd": 0.002678
+        }
+      }
+    },
+    {
+      "id": "pep8-indentation",
+      "question": "What does PEP 8 say about indentation?",
+      "in_corpus": true,
+      "reference": "Use 4 spaces per indentation level.",
+      "expected_source_ids": [
+        "pep-0008"
+      ],
+      "answer": "PEP 8 recommends:\n\n- **Use 4 spaces per indentation level.** [pep-0008/03-indentation/0]\n- **Prefer spaces to tabs.** Use tabs only for consistency with existing tab-indented code; Python disallows mixing tabs and spaces for indentation. [pep-0008/04-tabs-or-spaces/0]\n- **For continuation lines**, align wrapped elements vertically inside parentheses, brackets, or braces, or use a hanging indent. Hanging indents should have no arguments on the first line and enough extra indentation to distinguish the continuation clearly. [pep-0008/03-indentation/0] [pep-0008/03-indentation/1] Hanging indents may use an amount other than 4 spaces. [pep-0008/03-indentation/2]\n- **For multiline `if` conditions**, the natural 4-space alignment can resemble the body\u2019s indentation. Examples show leaving that alignment unchanged, adding a distinguishing comment, or indenting the condition\u2019s continuation further. [pep-0008/03-indentation/2] [pep-0008/03-indentation/3]",
+      "contexts": [
+        "pep-0008/04-tabs-or-spaces/0\nPEP 8: Style Guide for Python Code. Section: Tabs or Spaces?.\nSpaces are the preferred indentation method.\n\nTabs should be used solely to remain consistent with code that is\nalready indented with tabs.\n\nPython disallows mixing tabs and spaces for indentation.",
+        "pep-0008/03-indentation/1\nPEP 8: Style Guide for Python Code. Section: Indentation.\n# Hanging indents should add a level.\n   foo = long_function_name(\n       var_one, var_two,\n       var_three, var_four)\n\n   # Wrong:\n\n   # Arguments on first line forbidden when not using vertical alignment.\n   foo = long_function_name(var_one, var_two,\n       var_three, var_four)\n\n   # Further indentation required as indentation is not distinguishable.\n   def long_function_name(\n       var_one, var_two, var_three,\n       var_four):",
+        "pep-0008/03-indentation/0\nPEP 8: Style Guide for Python Code. Section: Indentation.\nUse 4 spaces per indentation level.\n\nContinuation lines should align wrapped elements either vertically\nusing Python's implicit line joining inside parentheses, brackets and\nbraces, or using a *hanging indent* [#fn-hi]_.  When using a hanging\nindent the following should be considered; there should be no\narguments on the first line and further indentation should be used to\nclearly distinguish itself as a continuation line:\n\n   # Correct:",
+        "pep-0008/03-indentation/2\nPEP 8: Style Guide for Python Code. Section: Indentation.\nOptional:\n\n   # Hanging indents *may* be indented to other than 4 spaces.\n   foo = long_function_name(\n     var_one, var_two,\n     var_three, var_four)\n\nWhen the conditional part of an ``if``-statement is long enough to require\nthat it be written across multiple lines, it's worth noting that the\ncombination of a two character keyword (i.e. ``if``), plus a single space,\nplus an opening parenthesis creates a natural 4-space indent for the\ns",
+        "pep-0008/03-indentation/3\nPEP 8: Style Guide for Python Code. Section: Indentation.\n# No extra indentation.\n   if (this_is_one_thing and\n       that_is_another_thing):\n       do_something()\n\n   # Add a comment, which will provide some distinction in editors\n   # supporting syntax highlighting.\n   if (this_is_one_thing and\n       that_is_another_thing):\n       # Since both conditions are true, we can frobnicate.\n       do_something()\n\n   # Add some extra indentation on the conditional continuation line.\n   if (this_is_one",
+        "Based on the retrieved passages, PEP 8 states the following regarding indentation:\n\n* **Indentation level and method:** Use 4 spaces per indentation level [pep-0008/03-indentation/0]. Spaces are the preferred method of indentation [pep-0008/04-tabs-or-spaces/0].\n* **Tabs vs. spaces:** Tabs should only be used to stay consistent with existing code that already uses tabs, and Python disallows mixing tabs and spaces for indentation [pep-0008/04-tabs-or-spaces/0].\n* **Continuation lines:** Wrapped elements on continuation lines should be aligned vertically using implicit line joining inside parentheses, brackets, and braces, or by using a *hanging indent* [pep-0008/03-indentation/0].\n* **Hanging indents:**\n  * When using a hanging indent, there should be no arguments on the first line, and further indentation should be used so it clearly distinguishes itself as a continuation line [pep-0008/03-indentation/0]. \n  * Hanging indents should add a level [pep-0008/03-indentation/1], but optionally *may* be indented to an amount other than 4 spaces [pep-0008/03-indentation/2].\n  * Having arguments on the first line is forbidden when vertical alignment is not being used [pep-0008/03-indentation/1].\n  * Further indentation is required if the continuation line's indentation is not distinguishable [pep-0008/03-indentation/1].\n* **Multline `if`-statements:** When the conditional part of an `if`-statement is long enough to span multiple lines, the two-character keyword `if`, plus a single spa"
+      ],
+      "wall_ms": 54949.1,
+      "retrieve_ms": 1117.3,
+      "llm_ms": 53776.9,
+      "ttft_ms": 52315.2,
+      "providers": {
+        "google": {
+          "input_tokens": 1246,
+          "output_tokens": 564,
+          "cost_usd": 0.00305
+        },
+        "openai": {
+          "input_tokens": 1566,
+          "output_tokens": 238,
+          "cost_usd": 0.005512
+        }
+      }
+    },
+    {
+      "id": "accepted-count",
+      "question": "How many PEPs have status Accepted?",
+      "in_corpus": true,
+      "reference": "11 PEPs have status Accepted.",
+      "expected_source_ids": [],
+      "answer": "11 PEPs have status **Accepted**.",
+      "contexts": [
+        "SQL: SELECT COUNT(*) FROM peps WHERE status = 'Accepted'\nRows: [{\"COUNT(*)\": 11}]"
+      ],
+      "wall_ms": 6888.2,
+      "retrieve_ms": 0.0,
+      "llm_ms": 6831.2,
+      "ttft_ms": 6443.9,
+      "providers": {
+        "google": {
+          "input_tokens": 482,
+          "output_tokens": 76,
+          "cost_usd": 0.000646
+        },
+        "openai": {
+          "input_tokens": 194,
+          "output_tokens": 14,
+          "cost_usd": 0.000528
+        }
+      }
+    },
+    {
+      "id": "standards-track-count",
+      "question": "How many PEPs have type Standards Track?",
+      "in_corpus": true,
+      "reference": "587 PEPs have type Standards Track.",
+      "expected_source_ids": [],
+      "answer": "587 PEPs have type **Standards Track**.",
+      "contexts": [
+        "SQL: SELECT COUNT(*) FROM peps WHERE type = 'Standards Track'\nRows: [{\"COUNT(*)\": 587}]"
+      ],
+      "wall_ms": 5455.8,
+      "retrieve_ms": 0.0,
+      "llm_ms": 5347.5,
+      "ttft_ms": 5065.6,
+      "providers": {
+        "google": {
+          "input_tokens": 484,
+          "output_tokens": 76,
+          "cost_usd": 0.000648
+        },
+        "openai": {
+          "input_tokens": 197,
+          "output_tokens": 16,
+          "cost_usd": 0.000554
+        }
+      }
+    },
+    {
+      "id": "pep257",
+      "question": "What is PEP 257 about?",
+      "in_corpus": true,
+      "reference": "PEP 257 is the docstring conventions.",
+      "expected_source_ids": [
+        "pep-0257"
+      ],
+      "answer": "PEP 257, titled **\u201cDocstring Conventions,\u201d** describes the semantics and conventions of Python docstrings [pep-0257/00-introduction/0] [pep-0257/01-abstract/0]. It standardizes their high-level structure\u2014what they should contain and how to express it\u2014without prescribing markup syntax. These are conventions, not mandatory rules [pep-0257/02-rationale/0].",
+      "contexts": [
+        "pep-0257/07-copyright/0\nPEP 257: Docstring Conventions. Section: Copyright.\nThis document has been placed in the public domain.",
+        "pep-0257/01-abstract/0\nPEP 257: Docstring Conventions. Section: Abstract.\nThis PEP documents the semantics and conventions associated with\nPython docstrings.",
+        "pep-0257/00-introduction/0\nPEP 257: Docstring Conventions. Section: Introduction.\nPEP: 257\nTitle: Docstring Conventions\nAuthor: David Goodger <goodger@python.org>,\n        Guido van Rossum <guido@python.org>\nDiscussions-To: doc-sig@python.org\nStatus: Active\nType: Informational\nCreated: 29-May-2001\nPost-History: 13-Jun-2001",
+        "pep-0257/02-rationale/0\nPEP 257: Docstring Conventions. Section: Rationale.\nThe aim of this PEP is to standardize the high-level structure of\ndocstrings: what they should contain, and how to say it (without\ntouching on any markup syntax within docstrings).  The PEP contains\nconventions, not laws or syntax.\n\n    \"A universal convention supplies all of maintainability, clarity,\n    consistency, and a foundation for good programming habits too.\n    What it doesn't do is insist that you follow it against your will.\n    Tha",
+        "pep-0257/08-acknowledgements/0\nPEP 257: Docstring Conventions. Section: Acknowledgements.\nThe \"Specification\" text comes mostly verbatim from 8\nby Guido van Rossum.\n\nThis document borrows ideas from the archives of the Python Doc-SIG_.\nThanks to all members past and present.",
+        "Based on the provided passages, PEP 257 is titled \"Docstring Conventions\" [pep-0257/00-introduction/0]. It documents the semantics and conventions associated with Python docstrings [pep-0257/01-abstract/0]. \n\nIts aim is to standardize the high-level structure of docstrings\u2014specifically what they should contain and how to say it (without covering markup syntax within docstrings)\u2014and it provides conventions rather than laws or syntax [pep-0257/02-rationale/0]."
+      ],
+      "wall_ms": 11514.3,
+      "retrieve_ms": 1126.8,
+      "llm_ms": 10337.9,
+      "ttft_ms": 10395.1,
+      "providers": {
+        "google": {
+          "input_tokens": 982,
+          "output_tokens": 186,
+          "cost_usd": 0.001434
+        },
+        "openai": {
+          "input_tokens": 974,
+          "output_tokens": 93,
+          "cost_usd": 0.002878
+        }
+      }
+    },
+    {
+      "id": "world-cup",
+      "question": "Who won the 2026 FIFA World Cup?",
+      "in_corpus": false,
+      "reference": "The Python documentation corpus does not name a winner of the 2026 FIFA World Cup.",
+      "expected_source_ids": [],
+      "answer": "**Spain won the 2026 FIFA World Cup**, defeating Argentina 1\u20130 after extra time on July 19, 2026, according to the supplied [FIFA result](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/final) [tavily-search:1] and [FOX Sports report](https://www.foxsports.com/stories/soccer/world-cup-spain-wins-argentina-lamine-yamal-lionel-messi) [tavily-search:2]. The extracted page from https://www.britannica.com/question/Who-won-the-last-World-Cup also explicitly states that result [tavily-search:0].",
+      "contexts": [
+        "pep-2026/16-yy-0/0\nPEP 2026: Calendar versioning for Python. Section: YY.0.\nFor example, Python 26.0 would be released in 2026.\n\nThere's `not much appetite for Python version 4\n<https://www.techrepublic.com/article/programming-languages-why-python-4-0-will-probably-never-arrive-according-to-its-creator/>`__.\n`We don\u2019t want to repeat 2-to-3\n<https://web.archive.org/web/20220906155615/https://twitter.com/gvanrossum/status/1306082472443084801>`__,\nand 4 has a lot of expectations by now.\nWe don\u2019t want \u201cearth-shatterin",
+        "pep-0494/10-3-6-6-schedule/0\nPEP 494: Python 3.6 Release Schedule. Section: 3.6.6 schedule.\n- 3.6.6 candidate: 2018-06-12\n- 3.6.6 final: 2018-06-27",
+        "pep-0494/15-3-6-11-schedule/0\nPEP 494: Python 3.6 Release Schedule. Section: 3.6.11 schedule.\n- 3.6.11 candidate 1: 2020-06-15\n- 3.6.11 final: 2020-06-27",
+        "pep-2026/16-yy-0/6\nPEP 2026: Calendar versioning for Python. Section: YY.0.\n|                 |                                                    |          |        |\n|                 |    if sys.version[0] == '3':                       |          |        |\n+-----------------+----------------------------------------------------+----------+--------+",
+        "pep-0494/06-3-6-2-schedule/0\nPEP 494: Python 3.6 Release Schedule. Section: 3.6.2 schedule.\n- 3.6.2 candidate 1: 2017-06-17\n- 3.6.2 candidate 2: 2017-07-07\n- 3.6.2 final: 2017-07-17",
+        "tavily-search:0\nOn July 19, 2026, Spain beat Argentina 1\u20130 after extra time to win the 2026 FIFA World Cup. Spanish forward Ferran Torres scored the winning goal in extra time after coming on as a substitute during the match. Argentina won the previous FIFA World Cup, which was held in Qatar in 2022. In a stunning high-scoring final match\u2014in which Kylian Mbapp\u00e9 of France became the first player since 1966 to score three goals in a final\u2014Argentina beat out France in the World Cup\u2019s third shoot-out victory in",
+        "tavily-search:1\nImage 78\n\nImage 79: wordmark 1 1\n\nSpain claimed ultimate glory in front of a crowd of over 80,000 at New York New Jersey Stadium, as they were crowned FIFA World Cup\u2122 champions on Sunday 19 July 2026.\n\nWorld Cup winners in 2010, Spain lifted the Trophy for a second time after defeating three-time champions Argentina 1-0 after extra-time in the Final. [...] Porro \ud83c\uddea\ud83c\uddf8\ud83e\udd29Image 38: Argentina winner \ud83c\udde6\ud83c\uddf7Image 39: Alexis Mac Allister \ud83c\udde6\ud83c\uddf7\ud83d\udc4aImage 40: Julian Alvarez \ud83c\udde6\ud83c\uddf7\ud83e\udd29Image 41: Bellingham Winner \ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f \ud83d\udc4aImage",
+        "tavily-search:2\nPOPULAR SEARCHES\n\nBROWSE BY\n\nDatabricks\nSpain Wins 2026 FIFA World Cup Over Lionel Messi, Argentina\n\n# Spain Wins 2026 FIFA World Cup Over Lionel Messi, Argentina\n\nshare on facebook\nshare on x\nshare on reddit\nshare on link\n\nSpain has won the 2026 FIFA World Cup over Argentina, knocking off Lionel Messi and the reigning champions and capping off a memorable tournament where La Roja only gave up one goal during its eight-game run.",
+        "Based on the provided web results, Spain won the 2026 FIFA World Cup:\n\n* **https://www.britannica.com/question/Who-won-the-last-World-Cup** answers the question, stating that Spain won the 2026 FIFA World Cup by beating Argentina 1\u20130 after extra time on July 19, 2026 [https://www.britannica.com/question/Who-won-the-last-World-Cup].\n* **https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/final** answers the question, stating that Spain were crowned FIFA World Cup champions on Sunday, July 19, 2026, defeating Argentina 1\u20130 after extra-time [https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/final].\n* **https://www.foxsports.com/stories/soccer/world-cup-spain-wins-argentina-lamine-yamal-lionel-messi** answers the question, confirming that Spain won the 2026 FIFA World Cup over Argentina [https://www.foxsports.com/stories/soccer/world-cup-spain-wins-argentina-lamine-yamal-lionel-messi]."
+      ],
+      "wall_ms": 20164.8,
+      "retrieve_ms": 1197.5,
+      "llm_ms": 12365.1,
+      "ttft_ms": 18712.0,
+      "providers": {
+        "google": {
+          "input_tokens": 1728,
+          "output_tokens": 714,
+          "cost_usd": 0.003973
+        },
+        "openai": {
+          "input_tokens": 2498,
+          "output_tokens": 157,
+          "cost_usd": 0.006566
+        }
+      }
+    },
+    {
+      "id": "separate-line-helper",
+      "question": "What does imports_are_on_separate_lines in code_bundle/pep_tools/style.py check?",
+      "in_corpus": true,
+      "reference": "It returns false when one import statement names more than one module, such as import os, sys. A from-import of several names is allowed.",
+      "expected_source_ids": [
+        "pep_tools/style.py"
+      ],
+      "answer": "`imports_are_on_separate_lines(source)` checks that plain `import` statements do not import multiple names\u2014for example, `import os, sys`. It returns `False` if any do, and `True` otherwise (`pep_tools/style.py:33\u201336`). It allows `from module import a, b` because it checks only `ast.Import` nodes (`pep_tools/style.py:28\u201334`).",
+      "contexts": [
+        "`imports_are_on_separate_lines(source)` checks whether any plain `import` statement imports multiple names, such as `import os, sys`. It returns `False` if it finds one; otherwise, it returns `True` (`pep_tools/style.py:33\u201336`).\n\nIt allows `from module import a, b`: the check applies only to `ast.Import` nodes, consistent with the docstring (`pep_tools/style.py:28\u201334`)."
+      ],
+      "wall_ms": 9250.7,
+      "retrieve_ms": 0.0,
+      "llm_ms": 9175.5,
+      "ttft_ms": 8185.0,
+      "providers": {
+        "google": {
+          "input_tokens": 350,
+          "output_tokens": 73,
+          "cost_usd": 0.000536
+        },
+        "openai": {
+          "input_tokens": 649,
+          "output_tokens": 205,
+          "cost_usd": 0.003348
+        }
+      }
+    }
+  ],
+  "scores": {
+    "faithfulness": 0.9778,
+    "answer_relevancy": 0.8497,
+    "context_precision": 0.7085,
+    "context_recall": 0.9
+  },
+  "comparison": [
+    {
+      "id": "imports",
+      "models": {
+        "openai": {
+          "model": "gpt-6.1-sol",
+          "answer": "PEP 8 says imports should usually be on separate lines, such as `import os` followed by `import sys`, rather than `import sys, os`.",
+          "latency_ms": 2164.6,
+          "input_tokens": 57,
+          "output_tokens": 37,
+          "cost_usd": 0.000484
+        },
+        "google": {
+          "model": "gemini-3.8-flash",
+          "answer": "According to PEP 8, imports should usually be on separate lines. For example, importing each module separately is correct, whereas importing multiple modules on the same line (such as \"import sys, os\") is wrong.",
+          "latency_ms": 2333.8,
+          "input_tokens": 52,
+          "output_tokens": 44,
+          "cost_usd": 0.000204
+        }
+      }
+    },
+    {
+      "id": "final-count",
+      "models": {
+        "openai": {
+          "model": "gpt-6.1-sol",
+          "answer": "375 PEPs have status Final.",
+          "latency_ms": 1999.8,
+          "input_tokens": 46,
+          "output_tokens": 12,
+          "cost_usd": 0.000212
+        },
+        "google": {
+          "model": "gemini-3.8-flash",
+          "answer": "There are 375 PEPs that have the status Final.",
+          "latency_ms": 2323.1,
+          "input_tokens": 44,
+          "output_tokens": 14,
+          "cost_usd": 8.6e-05
+        }
+      }
+    },
+    {
+      "id": "blank-lines",
+      "models": {
+        "openai": {
+          "model": "gpt-6.1-sol",
+          "answer": "PEP 8 says to surround top-level function and class definitions with two blank lines, and method definitions inside a class with a single blank line.",
+          "latency_ms": 1536.2,
+          "input_tokens": 60,
+          "output_tokens": 34,
+          "cost_usd": 0.00046
+        },
+        "google": {
+          "model": "gemini-3.8-flash",
+          "answer": "PEP 8 states that top-level function and class definitions should be surrounded with two blank lines, while method definitions inside a class are surrounded by a single blank line.",
+          "latency_ms": 3101.4,
+          "input_tokens": 56,
+          "output_tokens": 256,
+          "cost_usd": 0.001002
+        }
+      }
+    }
+  ],
+  "date": "2026-10-24"
+}

@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import json
+import re
+import sqlite3
 
 from app.json_util import extract_json
 from app.prompts import DATA_PROMPT
 from app.routing import run_task
 from app.trace_util import mark_step, recovered_error, trace_event
 from tools.sqlite_tool import query_database
+
+_SELECT = re.compile(r"(?is)\b(?:select|with)\b[\s\S]+?(?:;|$)")
 
 
 def data_node(state: dict) -> dict:
@@ -30,8 +34,33 @@ def data_node(state: dict) -> dict:
         )
         if not drafted["ok"]:
             raise RuntimeError("sql generation failed")
-        sql = extract_json(drafted["text"])["sql"]
-        result = query_database(sql)
+        try:
+            result = _query_reply(drafted["text"])
+            problem = _version_problem(state["user_query"], result["sql"])
+            if problem:
+                raise ValueError(problem)
+        except (json.JSONDecodeError, TypeError, AttributeError, ValueError, KeyError, sqlite3.Error) as exc:
+            versions = re.findall(r"\b\d+\.\d+\b", state["user_query"])
+            if versions:
+                clauses = " OR ".join(f"python_version LIKE '%{version}%'" for version in versions)
+                result = query_database(f"SELECT COUNT(*) AS n FROM peps WHERE {clauses}")
+            else:
+                retried = run_task(
+                    {
+                        "agent": "data",
+                        "complexity": step["complexity"],
+                        "kind": step["kind"],
+                        "prompt": (
+                            f"{DATA_PROMPT}\n\nThe previous reply failed ({type(exc).__name__}: {exc}). "
+                            "Output one JSON object only. Use the column python_version, not Python-Version.\n\n"
+                            f"Question: {state['user_query']}"
+                        ),
+                    },
+                    routes,
+                )
+                if not retried["ok"]:
+                    raise RuntimeError("sql generation failed")
+                result = _query_reply(retried["text"])
         text = "SQL: {sql}\nRows: {rows}".format(sql=result["sql"], rows=json.dumps(result["rows"]))
         status = "done"
     except Exception as exc:
@@ -45,6 +74,31 @@ def data_node(state: dict) -> dict:
         "errors": errors,
         "trace": [entry, trace_event("data", "exit", status)],
     }
+
+
+def _version_problem(question: str, sql: str) -> str:
+    missing = [item for item in re.findall(r"\b\d+\.\d+\b", question) if item not in sql]
+    if not missing:
+        return ""
+    versions = ", ".join(missing)
+    return f"the question asks for version {versions}, but the SQL does not filter for it"
+
+
+def _query_reply(text: str) -> dict:
+    return query_database(_sql_from_text(text))
+
+
+def _sql_from_text(text: str) -> str:
+    try:
+        payload = extract_json(text)
+    except json.JSONDecodeError:
+        payload = None
+    if isinstance(payload, dict) and payload.get("sql"):
+        return str(payload["sql"])
+    match = _SELECT.search(text or "")
+    if not match:
+        raise ValueError("no SQL statement in the model reply")
+    return match.group(0).strip().rstrip(";").strip()
 
 
 def _step(state: dict) -> dict:
