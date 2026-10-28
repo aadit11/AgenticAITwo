@@ -6,7 +6,7 @@ I built this in Cursor with Grok, working phase by phase from `plan.md`. API key
 
 ## What worked and where I got stuck
 
-The supervisor graph, the Chroma index, and the two-column page landed in order. Retrieval and scoring were the stalls. A rewritten query outranked the PEP 8 imports passage until chunks from a PEP named in the question were kept. RAGAS then asked Gemini for several completions at once, which that model rejects, and a second attempt sent `max_tokens` to GPT 6.1 Sol, which that model also rejects. Scores landed after the judge stayed on Gemini and each call asked for one completion.
+The supervisor graph, the Chroma index, and the two-column page all came together without much trouble. The real obstacles were retrieval and scoring. A rewritten query kept ranking above the PEP 8 imports passage, and that only stopped once chunks from any PEP mentioned in the question were preserved. Next, RAGAS asked Gemini for multiple completions in a single request, which Gemini doesn't support. A second attempt passed `max_tokens` to GPT 6.1 Sol, which also rejected it. Scoring finally worked once the judge stayed on Gemini and each call requested just one completion.
 
 ## How I tested beyond "it ran"
 
@@ -14,4 +14,4 @@ Phase scripts check a chunk count, a named PEP hit, a route log, a recovered wor
 
 ## What I had to figure out myself
 
-The router may look only at plan complexity, so the supervisor never reads the question. GPT 6.1 Sol calls go through the Responses API. Tavily uses one MCP URL, with the key in the query string: Research searches, and Summary extracts a URL Research already returned. `langchain-community` stays at 0.4.1 because 0.4.2 breaks the RAGAS import. The server stores nothing between requests. The browser sends history, and a refresh starts over.
+Routing can depend only on how complex the plan is, so the supervisor never sees the question itself. Calls to GPT 6.1 Sol are made through the Responses API. Tavily is reached through a single MCP URL with the key placed in the query string: Research handles the searches, while Summary pulls the content of a URL that Research already returned. `langchain-community` is pinned at 0.4.1 because version 0.4.2 breaks the RAGAS import. Nothing is kept on the server between requests. The browser supplies the history, so refreshing the page starts a fresh conversation.
