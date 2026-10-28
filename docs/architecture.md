@@ -35,7 +35,27 @@ Chunk ids are stable: `doc_id/section-index-slug/piece`. Re-running `ingest/buil
 
 Ingest does not run when the server starts. `ingest/download_corpus.py` fetches the archives. `ingest/build_index.py` chunks, embeds, and writes Chroma.
 
-Retrieval is retrieve, then augment, then generate. Research rewrites the question with a low-complexity call, retrieves `k=5` for the rewrite and `k=5` for the original question, and merges the hits. If the question names a PEP, chunks for that PEP are kept even when the rewrite scores higher. The named-PEP lookup reads a wider pool and can add one more passage from that PEP when it contains a question word the first five passages lack. The generation prompt is `RESEARCH_PROMPT` in `app/prompts.py`. It tells the model to answer only from the appended passages, cite each claim with a chunk id, and not invent a PEP accepted after the snapshot. Each passage appended under `Passages:` is the full chunk.
+Retrieval is retrieve, then augment, then generate. Research rewrites the question with a low-complexity call, retrieves `k=5` for the rewrite and `k=5` for the original question, and merges the hits. If the question names a PEP, chunks for that PEP are kept even when the rewrite scores higher. The named-PEP lookup reads a wider pool and can add one more passage from that PEP when it contains a question word the first five passages lack. The augmentation prompt is the string Research sends to the generator. It is `RESEARCH_PROMPT` from `app/prompts.py`, then the retrieved passages, then any web results, then the question:
+
+```text
+You are the research agent. Answer only from the retrieved passages.
+Cite every claim with the chunk id in square brackets, for example [pep-0008/09-imports/0].
+If the passages do not support the answer, say that the corpus does not contain it.
+The corpus snapshot date is 2026-10-24. Do not invent PEPs accepted after that date.
+Do not use outside knowledge to fill gaps in the passages.
+When web results are included, name each URL and say whether it answers the question. Cite those claims with the result URL. Do not invent a URL.
+
+Passages:
+[{chunk_id}] {title} / {section}
+{full chunk text}
+
+Web results:
+{web passages, or None.}
+
+Question: {user question}
+```
+
+Each block under `Passages:` is one retrieved chunk, and the text is the full chunk rather than a shortened excerpt. Web hits are not repeated in that block. They appear only under `Web results:`.
 
 ## PEP table
 

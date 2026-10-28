@@ -77,7 +77,11 @@ def _validate_plan(payload) -> list[dict] | None:
 
 
 def plan_node(state: dict) -> dict:
-    entry = trace_event("plan", "enter", "write plan")
+    entry = trace_event(
+        "plan",
+        "enter",
+        "Reading the question and choosing which agents should run. This step does not answer the question.",
+    )
     routes: list[dict] = []
     history = state.get("history") or []
     result = run_task(
@@ -98,8 +102,17 @@ def plan_node(state: dict) -> dict:
             plan = None
     if plan is None:
         plan = _fallback_plan()
-        events.append(trace_event("plan", "fallback", "invalid planner JSON; using one research step"))
-    events.append(trace_event("plan", "exit", ",".join(step["agent"] for step in plan)))
+        events.append(
+            trace_event(
+                "plan",
+                "fallback",
+                "The planner reply was not valid JSON, so the desk will run one Research lookup.",
+            )
+        )
+    described = "; ".join(
+        f"{step['id']} {step['agent']} ({step['complexity']}): {step['reason']}" for step in plan
+    )
+    events.append(trace_event("plan", "exit", f"The plan is {described}."))
     return {"plan": plan, "route_log": routes, "trace": events}
 
 
@@ -117,7 +130,13 @@ def supervisor_node(state: dict) -> dict:
             step["status"] = "failed"
             why = "a dependency is missing" if missing else "dependency " + ", ".join(blocked) + " failed"
             errors.append(recovered_error(step["agent"], f"skipped because {why}"))
-            events.append(trace_event("supervisor", "skip", f"id={step['id']} agent={step['agent']} {why}"))
+            events.append(
+                trace_event(
+                    "supervisor",
+                    "skip",
+                    f"Skipped {step['agent']} ({step['id']}) because {why}. Later steps that do not depend on it can still run.",
+                )
+            )
             continue
         if any(by_id[dep]["status"] != "done" for dep in step["depends_on"]):
             continue
@@ -126,7 +145,7 @@ def supervisor_node(state: dict) -> dict:
             trace_event(
                 "supervisor",
                 "route",
-                f"next={step['agent']} id={step['id']} reason={step['reason']}",
+                f"Handing step {step['id']} to {step['agent']}. Reason: {step['reason']}",
             )
         )
         return {
@@ -136,7 +155,13 @@ def supervisor_node(state: dict) -> dict:
             "errors": errors,
             "trace": events,
         }
-    events.append(trace_event("supervisor", "route", "planned steps are finished; next=summary"))
+    events.append(
+        trace_event(
+            "supervisor",
+            "route",
+            "The planned workers are finished. Handing their notes to Summary, which writes the final answer.",
+        )
+    )
     return {
         "plan": plan,
         "next_node": "summary",

@@ -34,14 +34,14 @@
       {
         "node": "supervisor",
         "event": "skip",
-        "detail": "id=s2 agent=code dependency s1 failed",
-        "ts": "2026-10-25T03:08:46.789639+00:00"
+        "detail": "Skipped code (s2) because dependency s1 failed. Later steps that do not depend on it can still run.",
+        "ts": "2026-10-28T02:18:39.978051+00:00"
       },
       {
         "node": "supervisor",
         "event": "route",
-        "detail": "planned steps are finished; next=summary",
-        "ts": "2026-10-25T03:08:46.789677+00:00"
+        "detail": "The planned workers are finished. Handing their notes to Summary, which writes the final answer.",
+        "ts": "2026-10-28T02:18:39.978096+00:00"
       }
     ]
   },
@@ -100,67 +100,67 @@
         "recovered": true
       }
     ],
-    "final_answer": "PEP 8 says imports should usually be on separate lines. [pep-0008/09-imports/0] The number of PEPs with status Final could not be determined from the PEP table: the data agent failed, and the code agent was skipped because its dependency failed; both errors were marked recovered, but no count was returned.",
+    "final_answer": "PEP 8 says imports should usually be on separate lines. [pep-0008/09-imports/0] The number of PEPs with status **Final** could not be determined: the data agent failed to obtain the count from the PEP table, and the code agent was skipped because of that dependency failure.",
     "trace": [
       {
         "node": "plan",
         "event": "exit",
         "detail": "research,data,code",
-        "ts": "2026-10-25T03:08:46.889878+00:00"
+        "ts": "2026-10-28T02:18:40.050804+00:00"
       },
       {
         "node": "supervisor",
         "event": "route",
-        "detail": "next=research id=s1 reason=research step s1",
-        "ts": "2026-10-25T03:08:46.891880+00:00"
+        "detail": "Handing step s1 to research. Reason: research step s1",
+        "ts": "2026-10-28T02:18:40.051868+00:00"
       },
       {
         "node": "research",
         "event": "exit",
         "detail": "done",
-        "ts": "2026-10-25T03:08:46.894244+00:00"
+        "ts": "2026-10-28T02:18:40.053794+00:00"
       },
       {
         "node": "supervisor",
         "event": "route",
-        "detail": "next=data id=s2 reason=data step s2",
-        "ts": "2026-10-25T03:08:46.895567+00:00"
+        "detail": "Handing step s2 to data. Reason: data step s2",
+        "ts": "2026-10-28T02:18:40.054662+00:00"
       },
       {
         "node": "data",
         "event": "enter",
-        "detail": "s2",
-        "ts": "2026-10-25T03:08:46.897076+00:00"
+        "detail": "Starting s2. Data writes one read-only SELECT and runs it on the PEP table.",
+        "ts": "2026-10-28T02:18:40.056887+00:00"
       },
       {
         "node": "data",
         "event": "exit",
-        "detail": "failed",
-        "ts": "2026-10-25T03:08:46.897125+00:00"
+        "detail": "Data failed. The supervisor will still continue, and Summary will name the failure.",
+        "ts": "2026-10-28T02:18:40.057199+00:00"
       },
       {
         "node": "supervisor",
         "event": "skip",
-        "detail": "id=s3 agent=code dependency s2 failed",
-        "ts": "2026-10-25T03:08:46.898102+00:00"
+        "detail": "Skipped code (s3) because dependency s2 failed. Later steps that do not depend on it can still run.",
+        "ts": "2026-10-28T02:18:40.058083+00:00"
       },
       {
         "node": "supervisor",
         "event": "route",
-        "detail": "planned steps are finished; next=summary",
-        "ts": "2026-10-25T03:08:46.898120+00:00"
+        "detail": "The planned workers are finished. Handing their notes to Summary, which writes the final answer.",
+        "ts": "2026-10-28T02:18:40.058094+00:00"
       },
       {
         "node": "summary",
         "event": "enter",
-        "detail": "merge",
-        "ts": "2026-10-25T03:08:46.899638+00:00"
+        "detail": "Writing one answer from the worker notes. Summary keeps their citations and names any worker that failed.",
+        "ts": "2026-10-28T02:18:40.059601+00:00"
       },
       {
         "node": "summary",
         "event": "exit",
-        "detail": "done",
-        "ts": "2026-10-25T03:08:51.364128+00:00"
+        "detail": "The answer is complete.",
+        "ts": "2026-10-28T02:18:46.139745+00:00"
       }
     ]
   }

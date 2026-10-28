@@ -143,13 +143,45 @@ function applyEvent(kind, payload, assistant, view) {
   traceList.scrollTop = traceList.scrollHeight;
 }
 
+const TRACE_TITLES = {
+  "plan enter": "Planner",
+  "plan exit": "Plan",
+  "plan fallback": "Planner fallback",
+  "plan model": "Planner model",
+  "supervisor route": "Supervisor",
+  "supervisor skip": "Supervisor skipped a step",
+  "research enter": "Research",
+  "research retrieve": "Corpus search",
+  "research tool": "Research web search",
+  "research exit": "Research finished",
+  "research model": "Research model",
+  "data enter": "Data",
+  "data query": "PEP table query",
+  "data exit": "Data finished",
+  "data model": "Data model",
+  "code enter": "Code",
+  "code read": "Code file",
+  "code exit": "Code finished",
+  "code model": "Code model",
+  "summary enter": "Summary",
+  "summary tool": "Summary web tool",
+  "summary exit": "Summary finished",
+  "summary model": "Summary model",
+  "planner model": "Planner model",
+  "graph error": "Graph stopped",
+};
+
 function addTrace(node, event, detail) {
   const item = document.createElement("li");
   if (event === "error") item.className = "error";
   const name = document.createElement("span");
   name.className = "node";
-  name.textContent = `${node || "graph"} ${event || ""}`.trim();
-  item.append(name, document.createTextNode(` ${detail || ""}`.trimEnd()));
+  const key = `${node || "graph"} ${event || ""}`.trim();
+  name.textContent = TRACE_TITLES[key] || key;
+  const body = document.createElement("p");
+  body.className = "trace-detail";
+  body.textContent = detail || "";
+  item.append(name, body);
   traceList.appendChild(item);
 }
 

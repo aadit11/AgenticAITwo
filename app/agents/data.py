@@ -17,7 +17,11 @@ _SELECT = re.compile(r"(?is)\b(?:select|with)\b[\s\S]+?(?:;|$)")
 
 def data_node(state: dict) -> dict:
     step_id = str(state.get("current_step_id") or "")
-    entry = trace_event("data", "enter", step_id)
+    entry = trace_event(
+        "data",
+        "enter",
+        f"Starting {step_id or 'the data step'}. Data writes one read-only SELECT and runs it on the PEP table.",
+    )
     routes: list[dict] = []
     errors: list[dict] = []
     try:
@@ -62,17 +66,32 @@ def data_node(state: dict) -> dict:
                     raise RuntimeError("sql generation failed")
                 result = _query_reply(retried["text"])
         text = "SQL: {sql}\nRows: {rows}".format(sql=result["sql"], rows=json.dumps(result["rows"]))
+        query_note = trace_event(
+            "data",
+            "query",
+            f"Ran `{result['sql']}`. The table returned {len(result['rows'])} row(s).",
+        )
         status = "done"
     except Exception as exc:
         text = "Data could not answer from the PEP table."
+        query_note = None
         status = "failed"
         errors.append(recovered_error("data", type(exc).__name__))
+    exit_detail = (
+        "Finished. The rows go back to the supervisor."
+        if status == "done"
+        else "Data failed. The supervisor will still continue, and Summary will name the failure."
+    )
+    traces = [entry]
+    if query_note:
+        traces.append(query_note)
+    traces.append(trace_event("data", "exit", exit_detail))
     return {
         "plan": mark_step(state["plan"], step_id, status),
         "agent_outputs": {step_id: text},
         "route_log": routes,
         "errors": errors,
-        "trace": [entry, trace_event("data", "exit", status)],
+        "trace": traces,
     }
 
 

@@ -1,0 +1,2797 @@
+{
+  "results": [
+    {
+      "id": "p-pep2",
+      "question": "Answer from the PEP table only. What is the title and status of PEP 2?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6580.5,
+      "errors": [],
+      "answer": "PEP 2 is titled **\u201cProcedure for Adding New Modules\u201d** and its status is **Active**."
+    },
+    {
+      "id": "p-pep3",
+      "question": "Answer from the PEP table only. What is the status of PEP 3?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 7300.6,
+      "errors": [],
+      "answer": "PEP 3 has the status **Withdrawn**."
+    },
+    {
+      "id": "p-pep9",
+      "question": "Answer from the PEP table only. What is the title and status of PEP 9?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4923.8,
+      "errors": [],
+      "answer": "PEP 9 is titled **\u201cSample Plaintext PEP Template\u201d** and its status is **Withdrawn**."
+    },
+    {
+      "id": "p-pep12",
+      "question": "Answer from the PEP table only. What is the title and status of PEP 12?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5516.8,
+      "errors": [],
+      "answer": "PEP 12 is titled **\u201cSample reStructuredText PEP Template\u201d** and its status is **Active**."
+    },
+    {
+      "id": "p-pep103",
+      "question": "Answer from the PEP table only. What is the status and type of PEP 103?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5682.5,
+      "errors": [],
+      "answer": "PEP 103 has status **Withdrawn** and type **Informational**."
+    },
+    {
+      "id": "p-pep208",
+      "question": "Answer from the PEP table only. What is the title of PEP 208, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6807.6,
+      "errors": [],
+      "answer": "PEP 208 is titled **\u201cReworking the Coercion Model\u201d**, and the table records Python version **2.1**."
+    },
+    {
+      "id": "p-pep210",
+      "question": "Answer from the PEP table only. What is the status of PEP 210?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4247.3,
+      "errors": [],
+      "answer": "PEP 210 has a status of **Rejected**."
+    },
+    {
+      "id": "p-pep218",
+      "question": "Answer from the PEP table only. What is the title of PEP 218, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4665.5,
+      "errors": [],
+      "answer": "PEP 218 is titled **\u201cAdding a Built-In Set Object Type\u201d**, and the table records Python version **2.2**."
+    },
+    {
+      "id": "p-pep223",
+      "question": "Answer from the PEP table only. What is the status of PEP 223, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5053.9,
+      "errors": [],
+      "answer": "PEP 223 is **Final**, and the PEP table records Python version **2.0**."
+    },
+    {
+      "id": "p-pep235",
+      "question": "Answer from the PEP table only. What is the title of PEP 235?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5021.1,
+      "errors": [],
+      "answer": "The title of PEP 235 is **\u201cImport on Case-Insensitive Platforms.\u201d**"
+    },
+    {
+      "id": "p-pep237",
+      "question": "Answer from the PEP table only. What is the title of PEP 237, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5615.3,
+      "errors": [],
+      "answer": "PEP 237 is titled **\u201cUnifying Long Integers and Integers\u201d**, and the table records Python version **2.2**."
+    },
+    {
+      "id": "p-pep238",
+      "question": "Answer from the PEP table only. What is the title of PEP 238, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5328.3,
+      "errors": [],
+      "answer": "PEP 238 is titled **\u201cChanging the Division Operator\u201d**, and the PEP table records Python version **2.2**."
+    },
+    {
+      "id": "p-pep241",
+      "question": "Answer from the PEP table only. What is the status of PEP 241?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4721.9,
+      "errors": [],
+      "answer": "PEP 241 has a status of **Superseded**."
+    },
+    {
+      "id": "p-pep247",
+      "question": "Answer from the PEP table only. What is the title and type of PEP 247?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4953.3,
+      "errors": [],
+      "answer": "PEP 247 is titled **\u201cAPI for Cryptographic Hash Functions\u201d** and its type is **Informational**."
+    },
+    {
+      "id": "p-pep248",
+      "question": "Answer from the PEP table only. What is the title of PEP 248?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5071.7,
+      "errors": [],
+      "answer": "Python Database API Specification v1.0"
+    },
+    {
+      "id": "p-pep252",
+      "question": "Answer from the PEP table only. What is the title of PEP 252, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4766.9,
+      "errors": [],
+      "answer": "PEP 252 is titled **\u201cMaking Types Look More Like Classes\u201d**, and the table records Python version **2.2**."
+    },
+    {
+      "id": "p-pep261",
+      "question": "Answer from the PEP table only. What is the title of PEP 261, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6364.5,
+      "errors": [],
+      "answer": "PEP 261 is titled **Support for \"wide\" Unicode characters**, and the table records Python version **2.2**."
+    },
+    {
+      "id": "p-pep267",
+      "question": "Answer from the PEP table only. What is the status of PEP 267?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6703.1,
+      "errors": [],
+      "answer": "PEP 267 has status **Deferred**."
+    },
+    {
+      "id": "p-pep273",
+      "question": "Answer from the PEP table only. What is the title of PEP 273, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 7076.7,
+      "errors": [],
+      "answer": "PEP 273 is titled **\u201cImport Modules from Zip Archives\u201d**, and the PEP table records Python version **2.3**."
+    },
+    {
+      "id": "p-pep277",
+      "question": "Answer from the PEP table only. What is the title of PEP 277, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5872.4,
+      "errors": [],
+      "answer": "PEP 277 is titled **\u201cUnicode file name support for Windows NT\u201d**, and the table records **Python 2.3**."
+    },
+    {
+      "id": "p-pep279",
+      "question": "Answer from the PEP table only. What is the title of PEP 279, and which Python version does the table record?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6428.1,
+      "errors": [],
+      "answer": "PEP 279 is titled **\u201cThe enumerate() built-in function\u201d**, and the PEP table records Python version **2.3**."
+    },
+    {
+      "id": "p-pep228",
+      "question": "Answer from the PEP table only. What is the status of PEP 228?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5828.2,
+      "errors": [],
+      "answer": "PEP 228 has a status of **Withdrawn**."
+    },
+    {
+      "id": "p-eric",
+      "question": "Answer from the PEP table only. How many PEP rows list Eric V. Smith as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4969.9,
+      "errors": [],
+      "answer": "4 PEP rows list Eric V. Smith as an author."
+    },
+    {
+      "id": "p-yury",
+      "question": "Answer from the PEP table only. How many PEP rows list Yury Selivanov as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5858.5,
+      "errors": [],
+      "answer": "9 PEP rows list Yury Selivanov as an author."
+    },
+    {
+      "id": "p-pablo",
+      "question": "Answer from the PEP table only. How many PEP rows list Pablo Galindo as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6097.8,
+      "errors": [],
+      "answer": "15 PEP rows list Pablo Galindo as an author."
+    },
+    {
+      "id": "p-antoine",
+      "question": "Answer from the PEP table only. How many PEP rows list Antoine Pitrou as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5997.0,
+      "errors": [],
+      "answer": "13 PEP rows list Antoine Pitrou as an author."
+    },
+    {
+      "id": "p-brandt",
+      "question": "Answer from the PEP table only. How many PEP rows list Brandt Bucher as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5831.0,
+      "errors": [],
+      "answer": "7 PEP rows list Brandt Bucher as an author."
+    },
+    {
+      "id": "p-larry",
+      "question": "Answer from the PEP table only. How many PEP rows list Larry Hastings as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4909.1,
+      "errors": [],
+      "answer": "8 PEP rows list Larry Hastings as an author."
+    },
+    {
+      "id": "p-ivan",
+      "question": "Answer from the PEP table only. How many PEP rows list Ivan Levkivskyi as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 4982.1,
+      "errors": [],
+      "answer": "8 PEP rows list Ivan Levkivskyi as an author."
+    },
+    {
+      "id": "p-steven",
+      "question": "Answer from the PEP table only. How many PEP rows list Steven D'Aprano as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5540.7,
+      "errors": [],
+      "answer": "3 PEP rows list Steven D'Aprano as an author."
+    },
+    {
+      "id": "p-carl",
+      "question": "Answer from the PEP table only. How many PEP rows list Carl Meyer as an author?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 7113.1,
+      "errors": [],
+      "answer": "4 PEP rows list Carl Meyer as an author."
+    },
+    {
+      "id": "p-year-2003",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2003?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 8044.5,
+      "errors": [],
+      "answer": "27 PEP rows have a Created date in 2003."
+    },
+    {
+      "id": "p-year-2006",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2006?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 10655.2,
+      "errors": [],
+      "answer": "23 PEP rows have a Created date in 2006."
+    },
+    {
+      "id": "p-year-2011",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2011?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 7504.3,
+      "errors": [],
+      "answer": "16 PEP rows have a Created date in 2011."
+    },
+    {
+      "id": "p-year-2018",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2018?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 7270.2,
+      "errors": [],
+      "answer": "26 PEP rows have a Created date in 2018."
+    },
+    {
+      "id": "p-year-2022",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2022?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 8101.0,
+      "errors": [],
+      "answer": "25 PEP rows have a Created date in 2022."
+    },
+    {
+      "id": "p-year-2026",
+      "question": "Answer from the PEP table only. How many PEP rows have a Created date in 2026?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5672.9,
+      "errors": [],
+      "answer": "29 PEP rows have a Created date in 2026."
+    },
+    {
+      "id": "p-withdrawn-info",
+      "question": "Answer from the PEP table only. How many PEPs are both status Withdrawn and type Informational?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 6536.3,
+      "errors": [],
+      "answer": "11 PEPs are both Withdrawn and Informational."
+    },
+    {
+      "id": "p-rejected-info",
+      "question": "Answer from the PEP table only. How many PEPs are both status Rejected and type Informational?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5247.2,
+      "errors": [],
+      "answer": "12 PEPs are both Rejected and Informational."
+    },
+    {
+      "id": "p-superseded-process",
+      "question": "Answer from the PEP table only. How many PEPs are both status Superseded and type Process?",
+      "need": [
+        "data"
+      ],
+      "forbid": [
+        "research",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 5167.8,
+      "errors": [],
+      "answer": "3 PEPs are both Superseded and Process."
+    },
+    {
+      "id": "p-zen-complex",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line that begins with Complex.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 22635.6,
+      "errors": [],
+      "answer": "\u201cComplex is better than complicated.\u201d \u2014 [PEP 20, The Zen of Python](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-special",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about special cases.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 8083.2,
+      "errors": [],
+      "answer": "[PEP 20 \u2014 The Zen of Python](https://peps.python.org/pep-0020/) states: \u201cSpecial cases aren't special enough to break the rules.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-practicality",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about practicality.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 14042.4,
+      "errors": [],
+      "answer": "[PEP 20 \u2014 The Zen of Python](https://peps.python.org/pep-0020/) states: \u201cAlthough practicality beats purity.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-silenced",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about explicitly silenced errors.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 8590.3,
+      "errors": [],
+      "answer": "\u201cUnless explicitly silenced.\u201d \u2014 [PEP 20, *The Zen of Python*](https://peps.python.org/pep-0020/), immediately following \u201cErrors should never pass silently.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-now",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line that begins with Now.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 9801.1,
+      "errors": [],
+      "answer": "\u201cNow is better than never.\u201d \u2014 [PEP 20, The Zen of Python](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-never",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line that says never is often better than right now.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 9316.2,
+      "errors": [],
+      "answer": "\u201cAlthough never is often better than *right* now.\u201d \u2014 [PEP 20, The Zen of Python](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-hard",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about an implementation that is hard to explain.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 10030.7,
+      "errors": [],
+      "answer": "> \u201cIf the implementation is hard to explain, it's a bad idea.\u201d\n\n\u2014 [PEP 20, *The Zen of Python*](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-easy",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about an implementation that is easy to explain.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 10110.2,
+      "errors": [],
+      "answer": "[PEP 20 \u2014 The Zen of Python](https://peps.python.org/pep-0020/) states:\n\n> \u201cIf the implementation is easy to explain, it may be a good idea.\u201d [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-one-way",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line about one obvious way to do it.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 7730.1,
+      "errors": [],
+      "answer": "From [PEP 20 \u2014 The Zen of Python](https://peps.python.org/pep-0020/):\n\n> There should be one-- and preferably only one --obvious way to do it.\n\n[pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-pep8-72",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What line length does PEP 8 recommend for comments and docstrings?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 10234.3,
+      "errors": [],
+      "answer": "[PEP 8\u2019s \u201cMaximum Line Length\u201d section](https://peps.python.org/pep-0008/#maximum-line-length) recommends **72 characters per line for comments and docstrings**, specifically flowing blocks of text [pep-0008/05-maximum-line-length/0]. They should still be wrapped at 72 characters even when a team allows code lines up to 99 characters [pep-0008/05-maximum-line-length/1]."
+    },
+    {
+      "id": "p-pep8-trailing",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What does PEP 8 say about trailing whitespace?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 9198.5,
+      "errors": [],
+      "answer": "[PEP 8](https://peps.python.org/pep-0008/) says: **\u201cAvoid trailing whitespace anywhere.\u201d** It explains that trailing whitespace is usually invisible and can cause confusion\u2014for example, a backslash followed by a space and a newline does **not** count as a line-continuation marker. Some editors do not preserve trailing whitespace, and many projects, including CPython, have pre-commit hooks that reject it. [pep-0008/13-other-recommendations/0]"
+    },
+    {
+      "id": "p-pep8-groups",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. In what order does PEP 8 group imports?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 11377.1,
+      "errors": [],
+      "answer": "[PEP 8\u2019s Imports section](https://peps.python.org/pep-0008/#imports) specifies this order:\n\n1. Standard library imports.\n2. Related third-party imports.\n3. Local application/library-specific imports.\n\nPut a blank line between each group. [pep-0008/09-imports/0]"
+    },
+    {
+      "id": "p-pep8-mix",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Does PEP 8 allow mixing tabs and spaces for indentation?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 8913.3,
+      "errors": [],
+      "answer": "No. PEP 8\u2019s [\u201cTabs or Spaces?\u201d section](https://peps.python.org/pep-0008/#tabs-or-spaces) explicitly states: \u201cPython disallows mixing tabs and spaces for indentation.\u201d [pep-0008/04-tabs-or-spaces/0]"
+    },
+    {
+      "id": "p-pep257-phrase",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What does PEP 257 say a one-line docstring should be, a phrase or a sentence fragment?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 7765.9,
+      "errors": [],
+      "answer": "PEP 257 says a one-line docstring is **\u201ca phrase ending in a period,\u201d** not a \u201csentence fragment.\u201d See the \u201cOne-line Docstrings\u201d section of [PEP 257](https://peps.python.org/pep-0257/) [pep-0257/04-one-line-docstrings/0]."
+    },
+    {
+      "id": "p-glossary-list",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What does the Python glossary say a list is?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing one of mutable, sequence",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 8815.8,
+      "errors": [],
+      "answer": "The provided excerpts from the [Python glossary](https://docs.python.org/3/glossary.html) do not include the definition of **list**, so I can\u2019t establish its wording from this material. The retrieved chunks are `glossary/00-glossary/27`, `glossary/00-glossary/56`, `glossary/00-glossary/47`, `glossary/00-glossary/64`, and `glossary/00-glossary/52`; the closest entry is **list comprehension**, not **list**."
+    },
+    {
+      "id": "p-glossary-tuple",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What does the Python glossary say a tuple is?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing one of immutable, sequence",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 8510.9,
+      "errors": [],
+      "answer": "The retrieved passages from the [Python glossary](https://docs.python.org/3/glossary.html) do **not include a definition of \u201ctuple\u201d**, so they do not establish what the glossary says a tuple is. They cover \u201cnamed tuple\u201d and other entries instead. [glossary/00-glossary/62, glossary/00-glossary/63, glossary/00-glossary/92]"
+    },
+    {
+      "id": "p-glossary-dict",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. What does the Python glossary say a dictionary is?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 9058.9,
+      "errors": [],
+      "answer": "The [Python glossary](https://docs.python.org/3/glossary.html) defines a dictionary as \u201can associative array, where arbitrary keys are mapped to values.\u201d It adds that keys can be any object with `__hash__()` and `__eq__()` methods, and that a dictionary is called a \u201chash\u201d in Perl. [glossary/00-glossary/26]"
+    },
+    {
+      "id": "p-pep20-counts",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line that says readability counts.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 7915.0,
+      "errors": [],
+      "answer": "\u201cReadability counts.\u201d \u2014 [PEP 20, *The Zen of Python*](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-pep8-operators",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Does PEP 8 put spaces around the assignment operator in a keyword argument?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 7718.5,
+      "errors": [],
+      "answer": "No. [PEP 8](https://peps.python.org/pep-0008/) explicitly says: \u201cDon't use spaces around the `=` sign when used to indicate a keyword argument.\u201d [pep-0008/13-other-recommendations/1]"
+    },
+    {
+      "id": "p-pep1-author",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. According to PEP 1, what does the abbreviation PEP stand for?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 7504.7,
+      "errors": [],
+      "answer": "According to [PEP 1](https://peps.python.org/pep-0001/), **PEP** stands for **Python Enhancement Proposal** [pep-0001/01-what-is-a-pep/0]."
+    },
+    {
+      "id": "p-pep8-blank-top",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. How many blank lines does PEP 8 put around top-level function and class definitions?",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 10981.1,
+      "errors": [],
+      "answer": "PEP 8 says to surround top-level function and class definitions with **two blank lines**. [pep-0008/07-blank-lines/0]"
+    },
+    {
+      "id": "p-zen-ugly",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the first line of the Zen of Python.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 11601.7,
+      "errors": [],
+      "answer": "\u201cBeautiful is better than ugly.\u201d \u2014 [PEP 20, *The Zen of Python*](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-zen-nested",
+      "question": "Answer from the Python documentation or PEP text, not from the table or code bundle. Quote the Zen of Python line that begins with Flat.",
+      "need": [
+        "research"
+      ],
+      "forbid": [
+        "data",
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "summary:openai"
+      ],
+      "ms": 11097.6,
+      "errors": [],
+      "answer": "\u201cFlat is better than nested.\u201d \u2014 [PEP 20: The Zen of Python](https://peps.python.org/pep-0020/) [pep-0020/02-the-zen-of-python/0]"
+    },
+    {
+      "id": "p-url-2",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(2) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10981.7,
+      "errors": [],
+      "answer": "`pep_url(2)` returns `https://peps.python.org/pep-0002/`. The `04d` format pads the number to four digits with leading zeros (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-url-12",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(12) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10336.5,
+      "errors": [],
+      "answer": "`pep_url(12)` returns **`https://peps.python.org/pep-0012/`**. The `04d` format pads `12` to `0012` (chunk `s1`, `pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-url-279",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(279) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 7968.6,
+      "errors": [],
+      "answer": "`pep_url(279)` returns `https://peps.python.org/pep-0279/`. The `04d` format pads the number to four digits with leading zeros (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-url-484",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(484) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10609.9,
+      "errors": [],
+      "answer": "`pep_url(484)` returns **`https://peps.python.org/pep-0484/`**. The `{number:04d}` format pads 484 to four digits with a leading zero (chunk `s1`, `pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-url-703",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(703) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8283.9,
+      "errors": [],
+      "answer": "`pep_url(703)` returns `https://peps.python.org/pep-0703/`. The `04d` format pads the number to four digits (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-url-8107",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(8107) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10373.6,
+      "errors": [],
+      "answer": "`pep_url(8107)` returns **`https://peps.python.org/pep-8107/`**. The function formats the number with at least four digits, leaving `8107` unchanged (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-format-2",
+      "question": "Answer from code_bundle/pep_tools only. What string does format_pep_reference(2, 'Procedure for Adding New Modules') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 12981.8,
+      "errors": [],
+      "answer": "```text\nPEP 2: Procedure for Adding New Modules (https://peps.python.org/pep-0002/)\n```\n\n`format_pep_reference` builds the citation (`pep_tools/references.py:13\u201314`), and `pep_url(2)` formats the URL with four digits (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-format-279",
+      "question": "Answer from code_bundle/pep_tools only. What string does format_pep_reference(279, 'The enumerate() built-in function') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10891.1,
+      "errors": [],
+      "answer": "```text\nPEP 279: The enumerate() built-in function (https://peps.python.org/pep-0279/)\n```\n\nThe citation is formatted at `pep_tools/references.py:13\u201314`; the URL helper pads `279` to `0279` at `pep_tools/references.py:8`."
+    },
+    {
+      "id": "p-format-spaces",
+      "question": "Answer from code_bundle/pep_tools only. What string does format_pep_reference return for number 435 and title '  Enum   Type  ' after it cleans whitespace?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8840.7,
+      "errors": [],
+      "answer": "`format_pep_reference(435, '  Enum   Type  ')` returns:\n\n```text\nPEP 435: Enum Type (https://peps.python.org/pep-0435/)\n```\n\nWhitespace is collapsed at `pep_tools/references.py:13`, the number is padded to four digits at `pep_tools/references.py:8`, and the string is assembled at `pep_tools/references.py:14`."
+    },
+    {
+      "id": "p-url-401",
+      "question": "Answer from code_bundle/pep_tools only. What URL does pep_url(401) return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8856.0,
+      "errors": [],
+      "answer": "`pep_url(401)` returns **`https://peps.python.org/pep-0401/`**. The `04d` format pads the number to four digits with leading zeros (`pep_tools/references.py:8`)."
+    },
+    {
+      "id": "p-group-re",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('re') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 7954.2,
+      "errors": [],
+      "answer": "`import_group('re')` returns `\"stdlib\"`. The top-level module name remains `\"re\"` (`pep_tools/style.py:41`), which is in `STDLIB_MODULES` (`pep_tools/style.py:9`), so the function returns `\"stdlib\"` (`pep_tools/style.py:42\u201343`)."
+    },
+    {
+      "id": "p-group-json",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('json') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10265.7,
+      "errors": [],
+      "answer": "`import_group('json')` returns `\"stdlib\"`. The function checks the top-level module name against `STDLIB_MODULES` (`pep_tools/style.py:41\u201343`), which includes `\"json\"` (`pep_tools/style.py:10`)."
+    },
+    {
+      "id": "p-group-typing",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('typing') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8575.5,
+      "errors": [],
+      "answer": "`import_group('typing')` returns `\"stdlib\"`. The function checks the top-level module name against `STDLIB_MODULES` (`pep_tools/style.py:41\u201343`), which includes `\"typing\"` (`pep_tools/style.py:13`)."
+    },
+    {
+      "id": "p-group-sqlite",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('sqlite3') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 9042.2,
+      "errors": [],
+      "answer": "`import_group('sqlite3')` returns `\"stdlib\"`. The function checks the top-level module name against `STDLIB_MODULES` (`pep_tools/style.py:41\u201343`), which includes `\"sqlite3\"` (`pep_tools/style.py:12`)."
+    },
+    {
+      "id": "p-group-dataclasses",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('dataclasses') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8413.0,
+      "errors": [],
+      "answer": "`import_group('dataclasses')` returns `\"stdlib\"`. The top-level module name remains `\"dataclasses\"` (`pep_tools/style.py:41`), which is included in `STDLIB_MODULES` (`pep_tools/style.py:14`), so the function returns `\"stdlib\"` (`pep_tools/style.py:42-43`)."
+    },
+    {
+      "id": "p-group-itertools",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('itertools') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8943.9,
+      "errors": [],
+      "answer": "`import_group('itertools')` returns `\"stdlib\"`. The function extracts the top-level module name (`pep_tools/style.py:41`), finds `\"itertools\"` in `STDLIB_MODULES` (`pep_tools/style.py:15`), and returns `\"stdlib\"` (`pep_tools/style.py:42-43`)."
+    },
+    {
+      "id": "p-group-collections",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('collections.abc') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 11449.6,
+      "errors": [],
+      "answer": "`import_group('collections.abc')` returns **`\"stdlib\"`**. It takes the first component, `\"collections\"` (`pep_tools/style.py:41`), finds it in `STDLIB_MODULES` (`pep_tools/style.py:16`), and returns `\"stdlib\"` (`pep_tools/style.py:42\u201343`)."
+    },
+    {
+      "id": "p-group-numpy",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('numpy') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 13895.5,
+      "errors": [],
+      "answer": "`import_group('numpy')` returns `\"other\"`. The name remains `\"numpy\"` after splitting at the first dot (`pep_tools/style.py:41`), and because it is not in `STDLIB_MODULES` (`pep_tools/style.py:5\u201318`), the function falls through to `return \"other\"` (`pep_tools/style.py:42\u201344`)."
+    },
+    {
+      "id": "p-group-pandas",
+      "question": "Answer from code_bundle/pep_tools only. What does import_group('pandas.core') return?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8690.0,
+      "errors": [],
+      "answer": "`import_group('pandas.core')` returns `\"other\"`. It extracts the root module `\"pandas\"` (`pep_tools/style.py:41`), which is not in `STDLIB_MODULES` (`pep_tools/style.py:5\u201318`), so it falls through to `return \"other\"` (`pep_tools/style.py:42\u201344`)."
+    },
+    {
+      "id": "p-import-json-os",
+      "question": "Answer from code_bundle/pep_tools only. What does imports_are_on_separate_lines return for the source import json, os?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 8115.8,
+      "errors": [],
+      "answer": "It returns `False`: `import json, os` creates an `ast.Import` node with two names, and the function rejects imports with more than one name (`pep_tools/style.py:33\u201335`)."
+    },
+    {
+      "id": "p-from-os",
+      "question": "Answer from code_bundle/pep_tools only. Does imports_are_on_separate_lines allow the source from os import path, getcwd?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 10094.3,
+      "errors": [],
+      "answer": "Yes. `imports_are_on_separate_lines(\"from os import path, getcwd\")` returns `True`. It rejects only `ast.Import` nodes with multiple names, not `ast.ImportFrom` nodes (`pep_tools/style.py:33\u201336`). Its docstring explicitly allows `from module import a, b` (`pep_tools/style.py:28\u201331`)."
+    },
+    {
+      "id": "p-header-ada",
+      "question": "Answer from code_bundle/pep_tools only. parse_pep_header is given Author: Ada followed by a newline, two spaces, and Lovelace. What is the Author value?",
+      "need": [
+        "code"
+      ],
+      "forbid": [
+        "research",
+        "data"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "code"
+      ],
+      "routes": [
+        "planner:google",
+        "code:openai",
+        "code:openai",
+        "summary:openai"
+      ],
+      "ms": 9585.4,
+      "errors": [],
+      "answer": "The `Author` value is `\"Ada Lovelace\"`: the parser stores `\"Ada\"` initially (pep_tools/headers.py:24\u201329), then strips the indented continuation and appends it with a single space (pep_tools/headers.py:20\u201322)."
+    },
+    {
+      "id": "p-mix-draft",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that says readability counts, and say how many PEPs have status Draft.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 14018.8,
+      "errors": [],
+      "answer": "\u201cReadability counts.\u201d There are **55 PEPs with status Draft**, according to s2\u2019s PEP-table query. However, the quote was supplied as a literal in that query, not verified against the PEP text: s1 found no supporting passage. The supplied excerpts from https://peps.python.org/pep-0020/ establish its title and metadata, references, and copyright, but not the quoted line (`pep-0020/00-introduction/0`, `pep-0020/04-references/0`, `pep-0020/05-copyright/0`); the other excerpts are template instructions, not evidence for either answer (`pep-0009/00-introduction/7`, `pep-0012/04-how-to-use-this-template/6`)."
+    },
+    {
+      "id": "p-mix-withdrawn",
+      "question": "Use the PEP text and the PEP table. Give one PEP 8 rule that imports belong on separate lines, and the number of PEPs with status Withdrawn.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 20416.0,
+      "errors": [],
+      "answer": "PEP 8 says imports should usually be on separate lines\u2014for example, `import os` and `import sys` on distinct lines, rather than `import sys, os` [pep-0008/09-imports/0]. The PEP table contains **74 PEPs with status \u201cWithdrawn\u201d**, returned by `SELECT count(*) FROM peps WHERE status = 'Withdrawn'`."
+    },
+    {
+      "id": "p-mix-active",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that begins with Beautiful, and say how many PEPs have status Active.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 14924.2,
+      "errors": [],
+      "answer": "\u201cBeautiful is better than ugly.\u201d [pep-0020/02-the-zen-of-python/0] The PEP table contains **37 PEPs** with status **Active**, counted using `SELECT COUNT(*) FROM peps WHERE status = 'Active'`."
+    },
+    {
+      "id": "p-mix-final",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that prefers explicit to implicit, and say how many PEPs have status Final.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 18928.7,
+      "errors": [],
+      "answer": "\u201cExplicit is better than implicit.\u201d The PEP table query returned **375 PEPs with status Final** (`SELECT COUNT(*) FROM peps WHERE status = 'Final'`). These answers come from worker s2\u2019s SQL output; worker s1\u2019s retrieved text did not establish the quote or count (retrieved chunks: `pep-0009/00-introduction/7`, `pep-0001/15-pep-header-preamble/1`, `pep-0001/13-what-belongs-in-a-successful-pep/6`, `pep-0012/04-how-to-use-this-template/6`, `pep-0020/00-introduction/0`)."
+    },
+    {
+      "id": "p-mix-rejected",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that begins with Simple, and say how many PEPs have status Rejected.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 21218.6,
+      "errors": [],
+      "answer": "\u201cSimple is better than complex.\u201d The PEP-table query returned **131 PEPs with status Rejected**. However, s1 could not find the Zen line in the PEP text, so the quotation was supplied by s2\u2019s SQL literal rather than verified against that text. The retrieved chunks do not establish the quotation or count: `pep-0009/00-introduction/7`, `pep-0012/04-how-to-use-this-template/6`, `pep-0001/15-pep-header-preamble/1`, `pep-0009/00-introduction/1`, and `pep-0001/13-what-belongs-in-a-successful-pep/0`."
+    },
+    {
+      "id": "p-mix-process",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that begins with Flat, and say how many PEPs have type Process.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 14798.0,
+      "errors": [],
+      "answer": "\u201cFlat is better than nested.\u201d There are **53 PEPs of type Process**, according to s2\u2019s PEP-table query. However, s1 could not locate the Zen line in the PEP text, so the quotation was not verified against that text. The supplied text chunks cover Process PEPs and formatting, not the requested Zen line or count: `pep-0001/03-pep-types/1`, `pep-0009/00-introduction/7`, `pep-0009/00-introduction/9`, `pep-0009/00-introduction/8`, and `pep-0001/14-pep-formats-and-templates/0`."
+    },
+    {
+      "id": "p-mix-info",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line about errors passing silently, and say how many PEPs have type Informational.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing errors should never pass silently",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 19823.4,
+      "errors": [],
+      "answer": "The PEP table contains **105 Informational PEPs**, from `SELECT count(*) FROM peps WHERE type = 'Informational'`. Worker **s1 could not retrieve the requested Zen quotation**, so that part remains missing: its passages establish only that PEP 20 is Informational [pep-0020/00-introduction/0] and explain the Informational category [pep-0001/03-pep-types/0], not the line about errors passing silently."
+    },
+    {
+      "id": "p-mix-standards",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line about namespaces, and say how many PEPs have type Standards Track.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 19494.9,
+      "errors": [],
+      "answer": "\u201cNamespaces are one honking great idea -- let's do more of those!\u201d The PEP table contains **587 Standards Track PEPs**, according to `SELECT COUNT(*) FROM peps WHERE type = 'Standards Track'`. The quote was supplied as a literal in the SQL worker\u2019s output, not verified against the PEP text: the text worker did not find it, and its retrieved chunks do not establish the quote or count (`pep-0001/15-pep-header-preamble/1`; `pep-0012/04-how-to-use-this-template/0`; `pep-0009/00-introduction/7`; `pep-0012/04-how-to-use-this-template/2`; `pep-0009/00-introduction/9`)."
+    },
+    {
+      "id": "p-mix-guido",
+      "question": "Use the PEP text and the PEP table. What maximum line length does PEP 8 recommend for code, and how many PEP rows list Guido van Rossum as an author?",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing 50",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 14843.2,
+      "errors": [],
+      "answer": "PEP 8 recommends a maximum code line length of **79 characters** [pep-0008/05-maximum-line-length/0], though teams may agree to allow up to 99 characters [pep-0008/05-maximum-line-length/1]. **The number of PEP rows listing Guido van Rossum as an author could not be determined from the worker outputs**: s1 retrieved only PEP 8, which names him as an author [pep-0008/00-introduction/0], while s2 returned the constant 79 rather than an author-count query."
+    },
+    {
+      "id": "p-mix-provisional",
+      "question": "Use the PEP text and the PEP table. Where do the closing quotes of a one-line PEP 257 docstring go, and how many PEPs have status Provisional?",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 17523.0,
+      "errors": [],
+      "answer": "For a one-line PEP 257 docstring, the closing quotes go **on the same line as the opening quotes** [pep-0257/04-one-line-docstrings/0]. The PEP table contains **1 PEP with status Provisional**, from `SELECT count(*) FROM peps WHERE status = 'Provisional'`."
+    },
+    {
+      "id": "p-mix-deferred",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that begins with Sparse, and say how many PEPs have status Deferred.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 15695.0,
+      "errors": [],
+      "answer": "\u201cSparse is better than dense.\u201d **35 PEPs** have status **Deferred**, according to worker s2\u2019s SQL result. The text-search worker could not independently verify either answer: its PEP 20 excerpts contain only metadata and references ([pep-0020/00-introduction/0], [pep-0020/04-references/0]), while its PEP 1 excerpts only list Deferred as a possible status and discuss resurrecting deferred proposals ([pep-0001/15-pep-header-preamble/1], [pep-0001/12-pep-maintenance/1])."
+    },
+    {
+      "id": "p-mix-superseded",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line about practicality, and say how many PEPs have status Superseded.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing 25",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 20230.1,
+      "errors": [],
+      "answer": "\u201cPracticality beats purity.\u201d is the line returned by worker s2, although its SQL selected a literal rather than verifying the PEP text. **The number of PEPs with status Superseded could not be established**: worker s1 found no PEP table. The supplied excerpts from https://peps.python.org/pep-0001/ discuss headers, maintenance, and supersession, but provide neither the Zen line nor a status count [pep-0001/15-pep-header-preamble/5; pep-0001/15-pep-header-preamble/1; pep-0001/13-what-belongs-in-a-successful-pep/6; pep-0001/12-pep-maintenance/0; pep-0001/11-pep-review-resolution/8]."
+    },
+    {
+      "id": "p-mix-accepted",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that begins with Now, and say how many PEPs have status Accepted.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing 11",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 19918.7,
+      "errors": [],
+      "answer": "The Zen line is **\u201cNow is better than never.\u201d** (returned by worker s2\u2019s SQL query). Worker s1\u2019s retrieved PEP 20 excerpts did not include the Zen\u2019s lines [pep-0020/00-introduction/0, pep-0020/04-references/0]. **The number of Accepted PEPs could not be determined from the worker outputs**: no PEP-table count was returned, and the retrieved status-header excerpt only lists \u201cAccepted\u201d as a possible status [pep-0001/15-pep-header-preamble/1]."
+    },
+    {
+      "id": "p-mix-eric",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line about special cases, and say how many PEP rows list Eric V. Smith as an author.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": false,
+      "answer_pass": false,
+      "path_pass": true,
+      "answer_reason": "missing 4",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 17359.2,
+      "errors": [],
+      "answer": "\u201cSpecial cases aren't special enough to break the rules.\u201d Worker s2 returned this quotation, but did not establish it from the PEP text. **The number of PEP rows listing Eric V. Smith as an author remains undetermined:** s1 found no relevant rows in the supplied passages, and s2 returned no count. The supplied citations concern author headers and template instructions, not the requested quotation or count: `pep-0001/15-pep-header-preamble/2`, `pep-0009/00-introduction/3`, `pep-0009/00-introduction/7`, `pep-0012/04-how-to-use-this-template/1`, and `pep-0009/00-introduction/9`."
+    },
+    {
+      "id": "p-mix-pablo",
+      "question": "Use the PEP text and the PEP table. Quote the Zen line that says namespaces are a great idea, and say how many PEP rows list Pablo Galindo as an author.",
+      "need": [
+        "research",
+        "data"
+      ],
+      "forbid": [
+        "code"
+      ],
+      "pass": true,
+      "answer_pass": true,
+      "path_pass": true,
+      "answer_reason": "ok",
+      "path_reason": "path ok",
+      "workers": [
+        "research",
+        "data"
+      ],
+      "routes": [
+        "planner:google",
+        "research:google",
+        "research:google",
+        "data:google",
+        "summary:openai"
+      ],
+      "ms": 15984.0,
+      "errors": [],
+      "answer": "\u201cNamespaces are one honking great idea -- let's do more of those!\u201d The PEP-table query returned **15 rows** listing Pablo Galindo as an author. However, the quote was supplied as a literal in that query, not verified from the retrieved PEP text: worker s1 found neither the Zen lines nor the author table in its corpus results. The retrieved chunks were `pep-0020/00-introduction/0`, `pep-0020/04-references/0`, and `pep-0020/05-copyright/0` ([PEP 20](https://peps.python.org/pep-0020/)), plus `pep-0009/00-introduction/7` ([PEP 9](https://peps.python.org/pep-0009/)) and `pep-0012/04-how-to-use-this-template/1` ([PEP 12](https://peps.python.org/pep-0012/)); none contains the quoted line or establishes the count."
+    }
+  ]
+}

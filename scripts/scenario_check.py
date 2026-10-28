@@ -81,6 +81,7 @@ def ask(question: str) -> dict:
     started = time.perf_counter()
     answer: list[str] = []
     routes: list[str] = []
+    traces: list[dict] = []
     errors: list[str] = []
     with urllib.request.urlopen(request, timeout=300) as response:
         buffer = ""
@@ -109,6 +110,14 @@ def ask(question: str) -> dict:
                     answer.append(body.get("text") or "")
                 elif event == "route":
                     routes.append(f"{body.get('agent')}:{body.get('provider')}")
+                elif event == "trace":
+                    traces.append(
+                        {
+                            "node": body.get("node") or "",
+                            "event": body.get("event") or "",
+                            "detail": body.get("detail") or "",
+                        }
+                    )
                 elif event == "error":
                     errors.append(body.get("message") or "error")
                 elif event == "done":
@@ -119,6 +128,7 @@ def ask(question: str) -> dict:
     return {
         "answer": "".join(answer).strip(),
         "routes": routes,
+        "traces": traces,
         "errors": errors,
         "ms": round((time.perf_counter() - started) * 1000, 1),
     }

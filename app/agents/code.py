@@ -44,7 +44,11 @@ _SKIP_NAMES = {
 
 def code_node(state: dict) -> dict:
     step_id = str(state.get("current_step_id") or "")
-    entry = trace_event("code", "enter", step_id)
+    entry = trace_event(
+        "code",
+        "enter",
+        f"Starting {step_id or 'the code step'}. Code finds the function in code_bundle and explains that file, not a re-export.",
+    )
     routes: list[dict] = []
     errors: list[dict] = []
     try:
@@ -71,7 +75,12 @@ def code_node(state: dict) -> dict:
         except (json.JSONDecodeError, TypeError, AttributeError):
             query = state["user_query"]
             hinted = ""
-        shown = _relevant_source(state["user_query"], query, hinted)
+        shown, paths = _relevant_source(state["user_query"], query, hinted)
+        read_note = trace_event(
+            "code",
+            "read",
+            "Read " + ", ".join(paths) + "." if paths else "No matching file was found in code_bundle/.",
+        )
         if not shown:
             text = "No matching line was found in code_bundle/."
         else:
@@ -91,14 +100,24 @@ def code_node(state: dict) -> dict:
         status = "done"
     except Exception as exc:
         text = "Code could not read the bundle."
+        read_note = None
         status = "failed"
         errors.append(recovered_error("code", type(exc).__name__))
+    exit_detail = (
+        "Finished. The explanation goes back to the supervisor."
+        if status == "done"
+        else "Code failed. The supervisor will still continue, and Summary will name the failure."
+    )
+    traces = [entry]
+    if read_note:
+        traces.append(read_note)
+    traces.append(trace_event("code", "exit", exit_detail))
     return {
         "plan": mark_step(state["plan"], step_id, status),
         "agent_outputs": {step_id: text},
         "route_log": routes,
         "errors": errors,
-        "trace": [entry, trace_event("code", "exit", status)],
+        "trace": traces,
     }
 
 
@@ -124,7 +143,7 @@ def _find_definition(name: str) -> dict | None:
     return None
 
 
-def _relevant_source(question: str, query: str, hinted: str) -> str:
+def _relevant_source(question: str, query: str, hinted: str) -> tuple[str, list[str]]:
     """Read the file that defines the named function, then any helper it calls.
 
     A match in pep_tools/__init__.py is only a re-export, so it is not enough.
@@ -153,19 +172,19 @@ def _relevant_source(question: str, query: str, hinted: str) -> str:
             if extra and extra["path"] not in files and len(files) < 4:
                 files.append(extra["path"])
     if chunks:
-        return "\n\n".join(chunks)
+        return "\n\n".join(chunks), files[:4]
     try:
         matches = search_code(query, limit=8)
     except ValueError:
-        return ""
+        return "", []
     if hinted:
         matches = [item for item in matches if item["path"] == hinted] or matches
     matches = [item for item in matches if not item["path"].endswith("__init__.py")] or matches
     if not matches:
-        return ""
+        return "", []
     hit = matches[0]
     snippet = read_file(hit["path"], max(hit["line"] - 2, 1), hit["line"] + 40)
-    return f"{snippet['path']}\n{snippet['text']}"
+    return f"{snippet['path']}\n{snippet['text']}", [snippet["path"]]
 
 
 def _step(state: dict) -> dict:

@@ -206,12 +206,17 @@ h1 { margin: 0; font-size: 1.7rem; }
 #trace { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 
 #trace li {
-  padding: 0.45rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.55rem 0.65rem;
   border-radius: 8px;
   background: #faf8f4;
   border: 1px solid var(--line);
   font-size: 0.86rem;
 }
+
+.trace-detail { margin: 0; line-height: 1.4; }
 
 #trace li.error {
   background: var(--error-bg);

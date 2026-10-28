@@ -18,6 +18,7 @@ from google.genai import types
 from openai import OpenAI
 
 from app.publish import publish
+from app.trace_util import trace_event
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
@@ -233,6 +234,7 @@ def run_task(
 
     def finish(choice: dict, *, fallback: bool, recovered: bool, ok: bool, started: float) -> None:
         usage = last_token_usage()
+        latency_ms = round((time.perf_counter() - started) * 1000, 1)
         _log_route(
             route_log,
             {
@@ -240,10 +242,20 @@ def run_task(
                 "fallback": fallback,
                 "recovered": recovered,
                 "ok": ok,
-                "latency_ms": round((time.perf_counter() - started) * 1000, 1),
+                "latency_ms": latency_ms,
                 "input_tokens": usage["input_tokens"],
                 "output_tokens": usage["output_tokens"],
             },
+        )
+        outcome = "The call failed." if not ok else "The call succeeded."
+        retry = " This is the retry on the other provider." if fallback else ""
+        trace_event(
+            choice.get("agent") or "model",
+            "model",
+            (
+                f"{choice.get('provider')} {choice.get('model')} handled the {choice.get('kind') or 'step'} "
+                f"({choice.get('dimension')}) in {latency_ms} ms. {choice.get('reason')}{retry} {outcome}"
+            ),
         )
 
     started = time.perf_counter()

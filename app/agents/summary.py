@@ -13,7 +13,11 @@ from tools.tavily_mcp import tavily_extract, tavily_search
 
 
 def summary_node(state: dict) -> dict:
-    entry = trace_event("summary", "enter", "merge")
+    entry = trace_event(
+        "summary",
+        "enter",
+        "Writing one answer from the worker notes. Summary keeps their citations and names any worker that failed.",
+    )
     routes: list[dict] = []
     errors: list[dict] = []
     tool_events: list[dict] = []
@@ -51,7 +55,15 @@ def summary_node(state: dict) -> dict:
         "final_answer": text,
         "route_log": routes,
         "errors": errors,
-        "trace": [entry, *tool_events, trace_event("summary", "exit", "done" if text else "failed")],
+        "trace": [
+            entry,
+            *tool_events,
+            trace_event(
+                "summary",
+                "exit",
+                "The answer is complete." if text else "Summary failed before it could write the answer.",
+            ),
+        ],
     }
 
 
@@ -81,7 +93,16 @@ def _search_research_url(citations: list[dict], errors: list[dict], tool_events:
         errors.append(recovered_error("summary", f"tavily_search {type(exc).__name__}"))
         tool_events.append(trace_event("summary", "tool", f"tavily_search failed {type(exc).__name__}"))
         return ""
-    tool_events.append(trace_event("summary", "tool", f"tavily_search query={found['arguments']['query']}"))
+    tool_events.append(
+        trace_event(
+            "summary",
+            "tool",
+            (
+                f"tavily_search query={found['arguments']['query']}. "
+                "Summary called the same search tool as Research, aimed at a URL Research already returned."
+            ),
+        )
+    )
     lines = []
     for item in found["results"]:
         lines.append(f"{item['url']}\n{item['title']}\n{item['content']}")
@@ -99,5 +120,11 @@ def _extract_research_url(citations: list[dict], errors: list[dict], tool_events
         errors.append(recovered_error("summary", f"tavily_extract {type(exc).__name__}"))
         tool_events.append(trace_event("summary", "tool", f"tavily_extract failed {type(exc).__name__}"))
         return ""
-    tool_events.append(trace_event("summary", "tool", f"tavily_extract urls={target}"))
+    tool_events.append(
+        trace_event(
+            "summary",
+            "tool",
+            f"tavily_extract urls={target}. Summary extracted that same URL and did not extract a corpus source.",
+        )
+    )
     return found["content"]

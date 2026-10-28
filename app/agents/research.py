@@ -18,7 +18,11 @@ PEP_DOMAINS = ["peps.python.org", "discuss.python.org", "blog.python.org"]
 
 def research_node(state: dict) -> dict:
     step_id = str(state.get("current_step_id") or "")
-    entry = trace_event("research", "enter", step_id)
+    entry = trace_event(
+        "research",
+        "enter",
+        f"Starting {step_id or 'the research step'}. Research rewrites the question, searches the corpus, and answers from those passages.",
+    )
     routes: list[dict] = []
     errors: list[dict] = []
     citations: list[dict] = []
@@ -48,7 +52,25 @@ def research_node(state: dict) -> dict:
             state["user_query"],
         )
         retrieve_ms = round((time.perf_counter() - started) * 1000, 1)
-        extra_traces.append(trace_event("research", "retrieve", f"{retrieve_ms} ms"))
+        best = max(citations, key=lambda item: item["score"], default=None)
+        best_note = (
+            f" Best match is {best['chunk_id']} in {best['title']}, score {best['score']:.3f}."
+            if best
+            else " No passages were returned."
+        )
+        web_needed = needs_live_web(state["user_query"], best["score"] if best else 0.0)
+        web_note = (
+            " A web search will run because the corpus match is weak or the question is after the snapshot."
+            if web_needed
+            else " No web search: the corpus match is strong enough and the question is inside the snapshot."
+        )
+        extra_traces.append(
+            trace_event(
+                "research",
+                "retrieve",
+                f"Corpus search took {retrieve_ms} ms and kept {len(citations)} passages.{best_note}{web_note}",
+            )
+        )
         web_passages, tool_events = _maybe_search(state["user_query"], citations, errors)
         for item in citations:
             publish_citation(item)
@@ -83,7 +105,18 @@ def research_node(state: dict) -> dict:
         "citations": citations,
         "route_log": routes,
         "errors": errors,
-        "trace": [entry, *extra_traces, *tool_events, trace_event("research", "exit", status)],
+        "trace": [
+            entry,
+            *extra_traces,
+            *tool_events,
+            trace_event(
+                "research",
+                "exit",
+                "Finished. The notes go back to the supervisor."
+                if status == "done"
+                else "Research failed. The supervisor will still continue, and Summary will name the failure.",
+            ),
+        ],
     }
 
 
@@ -150,7 +183,10 @@ def _maybe_search(question: str, citations: list[dict], errors: list[dict]) -> t
             }
         )
         lines.append(f"{item['url']}\n{item['title']}\n{item['content']}")
-    detail = f"tavily_search query={found['arguments']['query']}"
+    detail = (
+        f"tavily_search query={found['arguments']['query']}. "
+        f"Research called the shared Tavily search tool and got {len(found['results'])} results."
+    )
     return "\n\n".join(lines), [trace_event("research", "tool", detail)]
 
 
